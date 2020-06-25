@@ -9,7 +9,7 @@ class MouseSwipeEventCallback {
 
 	_createMouseSwipeEvents() {
 		// Swipe event for greeter screen
-		new MouseSwipeEvent(
+		const greeterScreenSwipeEvent = new MouseSwipeEvent(
 			this._greeterScreen,
 			(el, dir) => {
 				if (dir === 'up') {
@@ -19,7 +19,7 @@ class MouseSwipeEventCallback {
 		);
 
 		// Swipe event for body overlay
-		new MouseSwipeEvent(
+		const bodyOverlaySwipeEvent = new MouseSwipeEvent(
 			this._bodyOverlay,
 			(el, dir) => {
 				if (dir === 'down') {
@@ -33,7 +33,7 @@ class MouseSwipeEventCallback {
 		);
 
 		// Swipe event for sessions screen
-		new MouseSwipeEvent(
+		const sessionsScreenSwipeEvent = new MouseSwipeEvent(
 			this._sessionsScreen,
 			(el, dir) => {
 				if (dir === 'up') {
@@ -43,7 +43,7 @@ class MouseSwipeEventCallback {
 		);
 
 		// Swipe event for users screen
-		new MouseSwipeEvent(
+		const usersSwipeEvent = new MouseSwipeEvent(
 			this._usersScreen,
 			(el, dir) => {
 				if (dir === 'up') {

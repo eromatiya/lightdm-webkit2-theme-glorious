@@ -36,7 +36,7 @@ class UsersScreen {
 
 			// Toggle user screen
 			this.toggleUsersScreen();
-		}
+		};
 	}
 
 	// Return session screen visibility bool
@@ -128,12 +128,12 @@ class UsersScreen {
 			this.hideUsersScreen();
 
 			// Update selected session item
-			this._updateUserItemDefault(userProfile.item)
+			this._updateUserItemDefault(userProfile.item);
 
 			// Update profile pic and label
-			this._setUserProfileImage(userProfile.profileImage, userProfile.profileImageFallBack)
+			this._setUserProfileImage(userProfile.profileImage, userProfile.profileImageFallBack);
 			this._setUserNameLabel(userProfile.displayName);
-		}
+		};
 	}
 
 	_updateProfileVariablesOnStartUp() {
@@ -162,7 +162,7 @@ class UsersScreen {
 		this._updateProfileVariablesOnStartUp();
 
 		// Update profile pic and label
-		this._setUserProfileImage(this._defaultUserProfileImage, this._defaultUserProfileImageFallback)
+		this._setUserProfileImage(this._defaultUserProfileImage, this._defaultUserProfileImageFallback);
 		this._setUserNameLabel(this._defaultUserDisplayName);
 
 		const defaultItemID = this._defaultUser + 'User';
@@ -182,11 +182,11 @@ class UsersScreen {
 			// Create obj
 			let userProfile = {
 				'item': document.createElement('button'),
-				'userName': this._usersObject[i].username,
-				'displayName': this._usersObject[i].display_name,
-				'profileImage': this._usersObject[i].image,
+				'userName': this._usersObject[parseInt(i, 10)].username,
+				'displayName': this._usersObject[parseInt(i, 10)].display_name,
+				'profileImage': this._usersObject[parseInt(i, 10)].image,
 				'profileImageFallBack': 'assets/profiles/user.svg'
-			}
+			};
 
 			// Alias
 			let userItem = userProfile.item;

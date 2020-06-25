@@ -32,7 +32,6 @@ class KeyEvents {
 				greeterScreen.toggleGreeterScreen();
 				this._passwordInputEl.value = '';
 			}
-		}
+		};
 	}
 }
-

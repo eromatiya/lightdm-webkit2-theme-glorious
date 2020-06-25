@@ -36,6 +36,6 @@ class GreeterScreen {
 		this._greeterScreenButton.onclick = () => {
 			this._passwordInputEL.value = '';
 			this._showGreeterScreen();
-		}
+		};
 	}
 }
