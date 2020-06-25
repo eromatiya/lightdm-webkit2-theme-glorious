@@ -63,7 +63,7 @@
 }
 
 #powerButtonShow {
-	background-image: url('../assets/shutdown.svg');
+	background-image: url('../../assets/shutdown.svg');
 }
 
 .powerButtonsOpenerHide {
@@ -71,23 +71,23 @@
 }
 
 #powerButtonImage {
-	background-image: url('../assets/shutdown.svg');
+	background-image: url('../../assets/shutdown.svg');
 }
 
 #restartButtonImage {
-	background-image: url('../assets/restart.svg');
+	background-image: url('../../assets/restart.svg');
 }
 
 #suspendButtonImage {
-	background-image: url('../assets/suspend.svg');
+	background-image: url('../../assets/suspend.svg');
 }
 
 #hibernateButtonImage {
-	background-image: url('../assets/hibernate.svg');
+	background-image: url('../../assets/hibernate.svg');
 }
 
 #powerButtonShow.backButtonMode {
-	background-image: url('../assets/roof.svg');
+	background-image: url('../../assets/roof.svg');
 }
 
 #powerButtonsMain {

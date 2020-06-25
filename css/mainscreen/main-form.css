@@ -140,11 +140,11 @@ label#userName {
 }
 
 #authenticateButton #authenticateButtonImage.mainFormButtonImage {
-	background-image: url('../assets/forward.svg');
+	background-image: url('../../assets/forward.svg');
 }
 
 #greeterScreenButton #greeterScreenButtonImage.mainFormButtonImage {
-	background-image: url('../assets/back.svg');
+	background-image: url('../../assets/back.svg');
 }
 
 button.mainFormButton#authenticateButton:hover,
