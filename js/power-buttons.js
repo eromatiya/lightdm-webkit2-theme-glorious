@@ -105,22 +105,22 @@ class PowerButtons {
 	_powerButtonsOnClickEvents() {
 		this._hibernateButton.onclick = () => {
 			this._powerButtonOnClickRun('hibernate', 'Hibernating...', lightdm.hibernate);
-		}
+		};
 		this._suspendButton.onclick = () => {
 			this._powerButtonOnClickRun('suspend', 'Suspending...', lightdm.suspend);
-		}
+		};
 		this._restartButton.onclick = () => {
 			this._powerButtonOnClickRun('restart', 'Rebooting...', lightdm.restart);
-		}
+		};
 		this._powerButton.onclick = () => {
 			this._powerButtonOnClickRun('shutdown', 'Shutting down...', lightdm.shutdown);
-		}
+		};
 	}
 
 	_powerButtonsShowOnClickEvent() {
 		this._powerButtonShow.onclick = (e) => {
 			this.togglepowerButtons();
-		}
+		};
 	}
 
 }

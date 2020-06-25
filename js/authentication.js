@@ -64,7 +64,7 @@ class Authentication {
 	_autologinTimerExpired() {
 		window.autologin_timer_expired = () => {
 			this.startAuthentication();
-		}
+		};
 	}
 
 	// Authentication completed callback

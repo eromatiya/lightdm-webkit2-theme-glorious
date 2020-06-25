@@ -127,7 +127,7 @@ class SessionsScreen {
 
 			// Update session button image
 			this._setSessionButtonImage(key);
-		}
+		};
 	}
 		
 	// Create session list

@@ -80,7 +80,6 @@ class DebugMode {
 				},
 				respond: (password) => {
 					console.log(`Password provided: '${password}'`);
-
 					if (password === this._debugModePass)
 					{
 						lightdm.is_authenticated = true;
@@ -90,30 +89,29 @@ class DebugMode {
 						let now = new Date().getTime();
 						while (new Date().getTime() < now + 2000);
 					}
-
 					authentication_complete();
 				},
 				start_session_sync: (session) => {
 					alert(`Logged with session: '${session}'!`);
 				},
 				shutdown: () => {
-					alert('System is shutting down...')
+					alert('System is shutting down...');
 				},
 				hibernate: () => {
-					alert('System is hibernating...')
+					alert('System is hibernating...');
 				},
 				suspend: () => {
-					alert('System is suspending...')
+					alert('System is suspending...');
 				},
 				restart: () => {
-					alert('System is rebooting...')
+					alert('System is rebooting...');
 				}
 			};
 		}
 	}
 }
 
-new DebugMode();
+const debugMode = new DebugMode();
 
 // Instantiation
 
@@ -139,10 +137,10 @@ const goodbyeScreen = new GoodbyeScreen();
 const sessionsScreen = new SessionsScreen();
 
 // Instantiate key events
-new KeyEvents();
+const keyEvents = new KeyEvents();
 
 // Instantiate mouse events and callbacks
-new MouseSwipeEventCallback();
+const mouseSwipeEventCallback = new MouseSwipeEventCallback();
 
 // Instantiate authentication
 const authentication = new Authentication();

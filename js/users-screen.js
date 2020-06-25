@@ -128,12 +128,12 @@ class UsersScreen {
 			this.hideUsersScreen();
 
 			// Update selected session item
-			this._updateUserItemDefault(userProfile.item)
+			this._updateUserItemDefault(userProfile.item);
 
 			// Update profile pic and label
-			this._setUserProfileImage(userProfile.profileImage, userProfile.profileImageFallBack)
+			this._setUserProfileImage(userProfile.profileImage, userProfile.profileImageFallBack);
 			this._setUserNameLabel(userProfile.displayName);
-		}
+		};
 	}
 
 	_updateProfileVariablesOnStartUp() {
@@ -162,7 +162,7 @@ class UsersScreen {
 		this._updateProfileVariablesOnStartUp();
 
 		// Update profile pic and label
-		this._setUserProfileImage(this._defaultUserProfileImage, this._defaultUserProfileImageFallback)
+		this._setUserProfileImage(this._defaultUserProfileImage, this._defaultUserProfileImageFallback);
 		this._setUserNameLabel(this._defaultUserDisplayName);
 
 		const defaultItemID = this._defaultUser + 'User';

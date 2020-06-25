@@ -11,8 +11,10 @@
 
 #sessionsScreenBackground.screenBackground {
 	background-image:
-					linear-gradient(rgba(0, 0, 0, 0.50),
-					rgba(0, 0, 0, 0.50)),
+					linear-gradient(
+						rgba(0, 0, 0, 0.5),
+						rgba(0, 0, 0, 0.5)
+					),
 					url('../../assets/bg.jpg');
 	filter: blur();
 }
@@ -22,6 +24,7 @@
 	height: auto;
 	max-height: 100%;
 	overflow: auto;
+
 	/* Align vertically and horizontally */
 	margin: 0;
 	position: absolute;
@@ -49,7 +52,7 @@
 }
 
 .sessionItemDefault {
-	background: var(--base-active-bg)
+	background: var(--base-active-bg);
 }
 
 .sessionItem:hover {
@@ -57,11 +60,11 @@
 }
 
 .sessionItem:focus {
-	background: var(--base-focus-bg)
+	background: var(--base-focus-bg);
 }
 
 .sessionItem:active {
-	background: var(--base-active-bg)
+	background: var(--base-active-bg);
 }
 
 #sessionItemIconContainer {
