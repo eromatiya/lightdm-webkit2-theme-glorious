@@ -1,0 +1,49 @@
+#goodbyeScreen.screen {
+	background: transparent;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	opacity: 0;
+	pointer-events: none;
+	transition: all var(--transition-speed);
+}
+
+#goodbyeScreenBackground.screenBackground {
+	background-image: url('../../assets/bg.jpg');
+}
+
+#goodbyeScreen.showGoodbyeScreen {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+#goodbyeScreenContentContainer {
+	width: auto;
+	height: auto;
+	border: none;
+	pointer-events: none;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	display: inline-flex;
+	transform: translate(-50%, -50%);
+}
+
+.goodbyeContent {
+	margin: 10px;
+}
+
+#goodbyeImage {
+	width: 88px;
+	height: 88px;
+	background-image: url('../../assets/shutdown.svg');
+	background-size: cover;
+}
+
+#goodbyeMessage {
+	font-family: Muli, sans-serif;
+	font-size: 56pt;
+	font-weight: 400;
+	font-style: italic;
+	color: var(--base-color);
+}

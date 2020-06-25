@@ -1,0 +1,88 @@
+#sessionsScreen.screen {
+	z-index: 5;
+	top: -100%;
+	left: 0;
+	padding: 10px;
+}
+
+#sessionsScreen.sessionsScreenShow {
+	top: 0;
+}
+
+#sessionsScreenBackground.screenBackground {
+	background-image:
+					linear-gradient(rgba(0, 0, 0, 0.50),
+					rgba(0, 0, 0, 0.50)),
+					url('../../assets/bg.jpg');
+	filter: blur();
+}
+
+.sessionsList {
+	width: auto;
+	height: auto;
+	max-height: 100%;
+	overflow: auto;
+	/* Align vertically and horizontally */
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.sessionItem {
+	background: transparent;
+	border: none;
+	border-radius: var(--rounded-radius);
+	outline: none;
+	margin: 5px;
+	width: 150px;
+	height: 150px;
+	padding: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.sessionItemContent {
+	width: 100%;
+	height: 100%;
+}
+
+.sessionItemDefault {
+	background: var(--base-active-bg)
+}
+
+.sessionItem:hover {
+	background: var(--base-hover-bg);
+}
+
+.sessionItem:focus {
+	background: var(--base-focus-bg)
+}
+
+.sessionItem:active {
+	background: var(--base-active-bg)
+}
+
+#sessionItemIconContainer {
+	margin-bottom: 5px;
+	position: relative;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+}
+
+img#sessionItemIcon {
+	width: 64px;
+	height: 64px;
+	object-fit: cover;
+	display: block;
+}
+
+#sessionItemName {
+	text-align: center;
+	font-size: 11pt;
+	font-family: Muli-Light, sans-serif;
+	font-weight: 400;
+	word-wrap: break-word;
+	color: var(--base-color);

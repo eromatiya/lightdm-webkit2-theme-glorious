@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="suspend.svg"
+   id="svg6"
+   version="1.1"
+   viewBox="0 0 240 240"
+   height="240"
+   width="240">
+  <metadata
+     id="metadata12">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg6"
+     inkscape:window-maximized="0"
+     inkscape:window-y="28"
+     inkscape:window-x="45"
+     inkscape:cy="-20.000983"
+     inkscape:cx="-70.407457"
+     inkscape:zoom="0.72458064"
+     inkscape:pagecheckerboard="true"
+     showgrid="false"
+     id="namedview8"
+     inkscape:window-height="740"
+     inkscape:window-width="1321"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     id="path2"
+     d="M 0,0 H 24 V 24 H 0 Z"
+     fill="none" />
+  <path
+     style="stroke-width:10"
+     id="path4"
+     d="m 177.92793,103.7 c -7.5,-47.6 -50,-83.5 -98.199998,-83.7 -4.9,0 -9.7,0.3 -14.4,1 -5,0.7 -6,7.3 -1.4,9.6 32.8,16.3 55.299998,50.2 55.299998,89.4 0,39.2 -22.499998,73.1 -55.299998,89.5 -4.5,2.3 -3.6,8.9 1.4,9.6 4.7,0.6 9.5,0.9 14.4,0.9 48.199998,-0.2 90.699998,-36.1 98.199998,-83.7 0.9,-5.5 1.1,-10.9 1.1,-16.3 0,-5.4 -0.2,-10.8 -1.1,-16.3 z"
+     fill="#ffffff" />
+</svg>

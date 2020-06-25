@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="back.svg"
+   id="svg6"
+   version="1.1"
+   viewBox="0 0 240 240"
+   height="240"
+   width="240">
+  <metadata
+     id="metadata12">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg6"
+     inkscape:window-maximized="0"
+     inkscape:window-y="28"
+     inkscape:window-x="45"
+     inkscape:cy="162.16908"
+     inkscape:cx="86.657441"
+     inkscape:zoom="1.3183544"
+     inkscape:pagecheckerboard="true"
+     showgrid="false"
+     id="namedview8"
+     inkscape:window-height="740"
+     inkscape:window-width="1321"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     id="path2"
+     d="M 0,0 H 24 V 24 H 0 Z"
+     fill="none"
+     opacity="0.87" />
+  <path
+     style="stroke-width:10.6581"
+     id="path4"
+     d="m 173.31063,23.916868 c -5.22249,-5.222488 -13.64242,-5.222488 -18.86491,0 L 65.87658,112.48602 c -4.156675,4.15667 -4.156675,10.87129 0,15.02797 l 88.56914,88.56914 c 5.22249,5.22249 13.64242,5.22249 18.86491,0 5.22249,-5.22249 5.22249,-13.64242 0,-18.8649 L 96.145698,119.94671 173.41721,42.675196 c 5.11591,-5.115908 5.11591,-13.64242 -0.10658,-18.758328 z"
+     fill="#ffffff" />
+</svg>

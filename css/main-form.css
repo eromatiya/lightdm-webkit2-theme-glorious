@@ -1,0 +1,164 @@
+/* Main form */
+.mainForm {
+	width: 100%;
+	height: auto;
+	border: none;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.mainForm > * {
+	pointer-events: auto;
+}
+
+/* Center profile container */
+#profilePictureContainer {
+	height: 148px;
+	width: 148px;
+	background: var(--base-bg);
+	border-radius: 50%;
+	pointer-events: initial;
+	margin: 0 auto;
+	position: relative;
+	flex-flow: column wrap;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Profile picture */
+#profilePicture {
+	height: 138px;
+	width: 138px;
+	border-radius: 50%;
+	object-fit: cover;
+	display: block;
+	flex-flow: column wrap;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Initialize animation */
+.rotateProfileAnim {
+	animation: rotate var(--transition-speed) 1;
+	animation-iteration-count: 1;
+	animation-play-state: paused;
+}
+
+/* Rotate animation */
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+#mainFormContent {
+	position: relative;
+	display: flex;
+	flex-flow: column wrap;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+}
+
+#mainFormContent > * {
+	pointer-events: auto;
+}
+
+label#userName {
+	color: var(--base-color);
+	font-size: 20px;
+	margin: 20px;
+	font-weight: 700;
+}
+
+#passwordInputContainer {
+	display: inline-flex;
+}
+
+#passwordInputBox {
+	background: var(--base-bg);
+	border-radius: var(--rounded-radius);
+	height: 36px;
+	display: inline-flex;
+	margin: 0 5px;
+}
+
+#passwordInput {
+	width: 180px;
+	height: 36px;
+	text-align: center;
+	background: transparent;
+	color: var(--base-color);
+	font-weight: 700;
+}
+
+.authenticationFailed {
+	border: 2px solid;
+	border-color: var(--base-error-bg);
+}
+
+.mainFormButton {
+	width: 36px;
+	height: 36px;
+	padding: 10px;
+	display: block;
+	cursor: pointer;
+	border-radius: var(--rounded-radius);
+}
+
+.mainFormButton#authenticateButton {
+	background: var(--base-bg);
+}
+
+.mainFormButton#greeterScreenButton {
+	width: 36px;
+	height: 36px;
+	background: var(--base-bg);
+	border-radius: 50%;
+}
+
+.mainFormButtonImage {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-size: cover;
+}
+
+#authenticateButton #authenticateButtonImage.mainFormButtonImage {
+	background-image: url('../assets/forward.svg');
+}
+
+#greeterScreenButton #greeterScreenButtonImage.mainFormButtonImage {
+	background-image: url('../assets/back.svg');
+}
+
+button.mainFormButton#authenticateButton:hover,
+button.mainFormButton#greeterScreenButton:hover {
+	background: var(--base-hover-bg);
+}
+
+button.mainFormButton#authenticateButton:focus,
+button.mainFormButton#greeterScreenButton:focus {
+	background: var(--base-focus-bg);
+}
+
+button.mainFormButton#authenticateButton:active,
+button.mainFormButton#greeterScreenButton:active {
+	background: var(--base-active-bg);
+}

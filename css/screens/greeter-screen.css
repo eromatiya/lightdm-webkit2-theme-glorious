@@ -1,0 +1,51 @@
+/* Greeter Screen */
+.greeterScreen.screen {
+	z-index: 5;
+	top: 0;
+	left: 0;
+	background-image:
+					linear-gradient(rgba(0, 0, 0, 0.50),
+					rgba(0, 0, 0, 0.50)),
+					url('../../assets/bg.jpg');
+}
+
+.greeterScreen.screen.hideGreeterScreen {
+	top: -100%;
+}
+
+.greeterScreenContent {
+	width: auto;
+	height: auto;
+	border: none;
+	pointer-events: none;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);	
+}
+
+#clock,
+#date,
+#greeter {
+	color: var(--base-color);
+	text-align: center;
+	position: relative;
+}
+
+#greeter {
+	font-size: 32pt;
+	font-family: Muli-Light, sans-serif;
+	font-weight: 300;
+}
+
+#clock {
+	font-size: 96pt;
+	font-family: Muli, sans-serif;
+	font-weight: 400;
+}
+
+#date {
+	font-size: 24pt;
+	font-family: Muli, sans-serif;
+	font-weight: 400;
+}
