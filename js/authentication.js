@@ -79,7 +79,7 @@ class Authentication {
 					() => {
 						lightdm.start_session_sync(sessionsScreen.getDefaultSession());
 					},
-					500
+					750
 				);
 			} else {
 				this._authenticationFailed();
