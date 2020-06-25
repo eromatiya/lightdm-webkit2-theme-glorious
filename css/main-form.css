@@ -100,6 +100,7 @@ label#userName {
 #passwordInput {
 	width: 180px;
 	height: 36px;
+	padding: 0 10px;
 	text-align: center;
 	background: transparent;
 	color: var(--base-color);
