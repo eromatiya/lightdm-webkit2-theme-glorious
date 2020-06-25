@@ -186,7 +186,7 @@ class UsersScreen {
 				'displayName': this._usersObject[parseInt(i, 10)].display_name,
 				'profileImage': this._usersObject[parseInt(i, 10)].image,
 				'profileImageFallBack': 'assets/profiles/user.svg'
-			}
+			};
 
 			// Alias
 			let userItem = userProfile.item;

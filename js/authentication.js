@@ -84,7 +84,7 @@ class Authentication {
 			} else {
 				this._authenticationFailed();
 			}
-		}
+		};
 	}
 
 	// Authenticate on button click

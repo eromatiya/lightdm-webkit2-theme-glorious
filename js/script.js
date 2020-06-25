@@ -9,7 +9,7 @@ class DebugMode {
 		if (window.lightdmDebugMode) {
 			window.lightdm = {
 				is_authenticated: false,
-				authentication_user: undefined,
+				authentication_user: null,
 				default_session: 'awesome',
 				can_suspend: true,
 				can_hibernate: true,
