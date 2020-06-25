@@ -135,8 +135,8 @@ class SessionsScreen {
 		// Generate session list
 		for (let i = 0; i < this._sessionsObject.length; i++) {
 
-			const sessionName = this._sessionsObject[i].name;
-			const sessionKey = this._sessionsObject[i].key;
+			const sessionName = this._sessionsObject[parseInt(i, 10)].name;
+			const sessionKey = this._sessionsObject[parseInt(i, 10)].key;
 			let sessionItem = document.createElement('button');
 
 			sessionItem.className = 'sessionItem';

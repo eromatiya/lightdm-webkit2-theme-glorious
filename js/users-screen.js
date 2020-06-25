@@ -182,9 +182,9 @@ class UsersScreen {
 			// Create obj
 			let userProfile = {
 				'item': document.createElement('button'),
-				'userName': this._usersObject[i].username,
-				'displayName': this._usersObject[i].display_name,
-				'profileImage': this._usersObject[i].image,
+				'userName': this._usersObject[parseInt(i, 10)].username,
+				'displayName': this._usersObject[parseInt(i, 10)].display_name,
+				'profileImage': this._usersObject[parseInt(i, 10)].image,
 				'profileImageFallBack': 'assets/profiles/user.svg'
 			}
 
