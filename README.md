@@ -30,24 +30,22 @@ Make sure to have the latest version.
 
 ### installation
 
-```
-# clone
-$ git clone --depth 1 https://github.com/manilarome/the-glorious-lightdm-webkit2-theme
+- clone
+`$ git clone --depth 1 https://github.com/manilarome/the-glorious-lightdm-webkit2-theme`
 
-# copy it to the lightdm webkit theme folder
-# cp the-glorious-lightdm-webkit2-theme /usr/share/lightdm-webkit/themes/ -r
+- copy it to the lightdm webkit theme folder
+`# cp the-glorious-lightdm-webkit2-theme /usr/share/lightdm-webkit/themes/ -r`
 
-# set lightdm greeter session to webkit2
-$ sudoedit /etc/lightdm/lightdm.conf
-# find `greeter-session`, uncomment it, then set its value to `lightdm-webkit2-greeter`
+- set lightdm greeter session to webkit2
+`$ sudoedit /etc/lightdm/lightdm.conf`
+find `greeter-session`, uncomment it, then set its value to `lightdm-webkit2-greeter`
 
-# set the lightdm webkit2 theme
-$ sudoedit /etc/lightdm/lightdm-webkit2-greeter.conf
-# find `webkit_theme` then set its value to `the-glorious-lightdm-webkit2-theme`
+- set the lightdm webkit2 theme
+`$ sudoedit /etc/lightdm/lightdm-webkit2-greeter.conf`
+find `webkit_theme` then set its value to `the-glorious-lightdm-webkit2-theme`
 
-# Note that you need to make sure that lightdm.service is running. There's a bunch of guide on the internet.
-# Archwiki is recommended.
-```
+- Note that you need to make sure that lightdm.service is running. There's a bunch of guide on the internet.
+Archwiki is recommended.
 
 ### Features
 
