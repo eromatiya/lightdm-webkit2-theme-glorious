@@ -41,7 +41,6 @@
 	width: 138px;
 	border-radius: 50%;
 	object-fit: cover;
-	display: block;
 	flex-flow: column wrap;
 	display: flex;
 	justify-content: center;

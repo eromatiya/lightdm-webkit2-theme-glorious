@@ -49,15 +49,15 @@ class Authentication {
 	_authenticationFailedRemove() {
 		// Remove warnings and tooltip
 		if (this._passwordInputBox.classList.contains('authenticationFailed') &&
-	  			this._tooltipMessage.classList.contains('tooltipError')) {
+				this._tooltipMessage.classList.contains('tooltipError')) {
 			setTimeout(
 				() => {
-		      		this._tooltipMessage.classList.remove('tooltipError');
-		      		this._passwordInputBox.classList.remove('authenticationFailed');
+					this._tooltipMessage.classList.remove('tooltipError');
+					this._passwordInputBox.classList.remove('authenticationFailed');
 				},
 				1500
 			);
-	   	}
+		}
 	}
 
 	// Timer expired, create new authentication session
@@ -112,7 +112,7 @@ class Authentication {
 			// Remove wrong password's warnings and tooltip
 			this._authenticationFailedRemove();
 
-	      	// Save input value to variable
+			// Save input value to variable
 			this._password = this._passwordInputEl.value;
 
 			if (e.key === 'Enter') {

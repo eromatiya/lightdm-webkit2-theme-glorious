@@ -60,7 +60,6 @@ input {
 	background: transparent;
 	color: var(--base-color);
 	border: none;
-	padding: 0;
 	font-family: Muli, sans-serif;
 	text-align: center;
 	outline: none;

@@ -36,7 +36,7 @@ class UsersScreen {
 
 			// Toggle user screen
 			this.toggleUsersScreen();
-		}
+		};
 	}
 
 	// Return session screen visibility bool

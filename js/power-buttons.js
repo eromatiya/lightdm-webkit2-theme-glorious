@@ -39,7 +39,7 @@ class PowerButtons {
 	_powerButtonsOverlayClickEvent() {
 		this._powerButtonsOverlay.onclick = e => {
 			this._hidePowerButtons();
-		}
+		};
 	}
 
 	_stopPropagation(e) {

@@ -30,7 +30,7 @@ class SessionsScreen {
 		this._sessionsButtonPanel.onclick = e => {
 			// Toggle sessions screen
 			this.toggleSessionsScreen();
-		}
+		};
 	}
 
 	// Return session screen visibility bool
