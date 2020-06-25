@@ -67,3 +67,8 @@ Right now, the features are pretty basic. There's no settings or customization. 
 ### Notes
 
 + If you're on a desktop environment like KDE Plasma and GNOME3, you can set your profile picture in the settings. While if you're on a more minimal environment like window managers, you can install the program called `mugshot` and set your profile image there.
+
+
+### Credits
+
+<span>Background Photo by <a href="https://unsplash.com/@nomadicjulien?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Nomadic Julien</a> on <a href="/s/photos/japan-street?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
