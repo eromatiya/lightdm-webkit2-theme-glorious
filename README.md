@@ -71,4 +71,4 @@ Right now, the features are pretty basic. There's no settings or customization. 
 
 ### Credits
 
-<span>Background Photo by <a href="https://unsplash.com/@nomadicjulien?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Nomadic Julien</a> on <a href="/s/photos/japan-street?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+<span>Background image by <a href="https://unsplash.com/@wilstewart3?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Wil Stewart</a> on <a href="/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
