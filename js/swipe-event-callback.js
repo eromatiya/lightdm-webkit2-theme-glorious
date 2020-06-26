@@ -1,4 +1,4 @@
-class MouseSwipeEventCallback {
+class SwipeEventCallback {
 	constructor() {
 		this._bodyOverlay = document.querySelector('.bodyOverlay');
 		this._sessionsScreen = document.querySelector('#sessionsScreen');
@@ -10,7 +10,7 @@ class MouseSwipeEventCallback {
 
 	_createMouseSwipeEvents() {
 		// Swipe event for greeter screen
-		const greeterScreenSwipeEvent = new MouseSwipeEvent(
+		const greeterScreenSwipeEvent = new SwipeEvent(
 			this._greeterScreen,
 			(el, dir) => {
 				if (dir === 'up') {
@@ -20,7 +20,7 @@ class MouseSwipeEventCallback {
 		);
 
 		// Swipe event for power screen
-		const powerScreenSwipeEvent = new MouseSwipeEvent(
+		const powerScreenSwipeEvent = new SwipeEvent(
 			this._powerScreen,
 			(el, dir) => {
 				if (dir === 'up') {
@@ -30,7 +30,7 @@ class MouseSwipeEventCallback {
 		);
 
 		// Swipe event for body overlay
-		const bodyOverlaySwipeEvent = new MouseSwipeEvent(
+		const bodyOverlaySwipeEvent = new SwipeEvent(
 			this._bodyOverlay,
 			(el, dir) => {
 				if (dir === 'down') {
@@ -46,7 +46,7 @@ class MouseSwipeEventCallback {
 		);
 
 		// Swipe event for sessions screen
-		const sessionsScreenSwipeEvent = new MouseSwipeEvent(
+		const sessionsScreenSwipeEvent = new SwipeEvent(
 			this._sessionsScreen,
 			(el, dir) => {
 				if (dir === 'up') {
@@ -56,7 +56,7 @@ class MouseSwipeEventCallback {
 		);
 
 		// Swipe event for users screen
-		const usersSwipeEvent = new MouseSwipeEvent(
+		const usersSwipeEvent = new SwipeEvent(
 			this._usersScreen,
 			(el, dir) => {
 				if (dir === 'up') {
@@ -65,5 +65,4 @@ class MouseSwipeEventCallback {
 			}
 		);
 	}
-
 }

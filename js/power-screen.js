@@ -18,9 +18,12 @@ class PowerScreen {
 	}
 
 	_powerScreenButtonOnClickEvent() {
-		this._powerScreenButton.onclick = e => {
-			this.togglePowerScreen();
-		};
+		this._powerScreenButton.addEventListener(
+			'click',
+			() => {
+				this.togglePowerScreen();
+			}
+		);
 	}
 
 	// Return power screen visibility bool
@@ -110,19 +113,22 @@ class PowerScreen {
 	}
 
 	_powerItemOnClickEvent(item, powerObj) {
-		item.onclick = e => {
-			// Hide power screen
-			this.hidePowerScreen();
+		item.addEventListener(
+			'click',
+			() => {
+				// Hide power screen
+				this.hidePowerScreen();
 
-			// Disable keydown events temporarily
-			this._disableWindowPropagation();
+				// Disable keydown events temporarily
+				this._disableWindowPropagation();
 
-			// Show goodby screen
-			goodbyeScreen.showGoodbyeScreen(powerObj.icon, powerObj.message);
+				// Show goodby screen
+				goodbyeScreen.showGoodbyeScreen(powerObj.icon, powerObj.message);
 
-			// Execute power command
-			this._executePowerCallback(powerObj.powerCommand);
-		};
+				// Execute power command
+				this._executePowerCallback(powerObj.powerCommand);
+			}
+		);
 	}
 
 	_createPowerList() {

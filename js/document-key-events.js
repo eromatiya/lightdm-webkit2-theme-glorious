@@ -9,6 +9,8 @@ class KeyEvents {
 	_registerOnKeyDown() {
 		document.onkeyup = (e) => {
 			if (e.key === 'Escape') {
+				// Prevent default escape key function
+				e.preventDefault();
 
 				// Power Screen
 				if (powerScreen.getPowerScreenVisibility()) {

@@ -42,7 +42,7 @@
 .powerButtonImage {
 	width: 100%;
 	height: 100%;
-	background-image: url('../../assets/shutdown.svg');
+	background-image: url('../../assets/power/shutdown.svg');
 	border-radius: var(--rounded-radius);
 	background-origin: content-box;
 	background-size: cover;

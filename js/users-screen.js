@@ -29,14 +29,16 @@ class UsersScreen {
 	}
 
 	profilePictureContainerOnClickEvent() {
-		this._profilePictureContainer.onclick = e => {
-			// Rotate profile pic if it's not currently running
-			if (profilePictureRotate.getProfileAnimationStatus()) return;
-			profilePictureRotate.rotateProfilePicture();
+		this._profilePictureContainer.addEventListener(
+			'click',
+			() => {
+				// Rotate profile pic
+				profilePictureRotate.rotateProfilePicture();
 
-			// Toggle user screen
-			this.toggleUsersScreen();
-		};
+				// Toggle user screen
+				this.toggleUsersScreen();
+			}
+		);
 	}
 
 	// Return session screen visibility bool
@@ -114,30 +116,33 @@ class UsersScreen {
 
 	// User item click event
 	_userItemOnClickEvent(userProfile) {
-		userProfile.item.onclick = e => {
-			// Rotate profile pic if it's not currently running
-			if (profilePictureRotate.getProfileAnimationStatus()) return;
-			profilePictureRotate.rotateProfilePicture();
+		userProfile.item.addEventListener(
+			'click',
+			() => {
+				// Rotate profile pic if it's not currently running
+				if (profilePictureRotate.getProfileAnimationStatus()) return;
+				profilePictureRotate.rotateProfilePicture();
 
-			// Update user session defaults
-			this._updateUserProfileDefaults(userProfile);
+				// Update user session defaults
+				this._updateUserProfileDefaults(userProfile);
 
-			// Clear passwordInput field
-			this._passwordInputEl.value = '';
+				// Clear passwordInput field
+				this._passwordInputEl.value = '';
 
-			// Refresh authentication session
-			authentication.startAuthentication();
+				// Refresh authentication session
+				authentication.startAuthentication();
 
-			// Update selected session item
-			this._updateUserItemDefault(userProfile.item);
+				// Update selected session item
+				this._updateUserItemDefault(userProfile.item);
 
-			// Update profile pic and label
-			this._setUserProfileImage(userProfile.profileImage, userProfile.profileImageFallBack);
-			this._setUserNameLabel(userProfile.displayName);
+				// Update profile pic and label
+				this._setUserProfileImage(userProfile.profileImage, userProfile.profileImageFallBack);
+				this._setUserNameLabel(userProfile.displayName);
 
-			// Hide user screen
-			this.hideUsersScreen();
-		};
+				// Hide user screen
+				this.hideUsersScreen();
+			}
+		);
 	}
 
 	_updateProfileVariablesOnStartUp() {

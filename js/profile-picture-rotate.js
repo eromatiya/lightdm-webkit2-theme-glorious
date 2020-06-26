@@ -32,7 +32,7 @@ class ProfilePictureRotate {
 	_animationEndEvent() {
 		this._profilePictureContainer.addEventListener(
 			'animationend',
-			e => {
+			() => {
 				this._profileAnimRunning = false;
 			}
 		);
@@ -40,10 +40,13 @@ class ProfilePictureRotate {
 
 	// On click event
 	_onClickEvent() {
-		this._profilePictureContainer.onclick = (e) => {
-			if (this._profileAnimRunning) return;
-			this.rotateProfilePicture();
-		};
+		this._profilePictureContainer.addEventListener(
+			'click', 
+			() => {
+				if (this._profileAnimRunning) return;
+				this.rotateProfilePicture();
+			}
+		);
 	}
 
 	getProfileAnimationStatus() {

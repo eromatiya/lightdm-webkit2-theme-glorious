@@ -36,7 +36,7 @@
 #goodbyeImage {
 	width: 88px;
 	height: 88px;
-	background-image: url('../../assets/shutdown.svg');
+	background-image: url('../../assets/power/shutdown.svg');
 	background-size: cover;
 }
 
