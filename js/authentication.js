@@ -104,20 +104,23 @@ class Authentication {
 
 	// Authenticate on button click
 	_authenticateButtonOnClickEvent() {
-		this._authenticateButton.onclick = e => {
-			// Save input value to variable
-			this._password = this._passwordInputEl.value;
-			if (this._password.length < 1) {
-				return;
+		this._authenticateButton.addEventListener(
+			'click',
+			() => {
+				// Save input value to variable
+				this._password = this._passwordInputEl.value;
+				if (this._password.length < 1) {
+					return;
+				}
+				// Prevent login spamming
+				if (profilePictureRotate.getProfileAnimationStatus()) return;
+				// Rotate profile picture
+				profilePictureRotate.rotateProfilePicture();
+				
+				// Validation
+				lightdm.respond(String(this._password));
 			}
-			// Prevent login spamming
-			if (profilePictureRotate.getProfileAnimationStatus()) return;
-			// Rotate profile picture
-			profilePictureRotate.rotateProfilePicture();
-			
-			// Validation
-			lightdm.respond(String(this._password));
-		}
+		);
 	}
 
 	// Register keydown event

@@ -27,10 +27,13 @@ class SessionsScreen {
 	// Register session button on clock event
 	// Will open sessions screen
 	_sessionsScreenButtonOnClickEvent() {
-		this._sessionsScreenButton.onclick = e => {
-			// Toggle sessions screen
-			this.toggleSessionsScreen();
-		};
+		this._sessionsScreenButton.addEventListener(
+			'click',
+				() => {
+				// Toggle sessions screen
+				this.toggleSessionsScreen();
+			}
+		);
 	}
 
 	// Return session screen visibility bool
@@ -112,22 +115,25 @@ class SessionsScreen {
 
 	// Session item click event
 	_sessionItemOnClickEvent(item, key) {
-		item.onclick = e => {
-			// Save active session key to variable
-			this._defaultSession = key;
+		item.addEventListener(
+			'click', 
+			() => {
+				// Save active session key to variable
+				this._defaultSession = key;
 
-			// Hide session screen
-			this.hideSessionsScreen();
+				// Hide session screen
+				this.hideSessionsScreen();
 
-			// Save default session on localstorage
-			this._localStorage.setItem('defaultSession', this._defaultSession);
+				// Save default session on localstorage
+				this._localStorage.setItem('defaultSession', this._defaultSession);
 
-			// Update the selected session item
-			this._updateSessionItemDefault(item);
+				// Update the selected session item
+				this._updateSessionItemDefault(item);
 
-			// Update session button image
-			this._setSessionButtonImage(key);
-		};
+				// Update session button image
+				this._setSessionButtonImage(key);
+			}
+		);
 	}
 		
 	// Create session list

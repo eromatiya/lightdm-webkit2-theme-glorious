@@ -33,9 +33,13 @@ class GreeterScreen {
 
 	// Greeter screen button on click event
 	_greeterScreenButtonOnClickEvent() {
-		this._greeterScreenButton.onclick = () => {
-			this._passwordInputEL.value = '';
-			this._showGreeterScreen();
-		};
+		this._greeterScreenButton.addEventListener(
+			'click',
+			() => {
+				this._passwordInputEL.value = '';
+				this._showGreeterScreen();
+			}
+		);
+
 	}
 }
