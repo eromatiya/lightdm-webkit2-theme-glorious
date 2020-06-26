@@ -112,6 +112,12 @@ label#userName {
 	border-color: var(--base-error-bg);
 }
 
+.authenticationSuccess {
+	border: 2px solid;
+	border-color: var(--base-success-bg);
+}
+
+
 .mainFormButton {
 	width: 36px;
 	height: 36px;
