@@ -5,9 +5,10 @@
 @import url('base/body-overlay.css');
 @import url('screens/screen.css');
 @import url('screens/greeter-screen.css');
-@import url('screens/goodbye-screen.css');
 @import url('screens/sessions-screen.css');
 @import url('screens/users-screen.css');
+@import url('screens/power-screen.css');
+@import url('screens/goodbye-screen.css');
 @import url('mainscreen/sessions-button.css');
 @import url('mainscreen/main-form.css');
 @import url('mainscreen/power-buttons.css');
