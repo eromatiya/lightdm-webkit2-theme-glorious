@@ -94,6 +94,7 @@ class PowerScreen {
 			}
 		];
 
+		// Create power button list
 		this._createPowerList();
 	}
 
