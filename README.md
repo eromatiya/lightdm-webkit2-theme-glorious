@@ -86,7 +86,8 @@ Right now, the features are pretty basic. There's no settings or customization. 
 
 ### Notes
 
-+ If you're on a desktop environment like KDE Plasma and GNOME3, you can set your profile picture in the settings. While if you're on a more minimal environment like window managers, you can install the program called `mugshot` and set your profile image there.
++ If you're on a desktop environment like KDE Plasma and GNOME3, you can set your profile picture and real name in the settings. While if you're on a more minimal environment like window managers, you can install and user the program called `mugshot`.
++ If your desktop environment or window manager logo is not in the sessions screen, feel free to submit a pull request!
 
 
 ### Credits
