@@ -20,6 +20,10 @@ a modern, glorified lightdm webkit2 theme and pretty much work-in-progress
 | --- |
 | ![screenshot](scrots/users.webp) |
 
+| power screen |
+| --- |
+| ![screenshot](scrots/power.webp) |
+
 
 ### dependencies
 
@@ -30,35 +34,33 @@ Make sure to have the latest version.
 
 ### installation
 
-0. Make sure that lightdm.service is running. There's a bunch of guide on the internet. Archwiki is recommended.
+0. If you're using systemd, make sure that `lightdm.service` or `lightdm-plymouth.service` is running. There's a bunch of guide on the internet. [Archwiki](https://wiki.archlinux.org/index.php/LightDM) is recommended.
 
 1. Clone it.
 
-	```bash
+	```
 	$ git clone --depth 1 https://github.com/manilarome/the-glorious-lightdm-webkit2-theme
 	```
 
 2. Copy the theme to the lightdm webkit theme folder.
 
-	```bash
+	```
 	# cp the-glorious-lightdm-webkit2-theme /usr/share/lightdm-webkit/themes/ -r
 	```
 
 3. Set lightdm greeter session to webkit2.
 
-	```bash
+	```
 	$ sudoedit /etc/lightdm/lightdm.conf
+	# Find `greeter-session`, uncomment it, then set its value to `lightdm-webkit2-greeter`.
 	```
 
-4. Find `greeter-session`, uncomment it, then set its value to `lightdm-webkit2-greeter`.
+4. Set as lightdm webkit2 theme.
 
-5. Set the lightdm webkit2 theme.
-
-	```bash
+	```
 	$ sudoedit /etc/lightdm/lightdm-webkit2-greeter.conf
+	# Find `webkit_theme` then set its value to `the-glorious-lightdm-webkit2-theme`.
 	```
-
-6. Find `webkit_theme` then set its value to `the-glorious-lightdm-webkit2-theme`.
 
 ### Features
 

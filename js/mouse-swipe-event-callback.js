@@ -2,6 +2,7 @@ class MouseSwipeEventCallback {
 	constructor() {
 		this._bodyOverlay = document.querySelector('.bodyOverlay');
 		this._sessionsScreen = document.querySelector('#sessionsScreen');
+		this._powerScreen = document.querySelector('#powerScreen');
 		this._usersScreen = document.querySelector('#usersScreen');
 		this._greeterScreen = document.querySelector('.screen.greeterScreen');
 		this._createMouseSwipeEvents();
@@ -14,6 +15,16 @@ class MouseSwipeEventCallback {
 			(el, dir) => {
 				if (dir === 'up') {
 					greeterScreen.toggleGreeterScreen();
+				}
+			}
+		);
+
+		// Swipe event for power screen
+		const powerScreenSwipeEvent = new MouseSwipeEvent(
+			this._powerScreen,
+			(el, dir) => {
+				if (dir === 'up') {
+					powerScreen.togglePowerScreen();
 				}
 			}
 		);
