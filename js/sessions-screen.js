@@ -4,7 +4,7 @@ class SessionsScreen {
 
 		this._sessionsScreen = document.querySelector('#sessionsScreen');
 		this._sessionsList = document.querySelector('.sessionsList');
-		this._sessionsButtonPanel = document.querySelector('#sessionsButtonPanel');
+		this._sessionsScreenButton = document.querySelector('#sessionsScreenButton');
 		this._sessionsButtonImage = document.querySelector('.sessionsButtonImage');
 
 		this._sessionScreenVisible = false;
@@ -18,7 +18,7 @@ class SessionsScreen {
 
 	// Start creating sessions list, register events
 	_init() {
-		this._sessionsButtonPanelOnClickEvent();
+		this._sessionsScreenButtonOnClickEvent();
 
 		// Add a delay before calling the lightdm object
 		this._updateSessionObject();
@@ -26,8 +26,8 @@ class SessionsScreen {
 
 	// Register session button on clock event
 	// Will open sessions screen
-	_sessionsButtonPanelOnClickEvent() {
-		this._sessionsButtonPanel.onclick = e => {
+	_sessionsScreenButtonOnClickEvent() {
+		this._sessionsScreenButton.onclick = e => {
 			// Toggle sessions screen
 			this.toggleSessionsScreen();
 		};
