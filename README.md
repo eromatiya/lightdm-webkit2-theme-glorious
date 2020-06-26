@@ -30,22 +30,35 @@ Make sure to have the latest version.
 
 ### installation
 
-- clone
-`$ git clone --depth 1 https://github.com/manilarome/the-glorious-lightdm-webkit2-theme`
+0. Make sure that lightdm.service is running. There's a bunch of guide on the internet. Archwiki is recommended.
 
-- copy it to the lightdm webkit theme folder
-`# cp the-glorious-lightdm-webkit2-theme /usr/share/lightdm-webkit/themes/ -r`
+1. Clone it.
 
-- set lightdm greeter session to webkit2
-`$ sudoedit /etc/lightdm/lightdm.conf`
-find `greeter-session`, uncomment it, then set its value to `lightdm-webkit2-greeter`
+	```bash
+	$ git clone --depth 1 https://github.com/manilarome/the-glorious-lightdm-webkit2-theme
+	```
 
-- set the lightdm webkit2 theme
-`$ sudoedit /etc/lightdm/lightdm-webkit2-greeter.conf`
-find `webkit_theme` then set its value to `the-glorious-lightdm-webkit2-theme`
+2. Copy the theme to the lightdm webkit theme folder.
 
-- Note that you need to make sure that lightdm.service is running. There's a bunch of guide on the internet.
-Archwiki is recommended.
+	```bash
+	# cp the-glorious-lightdm-webkit2-theme /usr/share/lightdm-webkit/themes/ -r
+	```
+
+3. Set lightdm greeter session to webkit2.
+
+	```bash
+	$ sudoedit /etc/lightdm/lightdm.conf
+	```
+
+4. Find `greeter-session`, uncomment it, then set its value to `lightdm-webkit2-greeter`.
+
+5. Set the lightdm webkit2 theme.
+
+	```bash
+	$ sudoedit /etc/lightdm/lightdm-webkit2-greeter.conf
+	```
+
+6. Find `webkit_theme` then set its value to `the-glorious-lightdm-webkit2-theme`.
 
 ### Features
 
@@ -53,6 +66,7 @@ Right now, the features are pretty basic. There's no settings or customization. 
 
 + Multi-user support
 + Swipe gestures
++ Simple keybinding
 + Yeah, that's all to it right now. 
 
 ### Swipe gestures
@@ -61,6 +75,11 @@ Right now, the features are pretty basic. There's no settings or customization. 
 + Swiping right on the login screen will open the session screen.
 + Swiping left on the login screen will open the users screen.
 + Swiping up on the greeter, user, and session screens will close them.
+
+
+### Keybinding
+
++ <kbd>Escape</kbd> to close the screens
 
 ### Notes
 
