@@ -27,14 +27,14 @@ a modern, glorified lightdm webkit2 theme and pretty much work-in-progress
 
 ### dependencies
 
-Make sure to have the latest version.
+Make sure you have the latest version.
 
 + lightdm
 + lightdm-webkit2-greeter
 
 ### installation
 
-0. If you're using systemd, make sure that `lightdm.service` or `lightdm-plymouth.service` is running. There's a bunch of guide on the internet. [Archwiki](https://wiki.archlinux.org/index.php/LightDM) is recommended.
+0. If you're using systemd, make sure that `lightdm.service` or `lightdm-plymouth.service` is enabled and running. There's a bunch of guide on the internet. [Archwiki](https://wiki.archlinux.org/index.php/LightDM) is recommended.
 
 1. Clone it.
 
@@ -86,7 +86,7 @@ Right now, the features are pretty basic. There's no settings or customization. 
 
 ### Notes
 
-+ If you're on a desktop environment like KDE Plasma and GNOME3, you can set your profile picture and real name in the settings. While if you're on a more minimal environment like window managers, you can install and user the program called `mugshot`.
++ If you're on a desktop environment like KDE Plasma and GNOME3, you can set your profile picture and real name in the settings. While if you're on a more minimal environment like window managers, you can install and use the program called `mugshot`.
 + If your desktop environment or window manager logo is not in the sessions screen, feel free to submit a pull request!
 
 
