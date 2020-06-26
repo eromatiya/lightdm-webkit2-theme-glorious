@@ -13,6 +13,8 @@ class DebugMode {
 				default_session: 'awesome',
 				can_suspend: true,
 				can_hibernate: true,
+				can_shutdown: true,
+				can_restart: true,
 				sessions: [
 					{
 						name: 'awesome wm',
@@ -124,17 +126,17 @@ const greeterScreen = new GreeterScreen();
 // Instantiate greeter screen contents
 const greeterScreenContent = new GreeterScreenContent();
 
-// Instantiate power buttons
-const powerButtons = new PowerButtons();
-
 // Instantiate user screen
 const usersScreen = new UsersScreen();
+
+// Instantiate sessions screen
+const sessionsScreen = new SessionsScreen();
 
 // Instantiate goodbye screen
 const goodbyeScreen = new GoodbyeScreen();
 
-// Instantiate sessions screen
-const sessionsScreen = new SessionsScreen();
+// Instantiate power screen
+const powerScreen = new PowerScreen();
 
 // Instantiate key events
 const keyEvents = new KeyEvents();

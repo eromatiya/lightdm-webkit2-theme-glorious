@@ -10,21 +10,25 @@ class KeyEvents {
 		document.onkeyup = (e) => {
 			if (e.key === 'Escape') {
 
-				if (powerButtons.getPowerButtonsVisiblity()) {
-					powerButtons.togglepowerButtons();
+				// Power Screen
+				if (powerScreen.getPowerScreenVisibility()) {
+					powerScreen.togglePowerScreen();
 					return;
 				}
 
+				// Users Screen
 				if (usersScreen.getUsersScreenVisibility()) {
 					usersScreen.toggleUsersScreen();
 					return;
 				}
 
+				// Sessions Screen
 				if (sessionsScreen.getSessionsScreenVisibility()) {
 					sessionsScreen.hideSessionsScreen();
 					return;
-				}
+				}	
 
+				// Goodbye Screen
 				if (this._goodbyeScreen.classList.contains('showGoodbyeScreen')) {
 					goodbyeScreen.hideGoodbyeScreen();
 					return;
