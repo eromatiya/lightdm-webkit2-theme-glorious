@@ -12,7 +12,7 @@
 }
 
 .greeterScreen.screen.hideGreeterScreen {
-	top: -100%;
+	top: -100vh;
 }
 
 .greeterScreenContent {

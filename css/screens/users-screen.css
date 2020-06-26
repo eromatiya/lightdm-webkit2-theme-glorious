@@ -1,6 +1,6 @@
 #usersScreen.screen {
 	z-index: 5;
-	top: -100%;
+	top: -100vh;
 	left: 0;
 	padding: 10px;
 }
