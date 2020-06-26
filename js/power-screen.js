@@ -122,7 +122,7 @@ class PowerScreen {
 
 			// Execute power command
 			this._executePowerCallback(powerObj.powerCommand);
-		}
+		};
 	}
 
 	_createPowerList() {
