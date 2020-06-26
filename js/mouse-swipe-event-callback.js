@@ -39,6 +39,8 @@ class MouseSwipeEventCallback {
 					sessionsScreen.toggleSessionsScreen();
 				} else if (dir === 'left') {
 					usersScreen.toggleUsersScreen();
+				} else if (dir === 'up') {
+					powerScreen.togglePowerScreen();
 				}
 			}
 		);

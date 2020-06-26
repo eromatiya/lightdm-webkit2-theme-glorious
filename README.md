@@ -76,7 +76,8 @@ Right now, the features are pretty basic. There's no settings or customization. 
 + Swiping down on the login screen will open the greeter screen.
 + Swiping right on the login screen will open the session screen.
 + Swiping left on the login screen will open the users screen.
-+ Swiping up on the greeter, user, and session screens will close them.
++ Swiping up on the login screen will open the power screen.
++ Swiping up on the greeter, user, power,and session screens will close them.
 
 
 ### Keybinding
