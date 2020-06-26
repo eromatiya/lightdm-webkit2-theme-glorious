@@ -102,7 +102,7 @@ class SessionsScreen {
 		this._defaultSession = this._localStorage.getItem('defaultSession');
 
 		if (this._defaultSession === null) {
-			this._defaultSession = lightdm.default_session || this._sessionsObject[0].key;
+			this._defaultSession = this._sessionsObject[0].key || lightdm.default_session;
 		}
 
 		// Update session button image
