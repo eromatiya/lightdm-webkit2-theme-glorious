@@ -45,8 +45,20 @@
 	background: var(--base-error-bg);
 }
 
+.tooltipMessage.tooltipTop.tooltipSuccess {
+	display: block;
+	opacity: 1;
+	font-family: Muli, sans-serif;
+	font-weight: 400;
+	background: var(--base-success-bg);
+}
+
 .tooltipMessage.tooltipTop.tooltipError::after {
 	border-color: var(--base-error-bg) transparent transparent transparent;
+}
+
+.tooltipMessage.tooltipTop.tooltipSuccess::after {
+	border-color: var(--base-success-bg) transparent transparent transparent;
 }
 
 /* Bottom side tooltop */
@@ -71,8 +83,20 @@
 	background: var(--base-error-bg);
 }
 
+.tooltipMessage.tooltipBottom.tooltipSuccess {
+	display: block;
+	opacity: 1;
+	font-family: Muli, sans-serif;
+	font-weight: 400;
+	background: var(--base-success-bg);
+}
+
 .tooltipMessage.tooltipBottom.tooltipError::after {
 	border-color: transparent transparent var(--base-error-bg) transparent;
+}
+
+.tooltipMessage.tooltipBottom.tooltipSuccess::after {
+	border-color: transparent transparent var(--base-success-bg) transparent;
 }
 
 /* Right side tooltop */
@@ -100,8 +124,20 @@
 	background: var(--base-error-bg);
 }
 
+.tooltipMessage.tooltipRight.tooltipSuccess {
+	display: block;
+	opacity: 1;
+	font-family: Muli, sans-serif;
+	font-weight: 400;
+	background: var(--base-error-bg);
+}
+
 .tooltipMessage.tooltipRight.tooltipError::after {
 	border-color: transparent var(--base-error-bg) transparent transparent;
+}
+
+.tooltipMessage.tooltipRight.tooltipSuccess::after {
+	border-color: transparent var(--base-success-bg) transparent transparent;
 }
 
 /* Left side tooltop */
@@ -125,6 +161,18 @@
 	background: var(--base-error-bg);
 }
 
+.tooltipMessage.tooltipLeft.tooltipSuccess {
+	display: block;
+	opacity: 1;
+	font-family: Muli, sans-serif;
+	font-weight: 400;
+	background: var(--base-success-bg);
+}
+
 .tooltipMessage.tooltipLeft.tooltipError::after {
 	border-color: transparent transparent transparent var(--base-error-bg);
+}
+
+.tooltipMessage.tooltipLeft.tooltipSuccess::after {
+	border-color: transparent transparent transparent var(--base-success-bg);
 }

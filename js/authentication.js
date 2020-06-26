@@ -60,6 +60,30 @@ class Authentication {
 		}
 	}
 
+	// You passed to authentication
+	_authenticationSuccess() {
+		// Rotate profile picture
+		profilePictureRotate.rotateProfilePicture();
+
+		// Success messages
+		this._passwordInputBox.classList.add('authenticationSuccess');
+		this._tooltipMessage.innerText = 'Authentication success! Logging in!';
+		this._tooltipMessage.classList.add('tooltipSuccess');
+
+		// Add a delay before unlocking
+		setTimeout(
+			() => {
+				// Remove success messages
+				this._passwordInputBox.classList.remove('authenticationSuccess');
+				this._tooltipMessage.classList.remove('tooltipSuccess');
+
+				// Login
+				lightdm.start_session_sync(sessionsScreen.getDefaultSession());
+			},
+			750
+		);
+	}
+
 	// Timer expired, create new authentication session
 	_autologinTimerExpired() {
 		window.autologin_timer_expired = () => {
@@ -71,16 +95,7 @@ class Authentication {
 	_authenticationComplete() {
 		window.authentication_complete = () => {
 			if (lightdm.is_authenticated) {
-				// Rotate profile picture
-				profilePictureRotate.rotateProfilePicture();
-
-				// Add a delay before unlocking
-				setTimeout(
-					() => {
-						lightdm.start_session_sync(sessionsScreen.getDefaultSession());
-					},
-					500
-				);
+				this._authenticationSuccess();
 			} else {
 				this._authenticationFailed();
 			}
