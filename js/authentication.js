@@ -45,6 +45,21 @@ class Authentication {
 		this._tooltipMessage.classList.add('tooltipError');
 	}
 
+	// Remove authentication failure messages
+	_authenticationFailedRemove() {
+		// Remove warnings and tooltip
+		if (this._passwordInputBox.classList.contains('authenticationFailed') &&
+				this._tooltipMessage.classList.contains('tooltipError')) {
+			setTimeout(
+				() => {
+					this._tooltipMessage.classList.remove('tooltipError');
+					this._passwordInputBox.classList.remove('authenticationFailed');
+				},
+				1500
+			);
+		}
+	}
+
 	// You passed to authentication
 	_authenticationSuccess() {
 		// Rotate profile picture
@@ -67,21 +82,6 @@ class Authentication {
 			},
 			750
 		);
-	}
-
-	// Remove authentication failure messages
-	_authenticationFailedRemove() {
-		// Remove warnings and tooltip
-		if (this._passwordInputBox.classList.contains('authenticationFailed') &&
-				this._tooltipMessage.classList.contains('tooltipError')) {
-			setTimeout(
-				() => {
-					this._tooltipMessage.classList.remove('tooltipError');
-					this._passwordInputBox.classList.remove('authenticationFailed');
-				},
-				1500
-			);
-		}
 	}
 
 	// Timer expired, create new authentication session
