@@ -21,6 +21,10 @@ class DebugMode {
 						key: 'awesome'
 					},
 					{
+						name: 'bspwm',
+						key: 'bspwm'
+					},
+					{
 						name: 'KDE Plasma',
 						key: 'plasma'
 					},
