@@ -20,7 +20,7 @@ class PowerScreen {
 	_powerScreenButtonOnClickEvent() {
 		this._powerScreenButton.onclick = e => {
 			this.togglePowerScreen();
-		}
+		};
 	}
 
 	// Return power screen visibility bool
