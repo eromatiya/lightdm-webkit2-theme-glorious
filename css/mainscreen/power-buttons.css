@@ -1,4 +1,4 @@
-#powerButtonsPanel {
+#powerScreenButton {
 	width: auto;
 	height: auto;
 	position: absolute;
@@ -17,90 +17,34 @@
 	user-select: none;
 }
 
-.powerButtonsPanelShow {
-	background-color: var(--base-bg);
-}
-
-#powerButtonsOverlay.screen {
-	background: transparent;
-	pointer-events: none;
-	z-index: 0;
-}
-
-#powerButtonsOverlay.screen.powerButtonsOverlayActivate {
-	pointer-events: auto;
-}
-
-.powerButtons {
+#powerButton {
 	width: 48px;
 	height: 48px;
+	padding: 5px;
 	cursor: pointer;
 }
 
-.powerButtons:hover {
+#powerButton:hover {
 	border-radius: var(--rounded-radius);
 	background-color: var(--base-hover-bg);
 }
 
-.powerButtons:focus {
+#powerButton:focus {
 	border-radius: var(--rounded-radius);
 	background-color: var(--base-focus-bg);
 }
 
-.powerButtons:active {
+#powerButton:active {
 	border-radius: var(--rounded-radius);
 	background-color: var(--base-active-bg);
 }
 
 .powerButtonImage {
-	width: 48px;
-	height: 48px;
+	width: 100%;
+	height: 100%;
+	background-image: url('../../assets/shutdown.svg');
 	border-radius: var(--rounded-radius);
 	background-origin: content-box;
 	background-size: cover;
 	background-repeat: no-repeat;
-	padding: 5px;
-}
-
-#powerButtonShow {
-	background-image: url('../../assets/shutdown.svg');
-}
-
-.powerButtonsOpenerHide {
-	display: none;
-}
-
-#powerButtonImage {
-	background-image: url('../../assets/shutdown.svg');
-}
-
-#restartButtonImage {
-	background-image: url('../../assets/restart.svg');
-}
-
-#suspendButtonImage {
-	background-image: url('../../assets/suspend.svg');
-}
-
-#hibernateButtonImage {
-	background-image: url('../../assets/hibernate.svg');
-}
-
-#powerButtonShow.backButtonMode {
-	background-image: url('../../assets/roof.svg');
-}
-
-#powerButtonsMain {
-	max-height: 200px;
-	opacity: 1;
-	z-index: 5;
-	pointer-events: auto;
-	transition: all var(--transition-speed);
-}
-
-#powerButtonsMain.hidePowerButtonsMain {
-	max-height: 0;
-	opacity: 0;
-	pointer-events: none;
-	transition: all var(--transition-speed);
 }

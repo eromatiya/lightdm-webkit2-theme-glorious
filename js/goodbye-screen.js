@@ -7,7 +7,7 @@ class GoodbyeScreen {
 
 	// Show goodbye screen
 	showGoodbyeScreen(icon, message) {
-		this._goodbyeImage.style.backgroundImage = `url('assets/${icon}.svg')`;
+		this._goodbyeImage.style.backgroundImage = `url('assets/power/${icon}.svg')`;
 		this._goodbyeMessage.textContent = message;
 		this._goodbyeScreen.classList.add('showGoodbyeScreen');
 	}

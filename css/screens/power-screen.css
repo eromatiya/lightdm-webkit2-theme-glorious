@@ -1,0 +1,92 @@
+#powerScreen.screen {
+	z-index: 5;
+	top: -100%;
+	left: 0;
+	padding: 10px;
+}
+
+#powerScreen.powerScreenShow {
+	top: 0;
+}
+
+#powerScreenBackground.screenBackground {
+	background-image:
+					linear-gradient(
+						rgba(0, 0, 0, 0.5),
+						rgba(0, 0, 0, 0.5)
+					),
+					url('../../assets/bg.jpg');
+	filter: blur();
+}
+
+.powerList {
+	width: auto;
+	height: auto;
+	max-height: 100%;
+	overflow: auto;
+
+	/* Align vertically and horizontally */
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.powerItem {
+	background: transparent;
+	border: none;
+	border-radius: var(--rounded-radius);
+	outline: none;
+	margin: 5px;
+	width: 150px;
+	height: 150px;
+	padding: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.powerItemContent {
+	width: 100%;
+	height: 100%;
+}
+
+.powerItemDefault {
+	background: var(--base-active-bg);
+}
+
+.powerItem:hover {
+	background: var(--base-hover-bg);
+}
+
+.powerItem:focus {
+	background: var(--base-focus-bg);
+}
+
+.powerItem:active {
+	background: var(--base-active-bg);
+}
+
+#powerItemIconContainer {
+	margin-bottom: 5px;
+	position: relative;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+}
+
+img#powerItemIcon {
+	width: 64px;
+	height: 64px;
+	object-fit: cover;
+	display: block;
+}
+
+#powerItemName {
+	text-align: center;
+	font-size: 11pt;
+	font-family: Muli-Light, sans-serif;
+	font-weight: 400;
+	word-wrap: break-word;
+	color: var(--base-color);
+}
