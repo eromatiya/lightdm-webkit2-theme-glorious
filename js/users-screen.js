@@ -115,6 +115,10 @@ class UsersScreen {
 	// User item click event
 	_userItemOnClickEvent(userProfile) {
 		userProfile.item.onclick = e => {
+			// Rotate profile pic if it's not currently running
+			if (profilePictureRotate.getProfileAnimationStatus()) return;
+			profilePictureRotate.rotateProfilePicture();
+
 			// Update user session defaults
 			this._updateUserProfileDefaults(userProfile);
 
@@ -124,15 +128,15 @@ class UsersScreen {
 			// Refresh authentication session
 			authentication.startAuthentication();
 
-			// Hide user screen
-			this.hideUsersScreen();
-
 			// Update selected session item
 			this._updateUserItemDefault(userProfile.item);
 
 			// Update profile pic and label
 			this._setUserProfileImage(userProfile.profileImage, userProfile.profileImageFallBack);
 			this._setUserNameLabel(userProfile.displayName);
+
+			// Hide user screen
+			this.hideUsersScreen();
 		};
 	}
 
