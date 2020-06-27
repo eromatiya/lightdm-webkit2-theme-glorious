@@ -54,13 +54,13 @@ class UsersScreen {
 	}
 
 	// Show session screen
-	showUsersScreen() {
+	_showUsersScreen() {
 		this._usersScreen.classList.add('usersScreenShow');
 		this._userScreenVisible = true;
 	}
 
 	// Hide users screen
-	hideUsersScreen() {
+	_hideUsersScreen() {
 		this._usersScreen.classList.remove('usersScreenShow');
 		this._userScreenVisible = false;
 	}
@@ -68,9 +68,9 @@ class UsersScreen {
 	// Toggle users screen
 	toggleUsersScreen() {
 		if (this._userScreenVisible) {
-			this.hideUsersScreen();
+			this._hideUsersScreen();
 		} else {
-			this.showUsersScreen();
+			this._showUsersScreen();
 		}
 	}
 
@@ -140,7 +140,7 @@ class UsersScreen {
 				this._setUserNameLabel(userProfile.displayName);
 
 				// Hide user screen
-				this.hideUsersScreen();
+				this._hideUsersScreen();
 			}
 		);
 	}

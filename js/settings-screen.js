@@ -12,6 +12,11 @@ class SettingsScreen {
 
 		this._backgroundCurrentElement = 0;
 		this._backgroundCurrentElementValue = null;
+
+		this._settingsScreen = document.querySelector('#settingsScreen');
+		this._settingsScreenButton = document.querySelector('#settingsScreenButton');
+		this._settingsScreenVisible = false;
+
 		this._init();
 	}
 
@@ -20,6 +25,40 @@ class SettingsScreen {
 		this._createBackgroundArray();
 
 		this._previewButtonsOnClickEvent();
+
+		// Events
+		this._settingsScreenButtonOnClickEvent();
+	}
+
+	_showSettingsScreen() {
+		this._settingsScreen.classList.add('settingsScreenShow');
+		this._settingsScreenVisible = true;
+	}
+
+	_hideSettingsScreen() {
+		this._settingsScreen.classList.remove('settingsScreenShow');
+		this._settingsScreenVisible = false;
+	}
+
+	toggleSettingsScreen() {
+		if (this._settingsScreenVisible) {
+			this._hideSettingsScreen();
+		} else {
+			this._showSettingsScreen();
+		}
+	}
+
+	getSettingsScreenVisibility() {
+		return this._settingsScreenVisible;
+	}
+
+	_settingsScreenButtonOnClickEvent() {
+		this._settingsScreenButton.addEventListener(
+			'click',
+			() => {
+				this.toggleSettingsScreen();
+			}
+		);
 	}
 
 	// Find image files recursively and save it to an array
