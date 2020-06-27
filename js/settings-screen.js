@@ -7,7 +7,6 @@ class SettingsScreen {
 		this._previewBackgroundImage = document.querySelector('#previewBackgroundImage');
 		this._previewFileName = document.querySelector('#previewFileName');
 
-		this._backgroundsDirRecursion = 0;
 		this._backgroundImages = null;
 		this._backgroundImagesDir = null;
 
@@ -25,10 +24,11 @@ class SettingsScreen {
 
 	// Find image files recursively and save it to an array
 	_findImages(dirlist) {
-		var images = [],
+		let images = [],
 		subdirs = [];
+		let recursion = 0;
 
-		for (var file of dirlist) {
+		for (let file of dirlist) {
 			if (file.match(/(png|PNG)|(jpg|JPEG)|(bmp|BMP)/) ) {
 				images.push(file);
 			} else if (!file.match(/\w+\.\w+/)) {
@@ -36,10 +36,10 @@ class SettingsScreen {
 			}
 		}
 
-		if (subdirs.length && ! images.length && this._backgroundsDirRecursion < 3) {
-			this._backgroundsDirRecursion++;
-			for (var dir of subdirs) {
-				var list = greeterutil.dirlist(dir);
+		if (subdirs.length && recursion < 3) {
+			recursion++;
+			for (let dir of subdirs) {
+				let list = greeterutil.dirlist(dir);
 
 				if (list && list.length) {
 					images.push.apply(images, this._findImages(list));
