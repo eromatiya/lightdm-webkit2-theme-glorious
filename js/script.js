@@ -24,6 +24,9 @@ const goodbyeScreen = new GoodbyeScreen();
 // Instantiate power screen
 const powerScreen = new PowerScreen();
 
+// Instantiate power screen
+const settingsScreen = new SettingsScreen();
+
 // Instantiate key events
 const keyEvents = new KeyEvents();
 
