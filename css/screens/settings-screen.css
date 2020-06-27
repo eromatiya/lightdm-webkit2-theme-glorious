@@ -50,14 +50,16 @@
 }
 
 #previewBackgroundImage {
-	width: 400px;
-	height: 225px;
+	width: 480px;
+	height: 270px;
+	border-radius: var(--rounded-radius);
 	margin: 10px !important;
 }
 
 .previewButton {
 	width: 48px;
 	height: 48px;
+	border-radius: 50%;
 	position: relative;
 	padding: 10px;
 	cursor: pointer;
