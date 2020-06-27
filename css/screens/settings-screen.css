@@ -27,9 +27,6 @@
 	position: relative;
 	width: auto;
 
-	/* Center childrens */
-    text-align: center;
-
 	/* Align vertically and horizontally */
 	margin: 0;
 	position: absolute;
@@ -126,11 +123,11 @@ button.previewButton#previewImageNextButton:active {
 }
 
 #variableSettingsContainer {
-	width: auto;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 10px;
-	display: inline-table; 
+	margin-top: 10px;
+	width: 320px;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 #variableSettingsContainer .variableSettingsGroup {
@@ -141,23 +138,24 @@ label.settingsLabel {
 	font-family: Muli, sans-serif;
 	font-weight: 400;
 	font-size: 11pt;
+	margin: 0 5px;
 	text-align: left !important;
 	color: var(--base-color);
 }
 
 input.settingsInput {
 	background: var(--base-container);
-	width: 200px;
+	width: 75%;
 	height: 48px;
 	margin: 5px;
 }
 
 input.settingsInputExt {
-	width: 100px;
+	width: 25%;
 }
 
 input.settingsInputWide {
-	width: 310px;
+	width: 100%;
 }
 
 div.settingsInputGroup {
