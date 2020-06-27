@@ -49,7 +49,6 @@ class SettingsScreen {
 		return images;
 	}
 
-
 	// Generate an array of background images form the directory set in the config
 	_createBackgroundArray() {
 		this._backgroundImagesDir = config.get_str('branding', 'background_images') || '/usr/share/backgrounds';
