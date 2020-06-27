@@ -18,3 +18,77 @@
 					url('../../assets/bg.jpg');
 	filter: blur();
 }
+
+#settingsScreenContent {
+	top: 0;
+	left: 0;
+	width: auto;
+	height: auto;
+	padding: 10px;
+	position: relative;
+
+	/* Align vertically and horizontally */
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#settingsBackgroundImageContainer{
+	width: auto;
+	height: auto;
+	display: flex;
+	align-items: center;
+}
+
+#backgroundImagePreviewContainer {
+	width: auto;
+	height: auto;
+	background: #ff00ff;
+	position: relative;
+}
+
+#previewBackgroundImage {
+	width: 400px;
+	height: 225px;
+	margin: 10px !important;
+}
+
+.previewButton {
+	width: 48px;
+	height: 48px;
+	position: relative;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.previewButtonImage {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-size: cover;
+}
+
+#previewImageBackButton #previewImageBackImage.previewButtonImage {
+	background-image: url('../../assets/back.svg');
+}
+
+#previewImageNextButton #previewImageNextImage.previewButtonImage {
+	background-image: url('../../assets/next.svg');
+}
+
+button.previewButton#previewImageBackButton:hover,
+button.previewButton#previewImageNextButton:hover {
+	background: var(--base-hover-bg);
+}
+
+button.previewButton#previewImageBackButton:focus,
+button.previewButton#previewImageNextButton:focus {
+	background: var(--base-focus-bg);
+}
+
+button.previewButton#previewImageBackButton:active,
+button.previewButton#previewImageNextButton:active {
+	background: var(--base-active-bg);
+}
