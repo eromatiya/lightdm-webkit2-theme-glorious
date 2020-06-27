@@ -66,7 +66,7 @@
 		</div>
 	</div>
 
-	<div id='settingsScreen' class='screen settingsScreenShow'>
+	<div id='settingsScreen' class='screen'>
 		<div id='settingsScreenBackground' class='screenBackground'></div>
 		<div id='settingsScreenContent'>
 
@@ -151,17 +151,19 @@
 			</div>
 		</div>
 	</div>
+	
+	<div id='screensButtons'>
+		<button type='button' id='settingsScreenButton' class='screensButton'>
+			<img src='assets/settings.svg' id='settingsScreenButtonImage' class='screensButtonImage' draggable='false'></img>
+		</button>
 
-	<div id='sessionsScreenButton'>
-		<div class='sessionsButton'>
-			<img src='assets/sessions/session-default.png' class='sessionsButtonImage' draggable='false'></img>
-		</div>
-	</div>
+		<button type='button' id='sessionsScreenButton' class='screensButton'>
+			<img src='assets/sessions/session-default.png' id='sessionsScreenButtonImage' class='screensButtonImage' draggable='false'></img>
+		</button>
 
-	<div id='powerScreenButton'>
-		<div id='powerButton'>
-			<img src='assets/power/shutdown.svg' class='powerButtonImage' draggable='false'></img>
-		</div>
+		<button type='button' id='powerScreenButton' class='screensButton'>
+			<img src='assets/power/shutdown.svg' id='powerScreenButtonImage' class='screensButtonImage' draggable='false'></img>
+		</button>
 	</div>
 
 	<script type='text/javascript' src='js/debug-mode.js' defer></script>

@@ -5,7 +5,7 @@ class SessionsScreen {
 		this._sessionsScreen = document.querySelector('#sessionsScreen');
 		this._sessionsList = document.querySelector('.sessionsList');
 		this._sessionsScreenButton = document.querySelector('#sessionsScreenButton');
-		this._sessionsButtonImage = document.querySelector('.sessionsButtonImage');
+		this._sessionsScreenButtonImage = document.querySelector('#sessionsScreenButtonImage');
 
 		this._sessionScreenVisible = false;
 
@@ -90,9 +90,9 @@ class SessionsScreen {
 	// Update session button image
 	_setSessionButtonImage(key) {
 		// Update this session button image
-		this._sessionsButtonImage.src = `assets/sessions/${key}.png`;
-		this._sessionsButtonImage.onerror = () => {
-			this._sessionsButtonImage.src = 'assets/sessions/session-default.png';
+		this._sessionsScreenButtonImage.src = `assets/sessions/${key}.png`;
+		this._sessionsScreenButtonImage.onerror = () => {
+			this._sessionsScreenButtonImage.src = 'assets/sessions/session-default.png';
 		};
 	}
 
