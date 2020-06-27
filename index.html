@@ -10,7 +10,7 @@
 	<!-- We're using this to have a blurred background image -->
 	<div class='bodyOverlay'></div>
 
-	<div class='screen greeterScreen'>
+	<div class='screen greeterScreen hideGreeterScreen'>
 		<div class='greeterScreenContent'>
 			<div id='greeter'></div>
 			<div id='clock'></div>
@@ -66,6 +66,19 @@
 		</div>
 	</div>
 
+	<div id='settingsScreen' class='screen settingsScreenShow'>
+		<div id='settingsScreenBackground' class='screenBackground'></div>
+		<h1>asdsd</h1>
+	</div>
+
+	<div id='goodbyeScreen' class='screen'>
+		<div id='goodbyeScreenBackground' class='screenBackground'></div>
+		<div id='goodbyeScreenContentContainer'>
+			<div id='goodbyeImage' class='goodbyeContent'></div>
+			<div id='goodbyeMessage' class='goodbyeContent'>Shutting down...</div>
+		</div>
+	</div>
+
 	<div class='mainForm'>
 		<div id='mainFormContent'>
 			<div id='profilePictureContainer'>
@@ -96,14 +109,6 @@
 	<div id='powerScreenButton'>
 		<div id='powerButton'>
 			<img src='assets/power/shutdown.svg' class='powerButtonImage' draggable='false'></img>
-		</div>
-	</div>
-
-	<div id='goodbyeScreen' class='screen'>
-		<div id='goodbyeScreenBackground' class='screenBackground'></div>
-		<div id='goodbyeScreenContentContainer'>
-			<div id='goodbyeImage' class='goodbyeContent'></div>
-			<div id='goodbyeMessage' class='goodbyeContent'>Shutting down...</div>
 		</div>
 	</div>
 

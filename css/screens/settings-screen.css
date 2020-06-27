@@ -1,0 +1,20 @@
+#settingsScreen.screen {
+	z-index: 5;
+	top: -100vh;
+	left: 0;
+	padding: 10px;
+}
+
+#settingsScreen.settingsScreenShow {
+	top: 0;
+}
+
+#settingsScreenBackground.screenBackground {
+	background-image:
+					linear-gradient(
+						rgba(0, 0, 0, 0.5),
+						rgba(0, 0, 0, 0.5)
+					),
+					url('../../assets/bg.jpg');
+	filter: blur();
+}
