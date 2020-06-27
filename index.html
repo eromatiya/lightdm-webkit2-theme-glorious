@@ -69,17 +69,24 @@
 	<div id='settingsScreen' class='screen settingsScreenShow'>
 		<div id='settingsScreenBackground' class='screenBackground'></div>
 		<div id='settingsScreenContent'>
-			<div id='settingsBackgroundImageContainer'>
-				<button id='previewImageBackButton' class='previewButton'>
-					<div id='previewImageBackImage' class='previewButtonImage'></div>
-				</button>
-				<div id='backgroundImagePreviewContainer'>
-					<img id='previewBackgroundImage' src='assets/bg.jpg' onerror='this.src="assets/bg.jpg"' draggable='false'>
+
+			<div id='settingsBackgroundImage'>
+				<div id='settingsPreviewContainer'>
+					<button id='previewImageBackButton' class='previewButton'>
+						<div id='previewImageBackImage' class='previewButtonImage'></div>
+					</button>
+					<div id='backgroundImagePreviewContainer'>
+						<img id='previewBackgroundImage' src='assets/bg.jpg' onerror='this.src="assets/bg.jpg"' draggable='false'>
+					</div>
+					<button id='previewImageNextButton' class='previewButton'>
+						<div id='previewImageNextImage' class='previewButtonImage'></div>
+					</button>
 				</div>
-				<button id='previewImageNextButton' class='previewButton'>
-					<div id='previewImageNextImage' class='previewButtonImage'></div>
-				</button>
+				<div id='settingsPreviewFileNameContainer'>
+					<label id='previewFileName'>bg.jpg</label>
+				</div>
 			</div>
+
 			<!-- <div id='variableSettingsContainer'> -->
 				<!-- Some textbox, labels and buttons here -->
 			<!-- </div> -->

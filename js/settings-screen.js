@@ -5,6 +5,7 @@ class SettingsScreen {
 		this._previewImageBackButton = document.querySelector('#previewImageBackButton');
 		this._previewImageNextButton = document.querySelector('#previewImageNextButton');
 		this._previewBackgroundImage = document.querySelector('#previewBackgroundImage');
+		this._previewFileName = document.querySelector('#previewFileName');
 
 		this._backgroundsDirRecursion = 0;
 		this._backgroundImages = null;
@@ -66,14 +67,21 @@ class SettingsScreen {
 		this._backgroundImages.unshift(this._defaultBackgroundPath);
 	}
 
+	// Update preview <img> and variables
 	_updatePreviewBackgroundImage() {
-		this._backgroundCurrentElementValue = 'file://' + this._backgroundImages[parseInt(this._backgroundCurrentElement, 10)];
+		const bgPath = this._backgroundImages[parseInt(this._backgroundCurrentElement, 10)];
+		
+		// Update label - file name
+		this._previewFileName.textContent = bgPath.replace(/^.*[\\\/]/, '');
+		
+		// Update full path variable
+		this._backgroundCurrentElementValue = 'file://' + bgPath;
+
+		// Update image src
 		this._previewBackgroundImage.src = this._backgroundCurrentElementValue;
-		console.log(this._backgroundCurrentElement + ': ' + this._backgroundCurrentElementValue);
 	}
 
 	_previewButtonsOnClickEvent() {
-
 		this._previewImageBackButton.addEventListener(
 			'click',
 			() => {

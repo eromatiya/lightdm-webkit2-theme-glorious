@@ -35,7 +35,31 @@
 	transform: translate(-50%, -50%);
 }
 
-#settingsBackgroundImageContainer{
+#settingsBackgroundImage {
+	width: auto;
+	height: auto;
+	display: block;
+}
+
+#settingsPreviewFileNameContainer {
+	width: 100%;
+	height: auto;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+label#previewFileName {
+	font-family: Muli, sans-serif;
+	font-weight: 400;
+	margin: 0 auto;
+	font-size: 12pt;
+	margin-top: 10px;
+	text-align: center;
+	color: var(--base-color);
+}
+
+#settingsPreviewContainer{
 	width: auto;
 	height: auto;
 	display: flex;
