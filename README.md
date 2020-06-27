@@ -39,13 +39,13 @@ Make sure you have the latest version.
 1. Clone it.
 
 	```
-	$ git clone --depth 1 https://github.com/manilarome/the-glorious-lightdm-webkit2-theme
+	$ git clone --depth 1 https://github.com/manilarome/lightdm-webkit2-theme-glorious
 	```
 
 2. Copy the theme to the lightdm webkit theme folder.
 
 	```
-	# cp the-glorious-lightdm-webkit2-theme /usr/share/lightdm-webkit/themes/ -r
+	# cp lightdm-webkit2-theme-glorious /usr/share/lightdm-webkit/themes/ -r
 	```
 
 3. Set lightdm greeter session to webkit2.
@@ -59,7 +59,7 @@ Make sure you have the latest version.
 
 	```
 	$ sudoedit /etc/lightdm/lightdm-webkit2-greeter.conf
-	# Find `webkit_theme` then set its value to `the-glorious-lightdm-webkit2-theme`.
+	# Find `webkit_theme` then set its value to `lightdm-webkit2-theme-glorious`.
 	```
 
 ### Features
