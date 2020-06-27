@@ -4,7 +4,7 @@
 
 a modern, glorified lightdm webkit2 theme and pretty much work-in-progress
 
-## [live demo here](https://manilarome.github.io/the-glorious-lightdm-webkit2-theme/)
+## [live demo here](https://manilarome.github.io/lightdm-webkit2-theme-glorious)
 
 ### gallery
 
