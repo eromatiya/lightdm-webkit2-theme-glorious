@@ -43,16 +43,17 @@
 }
 
 #backgroundImagePreviewContainer {
-	width: auto;
-	height: auto;
-	background: #ff00ff;
+	width: 480px;
+	height: 270px;
 	position: relative;
+	background: var(--base-container);
+	border-radius: var(--rounded-radius);
 }
 
 #previewBackgroundImage {
-	width: 480px;
-	height: 270px;
-	margin: 10px !important;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 	border-radius: var(--rounded-radius);
 	transition: all var(--transition-speed);
 }
@@ -63,6 +64,7 @@
 	border-radius: 50%;
 	position: relative;
 	padding: 10px;
+	margin: 0 10px;
 	cursor: pointer;
 }
 

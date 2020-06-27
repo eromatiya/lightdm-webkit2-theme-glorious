@@ -7,7 +7,7 @@ class SettingsScreen {
 		this._previewBackgroundImage = document.querySelector('#previewBackgroundImage');
 
 		this._backgroundsDirRecursion = 0;
-		this._backgroundImages = [];
+		this._backgroundImages = null;
 		this._backgroundImagesDir = null;
 
 		this._backgroundCurrentElement = 0;
@@ -28,9 +28,9 @@ class SettingsScreen {
 		subdirs = [];
 
 		for (var file of dirlist) {
-			if ( file.match( /(png|PNG)|(jpg|JPEG)|(bmp|BMP)/ ) ) {
+			if (file.match(/(png|PNG)|(jpg|JPEG)|(bmp|BMP)/) ) {
 				images.push(file);
-			} else if ( ! file.match( /\w+\.\w+/ ) ) {
+			} else if (!file.match(/\w+\.\w+/)) {
 				subdirs.push(file)
 			}
 		}
@@ -40,8 +40,8 @@ class SettingsScreen {
 			for (var dir of subdirs) {
 				var list = greeterutil.dirlist(dir);
 
-				if ( list && list.length ) {
-					images.push.apply( images, this._findImages(list) );
+				if (list && list.length) {
+					images.push.apply(images, this._findImages(list));
 				}
 			}
 		}
@@ -52,14 +52,14 @@ class SettingsScreen {
 
 	// Generate an array of background images form the directory set in the config
 	_createBackgroundArray() {
-		this._backgroundImagesDir = config.get_str( 'branding', 'background_images' ) || '/usr/share/backgrounds';
+		this._backgroundImagesDir = config.get_str('branding', 'background_images') || '/usr/share/backgrounds';
 
-		if ( this._backgroundImagesDir ) {
-			this._backgroundImages = greeterutil.dirlist( this._backgroundImagesDir ) || [];
+		if (this._backgroundImagesDir) {
+			this._backgroundImages = greeterutil.dirlist(this._backgroundImagesDir) || [];
 			// console.log(this._backgroundImages);
 		}
 
-		if ( this._backgroundImages && this._backgroundImages.length ) {
+		if (this._backgroundImages && this._backgroundImages.length) {
 			this._backgroundImages = this._findImages(this._backgroundImages);
 		}
 
