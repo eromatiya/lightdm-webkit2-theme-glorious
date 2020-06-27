@@ -52,8 +52,9 @@
 #previewBackgroundImage {
 	width: 480px;
 	height: 270px;
-	border-radius: var(--rounded-radius);
 	margin: 10px !important;
+	border-radius: var(--rounded-radius);
+	transition: all var(--transition-speed);
 }
 
 .previewButton {
