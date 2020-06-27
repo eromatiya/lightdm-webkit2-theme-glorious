@@ -34,6 +34,14 @@ Make sure you have the latest version.
 
 ### installation
 
+#### aur
+
+```bash
+$ yay -S lightdm-webkit2-theme-glorious
+```
+
+#### manual
+
 0. If you're using systemd, make sure that `lightdm.service` or `lightdm-plymouth.service` is enabled and running. There's a bunch of guide on the internet. [Archwiki](https://wiki.archlinux.org/index.php/LightDM) is recommended.
 
 1. Clone it.
@@ -62,7 +70,7 @@ Make sure you have the latest version.
 	# Find `webkit_theme` then set its value to `lightdm-webkit2-theme-glorious`.
 	```
 
-### Features
+### features
 
 Right now, the features are pretty basic. There's no settings or customization. It's just a plain old login screen. But here's the basic things it can do.
 
@@ -71,7 +79,7 @@ Right now, the features are pretty basic. There's no settings or customization. 
 + Simple keybinding
 + Yeah, that's all to it right now. 
 
-### Swipe gestures
+### swipe gestures
 
 + Swiping down on the login screen will open the greeter screen.
 + Swiping right on the login screen will open the session screen.
@@ -80,7 +88,7 @@ Right now, the features are pretty basic. There's no settings or customization. 
 + Swiping up on the greeter, user, power,and session screens will close them.
 
 
-### Keybinding
+### keybinding
 
 + <kbd>Escape</kbd> to close the screens
 
@@ -90,6 +98,6 @@ Right now, the features are pretty basic. There's no settings or customization. 
 + If your desktop environment or window manager logo is not in the sessions screen, feel free to submit a pull request!
 
 
-### Credits
+### credits
 
 <span>Background image by <a href="https://unsplash.com/@wilstewart3?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Wil Stewart</a> on <a href="/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
