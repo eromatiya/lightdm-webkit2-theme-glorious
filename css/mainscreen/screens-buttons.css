@@ -4,14 +4,13 @@
 	display: flex;
 	position: absolute;
 	bottom: 10px;
-	left: 50%;
-	transform: translateX(-50%);
+	right: 10px;
 }
 
 button.screensButton {
 	width: 48px;
 	height: 48px;
-	margin: 25px;
+	margin: 10px;
 	cursor: pointer;
 	border-radius: 50%;
 }

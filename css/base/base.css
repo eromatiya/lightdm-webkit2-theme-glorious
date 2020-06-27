@@ -7,7 +7,7 @@
 	--base-hover-bg: #f2f2f230;
 	--base-focus-bg: #f2f2f245;
 	--base-active-bg: #fefefe60;
-	--blur-strength: 6px;
+	--blur-strength: 12px;
 	--panel-bg: var(--base-bg);
 	--panel-color: var(--base-color);
 	--transition-speed: 300ms;
