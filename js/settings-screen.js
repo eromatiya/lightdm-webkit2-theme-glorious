@@ -70,6 +70,16 @@ class SettingsScreen {
 		}
 	}
 
+	_updatePreviewBackgroundImageOnStartUp() {
+
+		if (!this._backgroundImages.indexOf(this._backgroundCurrentPath)) {
+			this._backgroundCurrentElement = 0;
+		} else {
+			this._backgroundCurrentElement = this._backgroundImages.indexOf(this._backgroundCurrentPath);
+		}
+		this._updatePreviewBackgroundImage();
+	}
+
 	_updateCurrentBackgroundVariables() {
 		this._backgroundCurrentPath = this._localStorage.getItem('defaultBackgroundImage');
 
@@ -77,6 +87,7 @@ class SettingsScreen {
 			this._backgroundCurrentPath = this._backgroundImages[0];
 		}
 
+		this._updatePreviewBackgroundImageOnStartUp();
 		this._updateBackgroundImages();
 	}
 
@@ -176,13 +187,25 @@ class SettingsScreen {
 
 	// Update preview <img> and variables
 	_updatePreviewBackgroundImage() {
-		const bgPath = this._backgroundImages[parseInt(this._backgroundCurrentElement, 10)];
+
+		let backgroundPath = null;
+
+		// Avoid errors if the user removed the background
+		if (!this._backgroundImages[parseInt(this._backgroundCurrentElement, 10)]) {
+			
+			// Image has been removed, use the element 0;
+			backgroundPath = this._backgroundImages[parseInt(0, 10)];
+		} else {
+
+			// Get the path of bg image
+			backgroundPath = this._backgroundImages[parseInt(this._backgroundCurrentElement, 10)];
+		}
 		
 		// Update label - file name
-		this._previewFileName.textContent = bgPath.replace(/^.*[\\\/]/, '');
+		this._previewFileName.textContent = backgroundPath.replace(/^.*[\\\/]/, '');
 		
 		// Update full path variable
-		this._backgroundCurrentPath = bgPath;
+		this._backgroundCurrentPath = backgroundPath;
 
 		// Update image src
 		this._previewBackgroundImage.src = 'file://' + this._backgroundCurrentPath;
