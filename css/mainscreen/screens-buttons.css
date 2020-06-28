@@ -1,18 +1,21 @@
 #screensButtons {
-	width: auto;
+	width: 100%;
 	height: auto;
 	display: flex;
 	position: absolute;
 	bottom: 10px;
-	right: 10px;
 }
 
 button.screensButton {
-	width: 48px;
-	height: 48px;
+	width: auto;
+	height: auto;
 	margin: 10px;
+	border-radius: var(--rounded-radius);
+}
+
+button.screensButton,
+button.screensButton > * {
 	cursor: pointer;
-	border-radius: 50%;
 }
 
 button.screensButton:hover {
@@ -28,9 +31,30 @@ button.screensButton:active {
 }
 
 img.screensButtonImage {
-	width: 100%;
-	height: 100%;
+	width: 48px;
+	height: 48px;;
 	object-fit: cover;
 	display: block;
 	padding: 5px;
+}
+
+button#sessionsScreenButton.screensButton {
+	display: flex;
+	border-radius: var(--rounded-radius);
+}
+
+#sessionsScreenButton label#sessionsScreenLabel {
+	color: var(--base-color);
+	font-family: Muli-Light, sans-serif;
+	font-weight: 300;
+	vertical-align: bottom;
+	font-size: 30pt;
+}
+
+div.screensButtonLeftSide {
+	margin-right: auto;
+}
+
+div.screensButtonRightSide {
+	margin-left:auto;
 }
