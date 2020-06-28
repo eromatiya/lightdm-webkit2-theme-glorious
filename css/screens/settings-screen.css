@@ -16,7 +16,7 @@
 						rgba(0, 0, 0, 0.5)
 					),
 					url('../../assets/bg.jpg');
-	filter: blur();
+	filter: blur(var(--blur-strength));
 }
 
 #settingsScreenContent {
