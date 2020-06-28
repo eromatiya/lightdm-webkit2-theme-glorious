@@ -24,6 +24,9 @@ a modern, glorified lightdm webkit2 theme and pretty much work-in-progress
 | --- |
 | ![screenshot](scrots/power.webp) |
 
+| settings screen |
+| --- |
+| ![screenshot](scrots/settings.webp) |
 
 ### dependencies
 
@@ -72,12 +75,10 @@ $ yay -S lightdm-webkit2-theme-glorious
 
 ### features
 
-Right now, the features are pretty basic. There's no settings or customization. It's just a plain old login screen. But here's the basic things it can do.
-
 + Multi-user support
 + Swipe gestures
++ Theming settings
 + Simple keybinding
-+ Yeah, that's all to it right now. 
 
 ### swipe gestures
 
@@ -94,6 +95,7 @@ Right now, the features are pretty basic. There's no settings or customization. 
 
 ### Notes
 
++ You can add more background images by putting your wallpapers/images in `/usr/share/backgrounds/`.
 + If you're on a desktop environment like KDE Plasma and GNOME3, you can set your profile picture and real name in the settings. While if you're on a more minimal environment like window managers, you can install and use the program called `mugshot`.
 + If your desktop environment or window manager logo is not in the sessions screen, feel free to submit a pull request!
 
