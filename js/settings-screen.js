@@ -8,6 +8,14 @@ class SettingsScreen {
 		this._previewBackgroundImage = document.querySelector('#previewBackgroundImage');
 		this._previewFileName = document.querySelector('#previewFileName');
 
+		this._bodyOverlay = document.querySelector('.bodyOverlay');
+		this._greeterScreen = document.querySelector('.screen#greeterScreen');
+		this._settingsScreenBackground = document.querySelector('.screenBackground#settingsScreenBackground');
+		this._powerScreenBackground = document.querySelector('.screenBackground#powerScreenBackground');
+		this._sessionsScreenBackground = document.querySelector('.screenBackground#sessionsScreenBackground');
+		this._usersScreenBackground = document.querySelector('.screenBackground#usersScreenBackground');
+		this._goodbyeScreenBackground = document.querySelector('.screenBackground#goodbyeScreenBackground');
+
 		this._backgroundImages = null;
 		this._backgroundImagesDir = null;
 
@@ -47,17 +55,18 @@ class SettingsScreen {
 		dummyImg.src = 'file://' + this._backgroundCurrentPath;
 
 		dummyImg.onload = () => {
+			
 			// Save src to a variable
 			const src = `url('${dummyImg.src}')`
 
 			// Set src to bgs
-			document.querySelector('.bodyOverlay').style.backgroundImage = src;
-			document.querySelector('.screen#greeterScreen').style.backgroundImage =  darken + src;
-			document.querySelector('.screenBackground#settingsScreenBackground').style.backgroundImage =  darken + src;
-			document.querySelector('.screenBackground#powerScreenBackground').style.backgroundImage =  darken + src;
-			document.querySelector('.screenBackground#sessionsScreenBackground').style.backgroundImage =  darken + src;
-			document.querySelector('.screenBackground#usersScreenBackground').style.backgroundImage =  darken + src;
-			document.querySelector('.screenBackground#goodbyeScreenBackground').style.backgroundImage = src;
+			this._bodyOverlay.style.backgroundImage = src;
+			this._greeterScreen.style.backgroundImage = darken + src;
+			this._settingsScreenBackground.style.backgroundImage = darken + src;
+			this._powerScreenBackground.style.backgroundImage = darken + src;
+			this._sessionsScreenBackground.style.backgroundImage = darken + src;
+			this._usersScreenBackground.style.backgroundImage = darken + src;
+			this._goodbyeScreenBackground.style.backgroundImage = src;
 		}
 	}
 
