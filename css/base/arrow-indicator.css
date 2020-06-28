@@ -1,0 +1,85 @@
+.arrowIndicator {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	margin: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.arrowIndicator span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	box-sizing: border-box;
+	border: none;
+	border-right: 3px solid var(--base-color);
+	border-bottom: 3px solid var(--base-color);
+}
+
+@keyframes animateArrowIndicatorOne {
+	0% {
+		border-color: var(--base-container);
+	}
+	33% {
+		border-color: var(--base-color);
+	}
+	66% {
+		border-color: var(--base-container);
+	}
+	100% {
+		border-color: var(--base-container);
+	}
+}
+
+@keyframes animateArrowIndicatorTwo {
+	0% {
+		border-color: var(--base-container);
+	}
+	33% {
+		border-color: var(--base-container);
+	}
+	66% {
+		border-color: var(--base-color);
+	}
+	100% {
+		border-color: var(--base-container);
+	}
+}
+
+@keyframes animateArrowIndicatorThree {
+	0% {
+		border-color: var(--base-container);
+	}
+	33% {
+		border-color: var(--base-container);
+	}
+	66% {
+		border-color: var(--base-container);
+	}
+	100% {
+		border-color: var(--base-color);
+	}
+}
+
+.arrowIndicator span:nth-child(1) {
+	top: -30px;
+	left: -30px;
+	animation: animateArrowIndicatorOne 3s linear infinite;
+}
+
+.arrowIndicator span:nth-child(2) {
+	top: -15px;
+	left: -15px;
+	animation: animateArrowIndicatorTwo 3s linear infinite;
+}
+
+.arrowIndicator span:nth-child(3) {
+	top: 0;
+	left: 0;
+	animation: animateArrowIndicatorThree 3s linear infinite;
+}
