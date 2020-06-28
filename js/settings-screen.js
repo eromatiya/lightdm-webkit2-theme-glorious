@@ -81,7 +81,7 @@ class SettingsScreen {
 			this._sessionsScreenBackground.style.backgroundImage = darken + src;
 			this._usersScreenBackground.style.backgroundImage = darken + src;
 			this._goodbyeScreenBackground.style.backgroundImage = src;
-		}
+		};
 	}
 
 	_updatePreviewBackgroundImageOnStartUp() {
@@ -147,7 +147,7 @@ class SettingsScreen {
 			if (file.match(/(png|PNG)|(jpg|JPEG)|(bmp|BMP)/) ) {
 				images.push(file);
 			} else if (!file.match(/\w+\.\w+/)) {
-				subdirs.push(file)
+				subdirs.push(file);
 			}
 		}
 

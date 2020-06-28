@@ -20,11 +20,8 @@
 }
 
 #settingsScreenContent {
-	top: 0;
-	left: 0;
 	height: auto;
 	padding: 10px;
-	position: relative;
 	width: auto;
 
 	/* Align vertically and horizontally */
@@ -139,7 +136,7 @@ label.settingsLabel {
 	font-weight: 400;
 	font-size: 11pt;
 	margin: 0 5px;
-	text-align: left !important;
+	text-align: left;
 	color: var(--base-color);
 }
 
