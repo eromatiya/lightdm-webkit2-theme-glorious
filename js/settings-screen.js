@@ -60,7 +60,7 @@ class SettingsScreen {
 
 	_updateBackgroundImages() {
 		// Darken background
-		const darken = `linear-gradient(rgba(0, 0, 0, 0.5),	rgba(0, 0, 0, 0.5)),`
+		const darken = `linear-gradient(rgba(0, 0, 0, 0.5),	rgba(0, 0, 0, 0.5)),`;
 
 		// Create dummy image
 		let dummyImg = document.createElement('img');

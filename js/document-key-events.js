@@ -35,7 +35,6 @@ class KeyEvents {
 					settingsScreen.toggleSettingsScreen();
 					return;
 				}
-				settingsScreen
 
 				// Goodbye Screen
 				if (this._goodbyeScreen.classList.contains('showGoodbyeScreen')) {
