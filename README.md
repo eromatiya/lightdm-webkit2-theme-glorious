@@ -2,7 +2,7 @@
 
 [![maintained](https://img.shields.io/maintenance/yes/2020?label=maintained&style=flat-square)](https://github.com/manilarome/the-glorious-lightdm-webkit2-theme/commits/master) [![contributions](https://img.shields.io/badge/contribution-welcome-brightgreen&?style=flat-square)](https://github.com/manilarome/the-glorious-lightdm-webkit2-theme/pulls) [![HitCount](http://hits.dwyl.com/manilarome/the-glorious-lightdm-webkit2-theme.svg)](http://hits.dwyl.com/manilarome/the-glorious-lightdm-webkit2-theme) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/0812167ef9954b74ac23f7c1bfeb3764)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=manilarome/the-glorious-lightdm-webkit2-theme&amp;utm_campaign=Badge_Grade)
 
-a modern, glorified lightdm webkit2 theme and pretty much work-in-progress
+a modern, glorified lightdm webkit2 theme
 
 ## [live demo here](https://manilarome.github.io/lightdm-webkit2-theme-glorious)
 
@@ -79,6 +79,7 @@ $ yay -S lightdm-webkit2-theme-glorious
 + Swipe gestures
 + Theming settings
 + Simple keybinding
++ Vanilla Javascript <sup>(not sure if this is a feature tho)</sup>
 
 ### swipe gestures
 
@@ -97,7 +98,7 @@ $ yay -S lightdm-webkit2-theme-glorious
 
 + You can add more background images by putting your wallpapers/images in `/usr/share/backgrounds/`.
 + If you're on a desktop environment like KDE Plasma and GNOME3, you can set your profile picture and real name in the settings. While if you're on a more minimal environment like window managers, you can install and use the program called `mugshot`.
-+ If your desktop environment or window manager logo is not in the sessions screen, feel free to submit a pull request!
++ If your desktop environment or window manager's logo is not in the sessions screen, feel free to submit a pull request!
 
 
 ### credits
