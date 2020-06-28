@@ -47,7 +47,9 @@
 }
 
 .userItemDefault {
-	background: var(--base-active-bg);
+	background: var(--base-selected-bg);
+	border: 1px solid var(--base-container);
+	border-radius: var(--rounded-radius);
 }
 
 .userItem:hover {
@@ -71,8 +73,8 @@
 }
 
 img#userItemIcon {
-	width: 64px;
-	height: 64px;
+	width: 96px;
+	height: 96px;
 	border-radius: 50%;
 	object-fit: cover;
 	display: block;

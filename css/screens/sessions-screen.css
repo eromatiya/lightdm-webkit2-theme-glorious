@@ -47,7 +47,9 @@
 }
 
 .sessionItemDefault {
-	background: var(--base-active-bg);
+	background: var(--base-selected-bg);
+	border: 1px solid var(--base-container);
+	border-radius: var(--rounded-radius);
 }
 
 .sessionItem:hover {
@@ -71,8 +73,8 @@
 }
 
 img#sessionItemIcon {
-	width: 64px;
-	height: 64px;
+	width: 96px;
+	height: 96px;
 	object-fit: cover;
 	display: block;
 }

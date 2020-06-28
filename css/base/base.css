@@ -2,6 +2,7 @@
 	/* Colors */
 	--base-body-bg: #1a1a1aff;
 	--base-bg: #00000066;
+	--base-selected-bg: var(--base-bg);
 	--base-color: #fefefeff;
 	--base-container: #f2f2f220;
 	--base-hover-bg: #f2f2f230;
