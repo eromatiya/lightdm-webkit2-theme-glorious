@@ -63,7 +63,7 @@ $ yay -S lightdm-webkit2-theme-glorious
 
 	```
 	$ sudoedit /etc/lightdm/lightdm.conf
-	# Find `greeter-session`, uncomment it, then set its value to `lightdm-webkit2-greeter`.
+	# Find the `greeter-session` string under the `[Seat:*]` section, uncomment it, then set its value to `lightdm-webkit2-greeter`.
 	```
 
 4. Set as lightdm webkit2 theme.
@@ -77,7 +77,7 @@ $ yay -S lightdm-webkit2-theme-glorious
 
 + Multi-user support
 + Swipe gestures
-+ Theming settings
++ Customization and Settings
 + Simple keybinding
 + Vanilla Javascript <sup>(not sure if this is a feature tho)</sup>
 
