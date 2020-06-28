@@ -40,6 +40,8 @@ img.screensButtonImage {
 
 button#sessionsScreenButton.screensButton {
 	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
 	border-radius: var(--rounded-radius);
 }
 
@@ -47,8 +49,14 @@ button#sessionsScreenButton.screensButton {
 	color: var(--base-color);
 	font-family: Muli-Light, sans-serif;
 	font-weight: 300;
-	vertical-align: bottom;
 	font-size: 30pt;
+	transform: scaleX(0);
+	transform-origin: 0 100%;
+	transition: transform 300ms;
+}
+
+#sessionsScreenButton:hover label#sessionsScreenLabel {
+	transform: scaleX(1);
 }
 
 div.screensButtonLeftSide {
