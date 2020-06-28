@@ -9,14 +9,14 @@ class DebugMode {
 			window.config = {};
 			window.config.get_str = function() {
 				return '/usr/share/lightdm-webkit/themes/lightdm-webkit2-theme-glorious/assets/';
-			}
+			};
 		}
 
 		if (!window.greeterutil) {
 			window.greeterutil = {};
 			window.greeterutil.dirlist = function(path) {
 				return false;
-			}
+			};
 		}
 
 		if (!window.lightdm) {

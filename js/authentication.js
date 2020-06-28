@@ -46,7 +46,7 @@ class Authentication {
 			'Someone\'s gonna bites za dusto!',
 			'“You miss 100% of the shots you don\'t take – Wayne Gretzky – Michael Scott”',
 			'Get out of there, it\'s gonna blow!'
-		]
+		];
 		const randomMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
 		return randomMessage;
 	}
@@ -61,7 +61,7 @@ class Authentication {
 			'What are you doing, stepbro?~',
 			'Hey, you matter!',
 			'You are someone\'s reason to smile.'
-		]
+		];
 		const randomMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
 		return randomMessage;
 	}

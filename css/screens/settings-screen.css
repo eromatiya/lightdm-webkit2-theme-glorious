@@ -56,7 +56,7 @@ label#previewFileName {
 	color: var(--base-color);
 }
 
-#settingsPreviewContainer{
+#settingsPreviewContainer {
 	width: auto;
 	height: auto;
 	display: flex;
