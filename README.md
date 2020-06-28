@@ -2,7 +2,7 @@
 
 [![maintained](https://img.shields.io/maintenance/yes/2020?label=maintained&style=flat-square)](https://github.com/manilarome/the-glorious-lightdm-webkit2-theme/commits/master) [![contributions](https://img.shields.io/badge/contribution-welcome-brightgreen&?style=flat-square)](https://github.com/manilarome/the-glorious-lightdm-webkit2-theme/pulls) [![HitCount](http://hits.dwyl.com/manilarome/the-glorious-lightdm-webkit2-theme.svg)](http://hits.dwyl.com/manilarome/the-glorious-lightdm-webkit2-theme) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/0812167ef9954b74ac23f7c1bfeb3764)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=manilarome/the-glorious-lightdm-webkit2-theme&amp;utm_campaign=Badge_Grade)
 
-a modern, glorified lightdm webkit2 theme and pretty much work-in-progress
+a modern, glorified lightdm webkit2 theme
 
 ## [live demo here](https://manilarome.github.io/lightdm-webkit2-theme-glorious)
 
@@ -24,6 +24,9 @@ a modern, glorified lightdm webkit2 theme and pretty much work-in-progress
 | --- |
 | ![screenshot](scrots/power.webp) |
 
+| settings screen |
+| --- |
+| ![screenshot](scrots/settings.webp) |
 
 ### dependencies
 
@@ -60,7 +63,7 @@ $ yay -S lightdm-webkit2-theme-glorious
 
 	```
 	$ sudoedit /etc/lightdm/lightdm.conf
-	# Find `greeter-session`, uncomment it, then set its value to `lightdm-webkit2-greeter`.
+	# Find the `greeter-session` string under the `[Seat:*]` section, uncomment it, then set its value to `lightdm-webkit2-greeter`.
 	```
 
 4. Set as lightdm webkit2 theme.
@@ -72,12 +75,11 @@ $ yay -S lightdm-webkit2-theme-glorious
 
 ### features
 
-Right now, the features are pretty basic. There's no settings or customization. It's just a plain old login screen. But here's the basic things it can do.
-
 + Multi-user support
 + Swipe gestures
++ Customization and Settings
 + Simple keybinding
-+ Yeah, that's all to it right now. 
++ Vanilla Javascript <sup>(not sure if this is a feature tho)</sup>
 
 ### swipe gestures
 
@@ -87,16 +89,16 @@ Right now, the features are pretty basic. There's no settings or customization. 
 + Swiping up on the login screen will open the power screen.
 + Swiping up on the greeter, user, power,and session screens will close them.
 
-
 ### keybinding
 
 + <kbd>Escape</kbd> to close the screens
 
 ### Notes
 
++ Right now, the recommended resolution is `1366x768` and above. Will support lower resolution in the future, tho.
++ You can add more background images by putting your wallpapers/images in `/usr/share/backgrounds/`.
 + If you're on a desktop environment like KDE Plasma and GNOME3, you can set your profile picture and real name in the settings. While if you're on a more minimal environment like window managers, you can install and use the program called `mugshot`.
-+ If your desktop environment or window manager logo is not in the sessions screen, feel free to submit a pull request!
-
++ If your desktop environment or window manager's logo is not in the sessions screen, feel free to submit a pull request!
 
 ### credits
 

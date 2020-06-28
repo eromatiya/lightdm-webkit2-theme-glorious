@@ -31,6 +31,41 @@ class Authentication {
 		lightdm.authenticate(this._userName);
 	}
 
+	_returnRandomErrorMessages() {
+		const errorMessages = [
+			'Authentication failed!',
+			'I am watching you.',
+			'I know where you live.',
+			'This incident will be reported.',
+			'RUN!',
+			'Why are you the way that you are?',
+			'Yamete, Oniichan~ uwu',
+			'This will self-destruct in 5 seconds!',
+			'Intruder image successfully sent!',
+			'You\'re doomed!',
+			'Someone\'s gonna bites za dusto!',
+			'“You miss 100% of the shots you don\'t take – Wayne Gretzky – Michael Scott”',
+			'Get out of there, it\'s gonna blow!'
+		];
+		const randomMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
+		return randomMessage;
+	}
+
+	_returnRandomSuccessfulMessages() {
+		const errorMessages = [
+			'Authentication success! Logging in!',
+			'Logging in! Biatch',
+			'Don\'t watch too much porn.',
+			'Splish! Splash! Your password is trash!',
+			'Looking good today~',
+			'What are you doing, stepbro?~',
+			'Hey, you matter!',
+			'You are someone\'s reason to smile.'
+		];
+		const randomMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
+		return randomMessage;
+	}
+
 	// You failed to authenticate
 	_authenticationFailed() {
 		// New authentication session
@@ -41,7 +76,7 @@ class Authentication {
 
 		// Error messages/UI
 		this._passwordInputBox.classList.add('authenticationFailed');
-		this._tooltipMessage.innerText = 'Authentication failed!';
+		this._tooltipMessage.innerText = this._returnRandomErrorMessages();
 		this._tooltipMessage.classList.add('tooltipError');
 	}
 
@@ -67,7 +102,7 @@ class Authentication {
 
 		// Success messages
 		this._passwordInputBox.classList.add('authenticationSuccess');
-		this._tooltipMessage.innerText = 'Authentication success! Logging in!';
+		this._tooltipMessage.innerText = this._returnRandomSuccessfulMessages();
 		this._tooltipMessage.classList.add('tooltipSuccess');
 
 		// Add a delay before unlocking
@@ -80,7 +115,7 @@ class Authentication {
 				// Login
 				lightdm.start_session_sync(sessionsScreen.getDefaultSession());
 			},
-			750
+			1500
 		);
 	}
 

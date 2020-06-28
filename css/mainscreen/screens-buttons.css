@@ -1,0 +1,71 @@
+#screensButtons {
+	width: 100%;
+	height: auto;
+	display: flex;
+	position: absolute;
+	bottom: 10px;
+}
+
+button.screensButton {
+	width: auto;
+	height: auto;
+	margin: 10px;
+	border-radius: var(--rounded-radius);
+}
+
+button.screensButton,
+button.screensButton > * {
+	cursor: pointer;
+}
+
+button.screensButton:hover {
+	background-color: var(--base-hover-bg);
+}
+
+button.screensButton:focus {
+	background-color: var(--base-focus-bg);
+}
+
+button.screensButton:active {
+	background-color: var(--base-active-bg);
+}
+
+img.screensButtonImage {
+	width: 48px;
+	height: 48px;
+	object-fit: cover;
+	display: block;
+	padding: 5px;
+}
+
+button#sessionsScreenButton.screensButton {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	border-radius: var(--rounded-radius);
+}
+
+#sessionsScreenButton + label#sessionsScreenLabel {
+	color: var(--base-color);
+	font-family: Muli-Light, sans-serif;
+	font-weight: 300;
+	font-size: 30pt;
+	transform: scaleX(0);
+	transform-origin: 0 100%;
+	transition: transform 300ms;
+}
+
+#sessionsScreenButton:hover + label#sessionsScreenLabel {
+	transform: scaleX(1);
+}
+
+div.screensButtonLeftSide {
+	margin-right: auto;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+div.screensButtonRightSide {
+	margin-left: auto;
+}

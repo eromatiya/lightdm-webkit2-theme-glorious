@@ -1,13 +1,14 @@
 :root {
 	/* Colors */
 	--base-body-bg: #1a1a1aff;
-	--base-bg: #00000060;
+	--base-bg: #00000066;
+	--base-selected-bg: var(--base-bg);
 	--base-color: #fefefeff;
 	--base-container: #f2f2f220;
 	--base-hover-bg: #f2f2f230;
 	--base-focus-bg: #f2f2f245;
 	--base-active-bg: #fefefe60;
-	--blur-strength: 6px;
+	--blur-strength: 12px;
 	--panel-bg: var(--base-bg);
 	--panel-color: var(--base-color);
 	--transition-speed: 300ms;
@@ -84,4 +85,13 @@ select:focus {
 
 option {
 	text-align: left;
+}
+
+img {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }

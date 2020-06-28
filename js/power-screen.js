@@ -33,13 +33,13 @@ class PowerScreen {
 	}
 
 	// Show session screen
-	showPowerScreen() {
+	_showPowerScreen() {
 		this._powerScreen.classList.add('powerScreenShow');
 		this._powerScreenVisible = true;
 	}
 
 	// Hide session screen
-	hidePowerScreen() {
+	_hidePowerScreen() {
 		this._powerScreen.classList.remove('powerScreenShow');
 		this._powerScreenVisible = false;
 	}
@@ -47,9 +47,9 @@ class PowerScreen {
 	// Toggle session screen
 	togglePowerScreen() {
 		if (this._powerScreen.classList.contains('powerScreenShow')) {
-			this.hidePowerScreen();
+			this._hidePowerScreen();
 		} else {
-			this.showPowerScreen();
+			this._showPowerScreen();
 		}
 	}
 
@@ -117,7 +117,7 @@ class PowerScreen {
 			'click',
 			() => {
 				// Hide power screen
-				this.hidePowerScreen();
+				this._hidePowerScreen();
 
 				// Disable keydown events temporarily
 				this._disableWindowPropagation();

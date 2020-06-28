@@ -26,9 +26,15 @@ class KeyEvents {
 
 				// Sessions Screen
 				if (sessionsScreen.getSessionsScreenVisibility()) {
-					sessionsScreen.hideSessionsScreen();
+					sessionsScreen.toggleSessionsScreen();
 					return;
-				}	
+				}
+
+				// Settings Screen
+				if (settingsScreen.getSettingsScreenVisibility()) {
+					settingsScreen.toggleSettingsScreen();
+					return;
+				}
 
 				// Goodbye Screen
 				if (this._goodbyeScreen.classList.contains('showGoodbyeScreen')) {

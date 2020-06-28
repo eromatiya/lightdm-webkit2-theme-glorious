@@ -46,11 +46,6 @@
 	cursor: pointer;
 }
 
-.powerItemContent {
-	width: 100%;
-	height: 100%;
-}
-
 .powerItemDefault {
 	background: var(--base-active-bg);
 }

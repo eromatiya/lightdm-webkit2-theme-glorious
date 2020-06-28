@@ -5,7 +5,21 @@ class DebugMode {
 	}
 
 	_debugModeProc() {
-		if (typeof window.lightdm === 'undefined') {
+		if (!window.config) {
+			window.config = {};
+			window.config.get_str = function() {
+				return '/usr/share/lightdm-webkit/themes/lightdm-webkit2-theme-glorious/assets/';
+			};
+		}
+
+		if (!window.greeterutil) {
+			window.greeterutil = {};
+			window.greeterutil.dirlist = function(path) {
+				return false;
+			};
+		}
+
+		if (!window.lightdm) {
 			window.lightdm = {
 				is_authenticated: false,
 				authentication_user: null,
