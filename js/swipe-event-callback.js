@@ -5,7 +5,7 @@ class SwipeEventCallback {
 		this._powerScreen = document.querySelector('#powerScreen');
 		this._settingsScreen = document.querySelector('#settingsScreen');
 		this._usersScreen = document.querySelector('#usersScreen');
-		this._greeterScreen = document.querySelector('.screen.greeterScreen');
+		this._greeterScreen = document.querySelector('.screen#greeterScreen');
 		this._createMouseSwipeEvents();
 	}
 

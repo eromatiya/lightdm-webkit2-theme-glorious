@@ -1,5 +1,6 @@
 class SettingsScreen {
 	constructor() {
+		this._localStorage = window.localStorage;
 		this._defaultBackgroundPath = '/usr/share/lightdm-webkit/themes/lightdm-webkit2-theme-glorious/assets/bg.jpg';
 
 		this._previewImageBackButton = document.querySelector('#previewImageBackButton');
@@ -11,11 +12,14 @@ class SettingsScreen {
 		this._backgroundImagesDir = null;
 
 		this._backgroundCurrentElement = 0;
-		this._backgroundCurrentElementValue = null;
+		this._backgroundCurrentPath = null;
 
 		this._settingsScreen = document.querySelector('#settingsScreen');
 		this._settingsScreenButton = document.querySelector('#settingsScreenButton');
 		this._settingsScreenVisible = false;
+
+
+		this._settingsApplyButton = document.querySelector('#settingsApplyButton');
 
 		this._init();
 	}
@@ -23,11 +27,64 @@ class SettingsScreen {
 	_init() {
 		// Create bg array
 		this._createBackgroundArray();
+		this._updateCurrentBackgroundVariables();
 
-		this._previewButtonsOnClickEvent();
 
 		// Events
+		this._previewButtonsOnClickEvent();
 		this._settingsScreenButtonOnClickEvent();
+		this._settingsApplyButtonOnClickEvent();
+	}
+
+	_updateBackgroundImages() {
+		// Darken background
+		const darken = `linear-gradient(rgba(0, 0, 0, 0.5),	rgba(0, 0, 0, 0.5)),`
+
+		// Create dummy image
+		let dummyImg = document.createElement('img');
+
+		// Set the src of dummyImg
+		dummyImg.src = 'file://' + this._backgroundCurrentPath;
+
+		dummyImg.onload = () => {
+			// Save src to a variable
+			const src = `url('${dummyImg.src}')`
+
+			// Set src to bgs
+			document.querySelector('.bodyOverlay').style.backgroundImage = src;
+			document.querySelector('.screen#greeterScreen').style.backgroundImage =  darken + src;
+			document.querySelector('.screenBackground#settingsScreenBackground').style.backgroundImage =  darken + src;
+			document.querySelector('.screenBackground#powerScreenBackground').style.backgroundImage =  darken + src;
+			document.querySelector('.screenBackground#sessionsScreenBackground').style.backgroundImage =  darken + src;
+			document.querySelector('.screenBackground#usersScreenBackground').style.backgroundImage =  darken + src;
+			document.querySelector('.screenBackground#goodbyeScreenBackground').style.backgroundImage = src;
+		}
+	}
+
+	_updateCurrentBackgroundVariables() {
+		this._backgroundCurrentPath = this._localStorage.getItem('defaultBackgroundImage');
+
+		if (!this._backgroundCurrentPath) {
+			this._backgroundCurrentPath = this._backgroundImages[0];
+		}
+
+		this._updateBackgroundImages();
+	}
+
+	_settingsApplyButtonOnClickEvent() {
+		this._settingsApplyButton.addEventListener(
+			'click',
+			() => {
+				// Save current background path in localStorage
+				this._localStorage.setItem('defaultBackgroundImage', this._backgroundCurrentPath);
+
+				// Update full path variable
+				this._backgroundCurrentPath = this._backgroundCurrentPath;
+
+				// Apply background changes
+				this._updateBackgroundImages();
+			}
+		);
 	}
 
 	_showSettingsScreen() {
@@ -116,10 +173,10 @@ class SettingsScreen {
 		this._previewFileName.textContent = bgPath.replace(/^.*[\\\/]/, '');
 		
 		// Update full path variable
-		this._backgroundCurrentElementValue = 'file://' + bgPath;
+		this._backgroundCurrentPath = bgPath;
 
 		// Update image src
-		this._previewBackgroundImage.src = this._backgroundCurrentElementValue;
+		this._previewBackgroundImage.src = 'file://' + this._backgroundCurrentPath;
 	}
 
 	_previewButtonsOnClickEvent() {

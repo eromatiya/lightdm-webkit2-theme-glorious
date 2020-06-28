@@ -3,7 +3,7 @@ class GreeterScreen {
 	constructor() {
 		this._hideGreeterScreen = this._hideGreeterScreen.bind(this);
 		this._showGreeterScreen = this._showGreeterScreen.bind(this);
-		this._greeterScreen = document.querySelector('.screen.greeterScreen');
+		this._greeterScreen = document.querySelector('.screen#greeterScreen');
 		this._greeterScreenButton = document.querySelector('#greeterScreenButton');
 		this._passwordInputEL = document.querySelector('#passwordInput');
 

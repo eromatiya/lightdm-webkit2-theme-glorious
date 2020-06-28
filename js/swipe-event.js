@@ -124,8 +124,8 @@ class SwipeEvent {
 }
 
 // This is how you create a swipe event callback instance
-// new MouseSwipeEvent(
-// 	document.querySelector('.greeterScreen'),
+// new SwipeEvent(
+// 	document.querySelector('#greeterScreen'),
 // 	(el, dir) => {
 // 		el.style.background = '#ff00ff';
 // 		console.log(`swiped ${dir}`);
