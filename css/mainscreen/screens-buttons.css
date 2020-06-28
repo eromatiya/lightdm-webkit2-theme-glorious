@@ -45,7 +45,7 @@ button#sessionsScreenButton.screensButton {
 	border-radius: var(--rounded-radius);
 }
 
-#sessionsScreenButton label#sessionsScreenLabel {
+#sessionsScreenButton + label#sessionsScreenLabel {
 	color: var(--base-color);
 	font-family: Muli-Light, sans-serif;
 	font-weight: 300;
@@ -55,12 +55,15 @@ button#sessionsScreenButton.screensButton {
 	transition: transform 300ms;
 }
 
-#sessionsScreenButton:hover label#sessionsScreenLabel {
+#sessionsScreenButton:hover + label#sessionsScreenLabel {
 	transform: scaleX(1);
 }
 
 div.screensButtonLeftSide {
 	margin-right: auto;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
 }
 
 div.screensButtonRightSide {
