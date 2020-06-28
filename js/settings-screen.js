@@ -57,7 +57,7 @@ class SettingsScreen {
 		dummyImg.onload = () => {
 			
 			// Save src to a variable
-			const src = `url('${dummyImg.src}')`
+			const src = `url('${dummyImg.src}')`;
 
 			// Set src to bgs
 			this._bodyOverlay.style.backgroundImage = src;
@@ -97,9 +97,6 @@ class SettingsScreen {
 			() => {
 				// Save current background path in localStorage
 				this._localStorage.setItem('defaultBackgroundImage', this._backgroundCurrentPath);
-
-				// Update full path variable
-				this._backgroundCurrentPath = this._backgroundCurrentPath;
 
 				// Apply background changes
 				this._updateBackgroundImages();
