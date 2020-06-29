@@ -3,6 +3,7 @@
 <meta charset='utf-8'>
 <head>
 	<meta charset='utf-8' />
+	<meta name='viewport' content='width=device-width, viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'>
 	<link rel='stylesheet' href='css/style.css' class='style'>
 </head>
 <body>
@@ -10,7 +11,7 @@
 	<!-- We're using this to have a blurred background image -->
 	<div class='bodyOverlay'></div>
 
-	<div id='greeterScreen' class='screen'>
+	<div id='greeterScreen' class='screen hideGreeterScreen'>
 		<div id='greeterScreenContent'>
 			<div id='greeter'></div>
 			<div id='clock'></div>
@@ -71,7 +72,7 @@
 		</div>
 	</div>
 
-	<div id='settingsScreen' class='screen'>
+	<div id='settingsScreen' class='screen settingsScreenShow'>
 		<div id='settingsScreenBackground' class='screenBackground'></div>
 		<div id='settingsScreenContent'>
 
