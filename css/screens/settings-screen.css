@@ -16,13 +16,13 @@
 						rgba(0, 0, 0, 0.5)
 					),
 					url('../../assets/bg.jpg');
-	filter: blur(var(--blur-strength));
+	filter: blur();
 }
 
 #settingsScreenContent {
 	height: auto;
-	padding: 10px;
 	width: auto;
+	display: flex;
 
 	/* Align vertically and horizontally */
 	margin: 0;
@@ -64,8 +64,8 @@ label#previewFileName {
 }
 
 #backgroundImagePreviewContainer {
-	width: 480px;
-	height: 270px;
+	width: 35vw;
+	height: 35vh;
 	position: relative;
 	background: var(--base-container);
 	border-radius: var(--rounded-radius);
@@ -120,15 +120,16 @@ button.previewButton#previewImageNextButton:active {
 }
 
 #variableSettingsContainer {
-	margin-top: 10px;
-	width: 320px;
+	width: 300px;
 	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
 }
 
 #variableSettingsContainer .variableSettingsGroup {
 	margin-top: 5px;
+}
+
+#variableSettingsContainer #settingsBackground.variableSettingsGroup {
+	margin-top: 0;
 }
 
 label.settingsLabel {
@@ -182,4 +183,27 @@ button.settingsButton:focus {
 
 button.settingsButton:active {
 	background: var(--base-active-bg);
+}
+
+div#settingsRandomBackground {
+	width: 100%;
+	margin: 10px;
+	height: auto;
+	position: relative;
+	display: flex;
+}
+
+div#settingsRandomBackgroundContent {
+	height: auto;
+	align-items: center;
+	margin: 0 auto;
+	display: flex;
+}
+
+#settingsRandomBackgroundLabel {
+	color: var(--base-color);
+	font-family: Muli, sans-serif;
+	font-size: 12pt;
+	font-weight: 10px;
+	margin: auto 10px;
 }

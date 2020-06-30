@@ -3,6 +3,7 @@
 <meta charset='utf-8'>
 <head>
 	<meta charset='utf-8' />
+	<meta name='viewport' content='width=device-width, viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'>
 	<link rel='stylesheet' href='css/style.css' class='style'>
 </head>
 <body>
@@ -90,6 +91,15 @@
 				<div id='settingsPreviewFileNameContainer'>
 					<label id='previewFileName'>bg.jpg</label>
 				</div>
+				<div id='settingsRandomBackground'>
+					<div id='settingsRandomBackgroundContent'>
+						<label class='switch'>
+							<input type='checkbox' id='randomBackgroundSetInput' autocomplete='false'>
+							<span class='slider' data-off='Off' data-on='On'></span>
+						</label>
+						<label id='settingsRandomBackgroundLabel'>Random Background</label>
+					</div>
+				</div>
 			</div>
 
 			<div id='variableSettingsContainer'>
@@ -164,12 +174,10 @@
 			</button>
 			<label id='sessionsScreenLabel'></label>
 		</div>
-
 		<div class='screensButtonRightSide'>
 			<button type='button' id='settingsScreenButton' class='screensButton'>
 				<img src='assets/settings.svg' id='settingsScreenButtonImage' class='screensButtonImage' draggable='false'></img>
 			</button>
-
 			<button type='button' id='powerScreenButton' class='screensButton'>
 				<img src='assets/power/shutdown.svg' id='powerScreenButtonImage' class='screensButtonImage' draggable='false'></img>
 			</button>

@@ -50,13 +50,12 @@ button#sessionsScreenButton.screensButton {
 	font-family: Muli-Light, sans-serif;
 	font-weight: 300;
 	font-size: 30pt;
-	transform: scaleX(0);
-	transform-origin: 0 100%;
-	transition: transform 300ms;
+	opacity: 0;
+	transition: opacity var(--transition-speed);
 }
 
 #sessionsScreenButton:hover + label#sessionsScreenLabel {
-	transform: scaleX(1);
+	opacity: 1;
 }
 
 div.screensButtonLeftSide {

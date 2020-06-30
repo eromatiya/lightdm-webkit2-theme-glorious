@@ -70,7 +70,7 @@ $ yay -S lightdm-webkit2-theme-glorious
 
 	```
 	$ sudoedit /etc/lightdm/lightdm-webkit2-greeter.conf
-	# Find `webkit_theme` then set its value to `lightdm-webkit2-theme-glorious`.
+	# Find `webkit_theme` then set its value to `glorious`.
 	```
 
 ### features
@@ -93,9 +93,20 @@ $ yay -S lightdm-webkit2-theme-glorious
 
 + <kbd>Escape</kbd> to close the screens
 
+### Customization and Settings
+
+#### Changing the colors, blur strength, animation speed, and background image on-the-fly
+
++ Open the dashboard by clicking the settings button on the dock.
++ Change the color and blur strength by setting it on the `Theme Engine` section.
++ Color settings supports `#RGB`, `#RRGGBB`, and `#RRGGBBAA`.
++ Blur strength settings only allows integer with `px` suffix.
++ Animation speed supports `s` and `ms`.
++ Background image selection
++ Background image random selection
+
 ### Notes
 
-+ Right now, the recommended resolution is `1366x768` and above. Will support lower resolution in the future, tho.
 + You can add more background images by putting your wallpapers/images in `/usr/share/backgrounds/`.
 + If you're on a desktop environment like KDE Plasma and GNOME3, you can set your profile picture and real name in the settings. While if you're on a more minimal environment like window managers, you can install and use the program called `mugshot`.
 + If your desktop environment or window manager's logo is not in the sessions screen, feel free to submit a pull request!

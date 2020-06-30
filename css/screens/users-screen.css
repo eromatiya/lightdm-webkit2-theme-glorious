@@ -48,8 +48,6 @@
 
 .userItemDefault {
 	background: var(--base-selected-bg);
-	border: 1px solid var(--base-container);
-	border-radius: var(--rounded-radius);
 }
 
 .userItem:hover {

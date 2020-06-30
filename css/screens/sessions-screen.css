@@ -35,6 +35,7 @@
 
 .sessionItem {
 	background: transparent;
+	
 	border: none;
 	border-radius: var(--rounded-radius);
 	outline: none;
@@ -48,8 +49,6 @@
 
 .sessionItemDefault {
 	background: var(--base-selected-bg);
-	border: 1px solid var(--base-container);
-	border-radius: var(--rounded-radius);
 }
 
 .sessionItem:hover {

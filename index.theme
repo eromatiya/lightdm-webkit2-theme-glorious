@@ -1,5 +1,5 @@
 [theme]
-name=lightdm-webkit2-theme-glorious
+name=glorious
 description=A glorified lightdm webkit2 theme
 engine=lightdm-webkit2-greeter
 url=index.html
