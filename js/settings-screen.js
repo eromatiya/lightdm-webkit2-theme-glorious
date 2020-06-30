@@ -65,6 +65,12 @@ class SettingsScreen {
 		this._localStorage.setItem('randomBackgroundImageMode', JSON.stringify(this._backgroundRandomMode));
 	}
 
+	_backgroundImageRandomReset() {
+		this._localStorage.removeItem('randomBackgroundImageMode');
+		this._backgroundImageRandomCheckBox.checked = false;
+		this._backgroundRandomMode = false;
+	}
+
 	_backgroundImageRandomOnChangeEvent() {
 		this._backgroundImageRandomCheckBox.addEventListener(
 			'change',
@@ -111,6 +117,15 @@ class SettingsScreen {
 			this._usersScreenBackground.style.backgroundImage = darken + src;
 			this._goodbyeScreenBackground.style.backgroundImage = src;
 		};
+	}
+
+	_resetBackgroundImages() {
+		// Reset default background
+		this._localStorage.removeItem('defaultBackgroundImage');
+		this._backgroundCurrentElement = 0;
+		this._backgroundCurrentPath = this._backgroundImages[0];
+		this._updatePreviewBackgroundImage();
+		this._updateBackgroundImages();
 	}
 
 	_updatePreviewBackgroundImageOnStartUp() {
@@ -651,15 +666,11 @@ class SettingsScreen {
 				this._saveOriginalDefaultCSS();
 				this._reApplyTheme();
 
-				// Reset default background
-				this._localStorage.removeItem('defaultBackgroundImage');
-				this._backgroundCurrentElement = 0;
-				this._backgroundCurrentPath = this._backgroundImages[0];
-				this._updatePreviewBackgroundImage();
-				this._updateBackgroundImages();
+				// Reset background image
+				this._resetBackgroundImages();
 
-				this._localStorage.removeItem('randomBackgroundImageMode');
-				this._backgroundImageRandomCheckBox.checked = false;
+				// Reset random mode
+				this._backgroundImageRandomReset();
 			}
 		);
 	}
