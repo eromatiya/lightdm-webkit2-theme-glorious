@@ -70,7 +70,7 @@ $ yay -S lightdm-webkit2-theme-glorious
 
 	```
 	$ sudoedit /etc/lightdm/lightdm-webkit2-greeter.conf
-	# Find `webkit_theme` then set its value to `lightdm-webkit2-theme-glorious`.
+	# Find `webkit_theme` then set its value to `glorious`.
 	```
 
 ### features
