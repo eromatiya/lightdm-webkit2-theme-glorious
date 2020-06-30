@@ -21,8 +21,8 @@
 
 #settingsScreenContent {
 	height: auto;
-	padding: 10px;
 	width: auto;
+	display: flex;
 
 	/* Align vertically and horizontally */
 	margin: 0;
@@ -64,8 +64,8 @@ label#previewFileName {
 }
 
 #backgroundImagePreviewContainer {
-	width: 480px;
-	height: 270px;
+	width: 35vw;
+	height: 35vh;
 	position: relative;
 	background: var(--base-container);
 	border-radius: var(--rounded-radius);
@@ -120,11 +120,8 @@ button.previewButton#previewImageNextButton:active {
 }
 
 #variableSettingsContainer {
-	margin-top: 10px;
-	width: 320px;
+	width: 300px;
 	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
 }
 
 #variableSettingsContainer .variableSettingsGroup {
