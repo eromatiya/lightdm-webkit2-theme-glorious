@@ -16,6 +16,7 @@ class SettingsScreen {
 		this._usersScreenBackground = document.querySelector('.screenBackground#usersScreenBackground');
 		this._goodbyeScreenBackground = document.querySelector('.screenBackground#goodbyeScreenBackground');
 
+		this._backgroundImageRandomCheckBox = document.querySelector('#randomBackgroundSetInput');
 		this._backgroundTextBox = document.querySelector('#backgroundColorSetInput');
 		this._backgroundOpacityTextBox = document.querySelector('#backgroundOpacitySetInput');
 		this._foregroundTextBox = document.querySelector('#foregroundColorSetInput');
@@ -29,6 +30,7 @@ class SettingsScreen {
 
 		this._backgroundCurrentElement = 0;
 		this._backgroundCurrentPath = null;
+		this._backgroundRandomMode = null;
 
 		this._settingsScreen = document.querySelector('#settingsScreen');
 		this._settingsScreenButton = document.querySelector('#settingsScreenButton');
@@ -56,11 +58,38 @@ class SettingsScreen {
 		this._settingsScreenButtonOnClickEvent();
 		this._settingsApplyButtonOnClickEvent();
 		this._settingsResetButtonOnClickEvent();
+		this._backgroundImageRandomOnChangeEvent();
+	}
+
+	_backgroundImageRandomApply() {
+		this._localStorage.setItem('randomBackgroundImageMode', JSON.stringify(this._backgroundRandomMode));
+	}
+
+	_backgroundImageRandomOnChangeEvent() {
+		this._backgroundImageRandomCheckBox.addEventListener(
+			'change',
+			() => {
+				if (this._backgroundImageRandomCheckBox.checked === true) {
+					this._backgroundRandomMode = true;
+					
+				} else {
+					this._backgroundRandomMode = false;
+				}
+			}
+		);
+	}
+
+	_updateRandomBackgroundImageCheckBoxOnStartup() {
+		if (this._backgroundRandomMode === true) {
+			this._backgroundImageRandomCheckBox.checked = true;
+		} else {
+			this._backgroundImageRandomCheckBox.checked = false;
+		}
 	}
 
 	_updateBackgroundImages() {
 		// Darken background
-		const darken = `linear-gradient(rgba(0, 0, 0, 0.5),	rgba(0, 0, 0, 0.5)),`;
+		const darken = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),`;
 
 		// Create dummy image
 		let dummyImg = document.createElement('img');
@@ -86,21 +115,27 @@ class SettingsScreen {
 
 	_updatePreviewBackgroundImageOnStartUp() {
 
-		if (!this._backgroundImages.indexOf(this._backgroundCurrentPath)) {
-			this._backgroundCurrentElement = 0;
+		if (this._backgroundRandomMode === false) {
+			if (!this._backgroundImages.indexOf(this._backgroundCurrentPath)) {
+				this._backgroundCurrentElement = 0;
+			} else {
+				this._backgroundCurrentElement = this._backgroundImages.indexOf(this._backgroundCurrentPath);
+			}
 		} else {
-			this._backgroundCurrentElement = this._backgroundImages.indexOf(this._backgroundCurrentPath);
+			this._backgroundCurrentElement = Math.floor(Math.random() * (this._backgroundImages.length - 1));
 		}
 		this._updatePreviewBackgroundImage();
 	}
 
 	_updateCurrentBackgroundVariables() {
 		this._backgroundCurrentPath = this._localStorage.getItem('defaultBackgroundImage');
+		this._backgroundRandomMode = JSON.parse(this._localStorage.getItem('randomBackgroundImageMode')) || false;
 
 		if (!this._backgroundCurrentPath) {
 			this._backgroundCurrentPath = this._backgroundImages[0];
 		}
 
+		this._updateRandomBackgroundImageCheckBoxOnStartup();
 		this._updatePreviewBackgroundImageOnStartUp();
 		this._updateBackgroundImages();
 	}
@@ -596,6 +631,9 @@ class SettingsScreen {
 
 				// Update css variables
 				this._updateCSSVariables();
+
+				// Random mode
+				this._backgroundImageRandomApply();
 			}
 		);
 	}
@@ -619,6 +657,9 @@ class SettingsScreen {
 				this._backgroundCurrentPath = this._backgroundImages[0];
 				this._updatePreviewBackgroundImage();
 				this._updateBackgroundImages();
+
+				this._localStorage.removeItem('randomBackgroundImageMode');
+				this._backgroundImageRandomCheckBox.checked = false;
 			}
 		);
 	}

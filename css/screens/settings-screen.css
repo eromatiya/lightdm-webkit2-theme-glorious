@@ -128,6 +128,10 @@ button.previewButton#previewImageNextButton:active {
 	margin-top: 5px;
 }
 
+#variableSettingsContainer #settingsBackground.variableSettingsGroup {
+	margin-top: 0;
+}
+
 label.settingsLabel {
 	font-family: Muli, sans-serif;
 	font-weight: 400;
@@ -179,4 +183,27 @@ button.settingsButton:focus {
 
 button.settingsButton:active {
 	background: var(--base-active-bg);
+}
+
+div#settingsRandomBackground {
+	width: 100%;
+	margin: 10px;
+	height: auto;
+	position: relative;
+	display: flex;
+}
+
+div#settingsRandomBackgroundContent {
+	height: auto;
+	align-items: center;
+	margin: 0 auto;
+	display: flex;
+}
+
+#settingsRandomBackgroundLabel {
+	color: var(--base-color);
+	font-family: Muli, sans-serif;
+	font-size: 12pt;
+	font-weight: 10px;
+	margin: auto 10px;
 }
