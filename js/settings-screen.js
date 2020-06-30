@@ -1,7 +1,7 @@
 class SettingsScreen {
 	constructor() {
 		this._localStorage = window.localStorage;
-		this._defaultBackgroundPath = '/usr/share/lightdm-webkit/themes/lightdm-webkit2-theme-glorious/assets/bg.jpg';
+		this._defaultBackgroundPath = '/usr/share/lightdm-webkit/themes/glorious/assets/bg.jpg';
 
 		this._previewImageBackButton = document.querySelector('#previewImageBackButton');
 		this._previewImageNextButton = document.querySelector('#previewImageNextButton');
@@ -94,6 +94,7 @@ class SettingsScreen {
 	}
 
 	_updateBackgroundImages() {
+		this._localStorage
 		// Darken background
 		const darken = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),`;
 
@@ -119,7 +120,7 @@ class SettingsScreen {
 		};
 	}
 
-	_resetBackgroundImages() {
+	_resetBackgroundImages() { 
 		// Reset default background
 		this._localStorage.removeItem('defaultBackgroundImage');
 		this._backgroundCurrentElement = 0;
@@ -666,11 +667,11 @@ class SettingsScreen {
 				this._saveOriginalDefaultCSS();
 				this._reApplyTheme();
 
-				// Reset background image
-				this._resetBackgroundImages();
-
 				// Reset random mode
 				this._backgroundImageRandomReset();
+
+				// Reset background image
+				this._resetBackgroundImages();
 			}
 		);
 	}
