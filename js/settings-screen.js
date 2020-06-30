@@ -94,7 +94,6 @@ class SettingsScreen {
 	}
 
 	_updateBackgroundImages() {
-		this._localStorage
 		// Darken background
 		const darken = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),`;
 
