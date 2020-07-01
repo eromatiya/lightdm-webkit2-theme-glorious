@@ -1,7 +1,7 @@
 class SettingsScreen {
 	constructor() {
 		this._localStorage = window.localStorage;
-		this._defaultBackgroundPath = '/usr/share/lightdm-webkit/themes/glorious/assets/bg.jpg';
+		this._defaultBackgroundPath = 'assets/bg.jpg';
 
 		this._previewImageBackButton = document.querySelector('#previewImageBackButton');
 		this._previewImageNextButton = document.querySelector('#previewImageNextButton');
@@ -101,7 +101,7 @@ class SettingsScreen {
 		let dummyImg = document.createElement('img');
 
 		// Set the src of dummyImg
-		dummyImg.src = 'file://' + this._backgroundCurrentPath;
+		dummyImg.src = this._backgroundCurrentPath;
 
 		dummyImg.onload = () => {
 			
@@ -256,7 +256,7 @@ class SettingsScreen {
 		this._backgroundCurrentPath = backgroundPath;
 
 		// Update image src
-		this._previewBackgroundImage.src = 'file://' + this._backgroundCurrentPath;
+		this._previewBackgroundImage.src = this._backgroundCurrentPath;
 	}
 
 	_previewButtonsOnClickEvent() {
