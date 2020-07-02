@@ -75,64 +75,65 @@
 	<div id='settingsScreen' class='screen'>
 		<div id='settingsScreenBackground' class='screenBackground'></div>
 		<div id='settingsScreenContent'>
-
-			<div id='settingsBackgroundImage'>
-				<div id='settingsPreviewContainer'>
-					<button id='previewImageBackButton' class='previewButton'>
-						<div id='previewImageBackImage' class='previewButtonImage'></div>
-					</button>
-					<div id='backgroundImagePreviewContainer'>
-						<img id='previewBackgroundImage' src='assets/bg.jpg' onerror='this.src="assets/bg.jpg"' draggable='false'>
+			<div id='settingsScreenContentCenter'>
+				<div id='settingsBackgroundImage'>
+					<div id='settingsPreviewContainer'>
+						<button id='previewImageBackButton' class='previewButton'>
+							<div id='previewImageBackImage' class='previewButtonImage'></div>
+						</button>
+						<div id='backgroundImagePreviewContainer'>
+							<img id='previewBackgroundImage' src='assets/bg.jpg' onerror='this.src="assets/bg.jpg"' draggable='false'>
+						</div>
+						<button id='previewImageNextButton' class='previewButton'>
+							<div id='previewImageNextImage' class='previewButtonImage'></div>
+						</button>
 					</div>
-					<button id='previewImageNextButton' class='previewButton'>
-						<div id='previewImageNextImage' class='previewButtonImage'></div>
-					</button>
-				</div>
-				<div id='settingsPreviewFileNameContainer'>
-					<label id='previewFileName'>bg.jpg</label>
-				</div>
-				<div id='settingsRandomBackground'>
-					<div id='settingsRandomBackgroundContent'>
-						<label class='switch'>
-							<input type='checkbox' id='randomBackgroundSetInput' autocomplete='false'>
-							<span class='slider' data-off='Off' data-on='On'></span>
-						</label>
-						<label id='settingsRandomBackgroundLabel'>Random Background</label>
+					<div id='settingsPreviewFileNameContainer'>
+						<label id='previewFileName'>bg.jpg</label>
 					</div>
-				</div>
-			</div>
-
-			<div id='variableSettingsContainer'>
-				<div id='settingsBackground' class='variableSettingsGroup'>
-					<label class='settingsLabel'>Background Color and Opacity</label>
-					<div class='settingsInputGroup'>
-						<input type='text' autocomplete='off' placeholder='#000000' maxlength='7' minlength='7' pattern='[a-fA-f0-9#]+' id='backgroundColorSetInput' class='settingsInput'>
-						<input type='text' autocomplete='off' placeholder='66' maxlength='2' minlength='2' id='backgroundOpacitySetInput' class='settingsInput settingsInputExt'>
-					</div>
-				</div>
-				<div id='settingsForeground' class='variableSettingsGroup'>
-					<label class='settingsLabel'>Foreground Color and Opacity</label>
-					<div class='settingsInputGroup'>
-						<input type='text' autocomplete='off' placeholder='#f2f2f2' maxlength='7' minlength='7' pattern='[a-fA-f0-9#]+' id='foregroundColorSetInput' class='settingsInput'>
-						<input type='text' autocomplete='off' placeholder='ff' maxlength='2' minlength='2' id='foregroundOpacitySetInput' class='settingsInput settingsInputExt'>
-					</div>
-				</div>
-				<div id='settingsBlurStrength' class='variableSettingsGroup'>
-					<label class='settingsLabel'>Blur Strength</label>
-					<div class='settingsInputGroup'>
-						<input type='text' autocomplete='off' placeholder='6px' pattern='[0-9px]+' id='blurStrengthSetInput' class='settingsInput settingsInputWide'>
-					</div>
-				</div>
-				<div id='settingsAnimSpeed' class='variableSettingsGroup'>
-					<label class='settingsLabel'>Animation Speed</label>
-					<div class='settingsInputGroup'>
-						<input type='text' autocomplete='off' placeholder='300ms' pattern='[0-9ms]+' id='animSpeedSetInput' class='settingsInput settingsInputWide'>
+					<div id='settingsRandomBackground'>
+						<div id='settingsRandomBackgroundContent'>
+							<label class='switch'>
+								<input type='checkbox' id='randomBackgroundSetInput' autocomplete='false'>
+								<span class='slider' data-off='Off' data-on='On'></span>
+							</label>
+							<label id='settingsRandomBackgroundLabel'>Random Background</label>
+						</div>
 					</div>
 				</div>
 
-				<div id='settingsMainButtons'>
-					<button type='button' id='settingsResetButton' class='settingsButton'>Reset</button>
-					<button type='button' id='settingsApplyButton' class='settingsButton'>Apply</button>
+				<div id='variableSettingsContainer'>
+					<div id='settingsBackground' class='variableSettingsGroup'>
+						<label class='settingsLabel'>Background Color and Opacity</label>
+						<div class='settingsInputGroup'>
+							<input type='text' autocomplete='off' placeholder='#000000' maxlength='7' minlength='7' pattern='[a-fA-f0-9#]+' id='backgroundColorSetInput' class='settingsInput'>
+							<input type='text' autocomplete='off' placeholder='66' maxlength='2' minlength='2' id='backgroundOpacitySetInput' class='settingsInput settingsInputExt'>
+						</div>
+					</div>
+					<div id='settingsForeground' class='variableSettingsGroup'>
+						<label class='settingsLabel'>Foreground Color and Opacity</label>
+						<div class='settingsInputGroup'>
+							<input type='text' autocomplete='off' placeholder='#f2f2f2' maxlength='7' minlength='7' pattern='[a-fA-f0-9#]+' id='foregroundColorSetInput' class='settingsInput'>
+							<input type='text' autocomplete='off' placeholder='ff' maxlength='2' minlength='2' id='foregroundOpacitySetInput' class='settingsInput settingsInputExt'>
+						</div>
+					</div>
+					<div id='settingsBlurStrength' class='variableSettingsGroup'>
+						<label class='settingsLabel'>Blur Strength</label>
+						<div class='settingsInputGroup'>
+							<input type='text' autocomplete='off' placeholder='6px' pattern='[0-9px]+' id='blurStrengthSetInput' class='settingsInput settingsInputWide'>
+						</div>
+					</div>
+					<div id='settingsAnimSpeed' class='variableSettingsGroup'>
+						<label class='settingsLabel'>Animation Speed</label>
+						<div class='settingsInputGroup'>
+							<input type='text' autocomplete='off' placeholder='300ms' pattern='[0-9ms]+' id='animSpeedSetInput' class='settingsInput settingsInputWide'>
+						</div>
+					</div>
+
+					<div id='settingsMainButtons'>
+						<button type='button' id='settingsResetButton' class='settingsButton'>Reset</button>
+						<button type='button' id='settingsApplyButton' class='settingsButton'>Apply</button>
+					</div>
 				</div>
 			</div>
 		</div>

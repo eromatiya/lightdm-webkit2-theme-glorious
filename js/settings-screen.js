@@ -94,9 +94,6 @@ class SettingsScreen {
 	}
 
 	_updateBackgroundImages() {
-		// Darken background
-		const darken = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),`;
-
 		// Create dummy image
 		let dummyImg = document.createElement('img');
 
@@ -110,11 +107,22 @@ class SettingsScreen {
 
 			// Set src to bgs
 			this._bodyOverlay.style.backgroundImage = src;
-			this._greeterScreen.style.backgroundImage = darken + src;
-			this._settingsScreenBackground.style.backgroundImage = darken + src;
-			this._powerScreenBackground.style.backgroundImage = darken + src;
-			this._sessionsScreenBackground.style.backgroundImage = darken + src;
-			this._usersScreenBackground.style.backgroundImage = darken + src;
+			
+			this._greeterScreen.style.backgroundImage = src;
+			this._greeterScreen.classList.add('darkenScreen');
+
+			this._settingsScreenBackground.style.backgroundImage = src;
+			this._settingsScreenBackground.classList.add('darkenScreen');
+
+			this._powerScreenBackground.style.backgroundImage = src;
+			this._powerScreenBackground.classList.add('darkenScreen');
+
+			this._sessionsScreenBackground.style.backgroundImage = src;
+			this._sessionsScreenBackground.classList.add('darkenScreen');
+
+			this._usersScreenBackground.style.backgroundImage = src;
+			this._usersScreenBackground.classList.add('darkenScreen');
+
 			this._goodbyeScreenBackground.style.backgroundImage = src;
 		};
 	}

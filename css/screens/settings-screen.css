@@ -20,16 +20,25 @@
 }
 
 #settingsScreenContent {
-	height: auto;
-	width: auto;
+	height: 100%;
+	width: 600px;
+	overflow-x: hidden;
+	overflow-y: auto;
 	display: flex;
+    align-items: center;
 
 	/* Align vertically and horizontally */
 	margin: 0;
-	position: absolute;
+	position: relative;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+#settingsScreenContentCenter {
+	height: auto;
+	width: auto;
+	margin: auto 0;
 }
 
 #settingsBackgroundImage {
@@ -64,8 +73,8 @@ label#previewFileName {
 }
 
 #backgroundImagePreviewContainer {
-	width: 35vw;
-	height: 35vh;
+	width: auto;
+	height: 250px;
 	position: relative;
 	background: var(--base-container);
 	border-radius: var(--rounded-radius);
@@ -82,6 +91,8 @@ label#previewFileName {
 .previewButton {
 	width: 48px;
 	height: 48px;
+	min-width: 48px;
+	min-height: 48px;
 	border-radius: 50%;
 	position: relative;
 	padding: 10px;
@@ -120,8 +131,11 @@ button.previewButton#previewImageNextButton:active {
 }
 
 #variableSettingsContainer {
-	width: 300px;
+	width: 350px;
 	position: relative;
+	margin: 0;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 #variableSettingsContainer .variableSettingsGroup {
