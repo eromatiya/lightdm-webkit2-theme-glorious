@@ -38,7 +38,7 @@
 #settingsScreenContentCenter {
 	height: auto;
 	width: auto;
-	margin: auto 0;
+	margin: auto auto;
 }
 
 #settingsBackgroundImage {
