@@ -186,10 +186,7 @@ class KeyEvents {
 
 	// Document on key down events
 	_onKeyDownEvent(e) {
-
 		this._keysLog[e.key] = true;
-
-		
 	}
 
 	_registerOnKeyDown() {
