@@ -130,7 +130,7 @@ button.previewButton#previewImageNextButton:active {
 	background: var(--base-active-bg);
 }
 
-#variableSettingsContainer {
+#settingsThemeContainer {
 	width: 350px;
 	position: relative;
 	margin: 0;
@@ -138,11 +138,11 @@ button.previewButton#previewImageNextButton:active {
 	transform: translateX(-50%);
 }
 
-#variableSettingsContainer .variableSettingsGroup {
+#settingsThemeContainer .settingsThemeGroup {
 	margin-top: 5px;
 }
 
-#variableSettingsContainer #settingsBackground.variableSettingsGroup {
+#settingsThemeContainer #settingsBackground.settingsThemeGroup {
 	margin-top: 0;
 }
 
