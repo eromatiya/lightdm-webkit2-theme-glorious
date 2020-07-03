@@ -176,7 +176,9 @@ div.settingsInputGroup {
 
 #settingsMainButtons {
 	display: flex;
-	margin-top: 5px;
+	margin: 10px auto;
+	position: relative;
+	width: 350px;
 }
 
 button.settingsButton {
