@@ -45,6 +45,31 @@ class SessionsScreen {
 
 	// Show session screen
 	showSessionsScreen() {
+		// Power Screen
+		if (powerScreen.getPowerScreenVisibility()) {
+			powerScreen.togglePowerScreen();
+		}
+
+		// Users Screen
+		if (usersScreen.getUsersScreenVisibility()) {
+			usersScreen.toggleUsersScreen();
+		}
+
+		// Settings Screen
+		if (settingsScreen.getSettingsScreenVisibility()) {
+			settingsScreen.toggleSettingsScreen();
+		}
+
+		// Goodbye Screen
+		if (goodbyeScreen.getGoodbyeScreenVisibility()) {
+			goodbyeScreen.hideGoodbyeScreen();
+		}
+
+		// Greeter Screen
+		if (greeterScreen.getGreeterScreenVisibility()) {
+			greeterScreen.toggleGreeterScreen();
+		}
+		
 		this._sessionsScreen.classList.add('sessionsScreenShow');
 		this._sessionScreenVisible = true;
 	}
