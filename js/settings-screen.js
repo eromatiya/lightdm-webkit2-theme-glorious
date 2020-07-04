@@ -24,24 +24,35 @@ class SettingsScreen {
 		this._settingsItemClickEvents();
 	}
 
-	_settingsGroupHide() {
+	_settingsNextScreen() {
+		this._settingsList.classList.add('settingsListHide');
+		this._settingsScreenContent.classList.remove('settingsScreenContentHide');
+	}
 
-		if (!this._settingsBackgroundImage.classList.contains('settingsGroupHide')) {
+	_settingsPreviousScreen() {
+		this._settingsList.classList.remove('settingsListHide');
+		this._settingsScreenContent.classList.add('settingsScreenContentHide');
+	}
+
+	_settingsElementHadClass(element, className) {
+		return element.classList.contains(className);
+	}
+
+	_settingsOnGroupScreen() {
+
+		if (!this._settingsElementHadClass(this._settingsBackgroundImage, 'settingsGroupHide')) {
 			this._settingsBackgroundImage.classList.add('settingsGroupHide');
-			this._settingsList.classList.remove('settingsListHide');
-			this._settingsScreenContent.classList.add('settingsScreenContentHide');
+			this._settingsPreviousScreen();
 			return true;
 
 		} else if (!this._settingsThemeContainer.classList.contains('settingsGroupHide')) {
 			this._settingsThemeContainer.classList.add('settingsGroupHide');
-			this._settingsList.classList.remove('settingsListHide');
-			this._settingsScreenContent.classList.add('settingsScreenContentHide');
+			this._settingsPreviousScreen();
 			return true;
 
 		} else if (!this._settingsKeyBindContainer.classList.contains('settingsGroupHide')) {
 			this._settingsKeyBindContainer.classList.add('settingsGroupHide');
-			this._settingsList.classList.remove('settingsListHide');
-			this._settingsScreenContent.classList.add('settingsScreenContentHide');
+			this._settingsPreviousScreen();
 			return true;
 		}
 		return false;
@@ -52,8 +63,7 @@ class SettingsScreen {
 		this._settingsItemBackground.addEventListener(
 			'click',
 			() => {
-				this._settingsList.classList.add('settingsListHide');
-				this._settingsScreenContent.classList.remove('settingsScreenContentHide');
+				this._settingsChangeScreen();
 				this._settingsBackgroundImage.classList.remove('settingsGroupHide');
 			}
 		);
@@ -61,8 +71,7 @@ class SettingsScreen {
 		this._settingsItemThemes.addEventListener(
 			'click',
 			() => {
-				this._settingsList.classList.add('settingsListHide');
-				this._settingsScreenContent.classList.remove('settingsScreenContentHide');
+				this._settingsChangeScreen();
 				this._settingsThemeContainer.classList.remove('settingsGroupHide');
 			}
 		);
@@ -70,8 +79,7 @@ class SettingsScreen {
 		this._settingsItemKeyBinds.addEventListener(
 			'click',
 			() => {
-				this._settingsList.classList.add('settingsListHide');
-				this._settingsScreenContent.classList.remove('settingsScreenContentHide');
+				this._settingsChangeScreen();
 				this._settingsKeyBindContainer.classList.remove('settingsGroupHide');
 			}
 		);
@@ -114,7 +122,7 @@ class SettingsScreen {
 
 	toggleSettingsScreen() {
 		if (this._settingsScreenVisible) {
-			if (this._settingsGroupHide()) {
+			if (this._settingsOnGroupScreen()) {
 				return;
 			}
 			this._hideSettingsScreen();
