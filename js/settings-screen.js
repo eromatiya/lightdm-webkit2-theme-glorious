@@ -59,7 +59,7 @@ class SettingsScreen {
 		this._settingsItemBackground.addEventListener(
 			'click',
 			() => {
-				this._settingsChangeScreen();
+				this._settingsNextScreen();
 				this._settingsBackgroundImage.classList.remove('settingsGroupHide');
 			}
 		);
@@ -67,7 +67,7 @@ class SettingsScreen {
 		this._settingsItemThemes.addEventListener(
 			'click',
 			() => {
-				this._settingsChangeScreen();
+				this._settingsNextScreen();
 				this._settingsThemeContainer.classList.remove('settingsGroupHide');
 			}
 		);
@@ -75,7 +75,7 @@ class SettingsScreen {
 		this._settingsItemKeyBinds.addEventListener(
 			'click',
 			() => {
-				this._settingsChangeScreen();
+				this._settingsNextScreen();
 				this._settingsKeyBindContainer.classList.remove('settingsGroupHide');
 			}
 		);
