@@ -24,17 +24,10 @@ class SettingsKeybinds {
 		this._updateKeyBindingsObj();
 
 		// Register events
-		this._keyBindModifierInputKeyDownEvent();
-		this._keyBindModifierInputKeyUpEvent();
-		this._keyBindModifierInputContextMenuEvent();
-		this._keyBindModifierInputOnPasteEvent();
-		this._keyBindCloseInputKeyDownEvent();
 		this._settingsApplyKeybindsClickEvent();
-		this._settingsResetKeybindsClickEvent();
-		this._keyBindSessionInputKeyDownEvent();
-		this._keyBindPowerInputKeyDownEvent();
-		this._keyBindSettingsInputKeyDownEvent();
-		this._keyBindUsersInputKeyDownEvent();
+		this._settingsResetKeybindsClickEvent();	
+		this._keyBindModifierInputEvents();
+		this._keyBindKeyDownEvents();
 	}
 
 	_settingsApplyKeybindsClickEvent() {
@@ -55,25 +48,19 @@ class SettingsKeybinds {
 		);
 	}
 
-	_keyBindModifierInputContextMenuEvent() {
+	_keyBindModifierInputEvents() {
 		this._keyBindModifierInput.oncontextmenu = e => {
 			e.preventDefault();
 		}
-	}
 
-	_keyBindModifierInputOnDropEvent() {
 		this._keyBindModifierInput.ondrop = e => {
 			return false;
 		}
-	}
-
-	_keyBindModifierInputOnPasteEvent() {
+		
 		this._keyBindModifierInput.onpaste = e => {
 			return false;
 		}
-	}
-	
-	_keyBindModifierInputKeyDownEvent() {
+		
 		this._keyBindModifierInput.onkeydown = e => {
 			if (e.key !== 'Alt' && e.key !== 'Control' && e.key !== 'Super') {
 				return false;
@@ -86,9 +73,7 @@ class SettingsKeybinds {
 			}
 			return false;
 		}
-	}
-
-	_keyBindModifierInputKeyUpEvent() {	
+		
 		this._keyBindModifierInput.addEventListener(
 			'keyup',
 			e => {
@@ -97,33 +82,27 @@ class SettingsKeybinds {
 		);
 	}
 
-	_keyBindSessionInputKeyDownEvent() {
+	_keyBindKeyDownEvents() {
 		this._keyBindSessionInput.onkeydown = e => {
 			this._keyBindSessionInput.value = e.key;
 			return false;
 		}
-	}
 
-	_keyBindPowerInputKeyDownEvent() {
 		this._keyBindPowerInput.onkeydown = e => {
 			this._keyBindPowerInput.value = e.key;
 			return false;
 		}
-	}
-	_keyBindSettingsInputKeyDownEvent() {
+		
 		this._keyBindSettingsInput.onkeydown = e => {
 			this._keyBindSettingsInput.value = e.key;
 			return false;
 		}
-	}
-	_keyBindUsersInputKeyDownEvent() {
+		
 		this._keyBindUsersInput.onkeydown = e => {
 			this._keyBindUsersInput.value = e.key;
 			return false;
 		}
-	}
-	
-	_keyBindCloseInputKeyDownEvent() {
+		
 		this._keyBindCloseInput.onkeydown = e => {
 			this._keyBindCloseInput.value = e.key;
 			return false;
@@ -157,20 +136,20 @@ class SettingsKeybinds {
 
 	_updateKeyBindInputsPlaceholders() {
 		// Alias? To shorten the obj name. Yes, I'm lazy eventhough I wrote this long comment lol
-		let keyBindObjAlias = this._keyBindingsObj;
+		let kbdObj = this._keyBindingsObj;
 
 		// Update modifiers
-		this._keyBindModifierInput.placeholder = keyBindObjAlias.defaultModifierKey;
+		this._keyBindModifierInput.placeholder = kbdObj.defaultModifierKey;
 		for (let modifier of this._keyBindModifiersShow) {
-			modifier.placeholder = keyBindObjAlias.defaultModifierKey;
+			modifier.placeholder = kbdObj.defaultModifierKey;
 		}
 
 		// Update inputs
-		this._keyBindSessionInput.placeholder = keyBindObjAlias.defaultSessionKey;
-		this._keyBindPowerInput.placeholder = keyBindObjAlias.defaultPowerKey;
-		this._keyBindSettingsInput.placeholder = keyBindObjAlias.defaultSettingsKey;
-		this._keyBindUsersInput.placeholder = keyBindObjAlias.defaultUsersKey;
-		this._keyBindCloseInput.placeholder = keyBindObjAlias.defaultCloseKey;
+		this._keyBindSessionInput.placeholder = kbdObj.defaultSessionKey;
+		this._keyBindPowerInput.placeholder = kbdObj.defaultPowerKey;
+		this._keyBindSettingsInput.placeholder = kbdObj.defaultSettingsKey;
+		this._keyBindUsersInput.placeholder = kbdObj.defaultUsersKey;
+		this._keyBindCloseInput.placeholder = kbdObj.defaultCloseKey;
 
 		// Call to clear inputs value
 		this._clearKeyBindInputsValues();
@@ -210,7 +189,7 @@ class SettingsKeybinds {
 	_updateKeyBindingsDefault() {
 		Object.keys(this._keyBindingsObj).forEach(
 			(key, index) => {
-				this._storageSetItem(key, this._keyBindingsObj[key]);
+				this._storageSetItem(key, this._keyBindingsObj[String(key)]);
 			}
 		);
 	}
