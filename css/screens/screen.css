@@ -37,7 +37,8 @@
 	width: 100vw;
 	height: 100vh;
 	background: #000000;
-	opacity: 0.75;
+	filter: grayscale(100%);
+	opacity: 0.8;
 	content: '';
 	top: 0;
 	left: 0;

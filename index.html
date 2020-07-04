@@ -11,7 +11,7 @@
 	<!-- We're using this to have a blurred background image -->
 	<div class='bodyOverlay'></div>
 
-	<div id='greeterScreen' class='screen'>
+	<div id='greeterScreen' class='screen hideGreeterScreen'>
 		<div id='greeterScreenContent'>
 			<div id='greeter'></div>
 			<div id='clock'></div>
@@ -72,7 +72,7 @@
 		</div>
 	</div>
 
-	<div id='settingsScreen' class='screen'>
+	<div id='settingsScreen' class='screen settingsScreenShow'>
 		<div id='settingsScreenBackground' class='screenBackground'></div>
 		<div id='settingsScreenContent'>
 			<div id='settingsScreenContentCenter'>
@@ -98,6 +98,57 @@
 								<span class='slider' data-off='Off' data-on='On'></span>
 							</label>
 							<label id='settingsRandomBackgroundLabel'>Random Background</label>
+						</div>
+					</div>
+				</div>
+
+				<div id='settingsKeyBindContainer'>
+					<div id='settingsKeyBindModifier' class='settingsThemeGroup'>
+						<label class='settingsLabel'>Modifier Key</label>
+						<div class='settingsInputGroup'>
+							<input type='text' autocomplete='off' placeholder='Alt' id='keyBindModifierInput' class='settingsInput settingsInputWide'>
+						</div>
+					</div>
+					<div id='settingsKeyBindSession' class='settingsThemeGroup'>
+						<label class='settingsLabel'>Session Screen Keybind</label>
+						<div class='settingsInputGroup'>
+							<input type='text' readonly='true' placeholder='Alt' id='keyBindModifierShow' class='settingsInput settingsInputHalf'>
+							<label for='keyBindModifierSession' class='settingsLabelKeyBindAdd'>+</label>
+							<input type='text' autocomplete='off' placeholder='s' maxlength='1' minlength='1' id='keyBindSessionInput' class='settingsInput settingsInputHalf'>
+						</div>
+					</div>
+
+					<div id='settingsKeyBindSession' class='settingsThemeGroup'>
+						<label class='settingsLabel'>Power Screen Keybind</label>
+						<div class='settingsInputGroup'>
+							<input type='text' readonly='true' placeholder='Alt' id='keyBindModifierShow' class='settingsInput settingsInputHalf'>
+							<label for='keyBindModifierSession' class='settingsLabelKeyBindAdd'>+</label>
+							<input type='text' autocomplete='off' placeholder='e' maxlength='1' minlength='1' id='keyBindPowerInput' class='settingsInput settingsInputHalf'>
+						</div>
+					</div>
+
+					<div id='settingsKeyBindSession' class='settingsThemeGroup'>
+						<label class='settingsLabel'>Settings Screen Keybind</label>
+						<div class='settingsInputGroup'>
+							<input type='text' readonly='true' placeholder='Alt' id='keyBindModifierShow' class='settingsInput settingsInputHalf'>
+							<label for='keyBindModifierSession' class='settingsLabelKeyBindAdd'>+</label>
+							<input type='text' autocomplete='off' placeholder='x' maxlength='1' minlength='1' id='keyBindSettingsInput' class='settingsInput settingsInputHalf'>
+						</div>
+					</div>
+
+					<div id='settingsKeyBindSession' class='settingsThemeGroup'>
+						<label class='settingsLabel'>Users Screen Keybind</label>
+						<div class='settingsInputGroup'>
+							<input type='text' readonly='true' placeholder='Alt' id='keyBindModifierShow' class='settingsInput settingsInputHalf'>
+							<label for='keyBindModifierSession' class='settingsLabelKeyBindAdd'>+</label>
+							<input type='text' autocomplete='off' placeholder='y' maxlength='1' minlength='1' id='keyBindUsersInput' class='settingsInput settingsInputHalf'>
+						</div>
+					</div>
+
+					<div id='settingsKeyBindModifier' class='settingsThemeGroup'>
+						<label class='settingsLabel'>Close Key</label>
+						<div class='settingsInputGroup'>
+							<input type='text' autocomplete='off' placeholder='Escape' id='keyBindCloseInput' class='settingsInput settingsInputWide'>
 						</div>
 					</div>
 				</div>
@@ -196,6 +247,7 @@
 	<script type='text/javascript' src='js/settings-screen.js'></script>
 	<script type='text/javascript' src='js/settings-background.js'></script>
 	<script type='text/javascript' src='js/settings-theme.js'></script>
+	<script type='text/javascript' src='js/settings-keybinds.js'></script>
 	<script type='text/javascript' src='js/document-key-events.js'></script>
 	<script type='text/javascript' src='js/authentication.js'></script>
 	<script type='text/javascript' src='js/swipe-event.js'></script>

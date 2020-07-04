@@ -130,7 +130,8 @@ button.previewButton#previewImageNextButton:active {
 	background: var(--base-active-bg);
 }
 
-#settingsThemeContainer {
+#settingsThemeContainer,
+#settingsKeyBindContainer {
 	width: 350px;
 	position: relative;
 	margin: 0;
@@ -166,8 +167,21 @@ input.settingsInputExt {
 	width: 25%;
 }
 
+input.settingsInputHalf {
+	width: 50%;
+}
+
 input.settingsInputWide {
 	width: 100%;
+}
+
+label.settingsLabelKeyBindAdd {
+	font-size: 14pt;
+	font-weight: 700;
+	text-align: center;
+	margin: auto 10px;
+	color: var(--base-color);
+	font-family: Muli-Bold, sans-serif;
 }
 
 div.settingsInputGroup {

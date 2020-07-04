@@ -33,6 +33,9 @@ const settingsBackground = new SettingsBackground();
 // Instantiate settings theme
 const settingsTheme = new SettingsTheme();
 
+// Instantiate settings theme
+const settingsKeybinds = new SettingsKeybinds();
+
 // Instantiate key events
 const keyEvents = new KeyEvents();
 
