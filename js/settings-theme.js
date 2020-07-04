@@ -136,6 +136,13 @@ class SettingsTheme {
 
 				return bg.replace(/^#([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])/, '#$1$1$2$2$3$3') + op;
 
+			} else if (/^#[0-9a-fA-F]{3}[0-9a-fA-F]{2}$/i.test(colorStr)) {
+
+				const bg = colorStr.slice(0, -2);
+				const op = colorStr.slice(-2);
+
+				return bg.replace(/^#([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])/, '#$1$1$2$2$3$3') + op;
+
 			} else {
 				return null;
 			}
