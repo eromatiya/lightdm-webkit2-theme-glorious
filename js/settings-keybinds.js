@@ -18,7 +18,7 @@ class SettingsKeybinds {
 
 	_init() {
 		// Update keybind obj
-		this._updatekeyBindingsObj();
+		this._updateKeyBindingsObj();
 
 		// Register events
 		this._keyBindModifierInputKeyDownEvent();
@@ -74,7 +74,27 @@ class SettingsKeybinds {
 		return this._localStorage.getItem(item);
 	}
 
-	_updateKeyBindInputs() {
+	// Set item
+	_storageSetItem(item, value) {
+		return this._localStorage.setItem(item, value);
+	}
+
+	_clearKeyBindInputsValues() {
+		// Clear modifiers
+		this._keyBindModifierInput.value = '';
+		for (let modifier of this._keyBindModifiersShow) {
+			modifier.value = '';
+		}
+
+		// Clear inputs
+		this._keyBindSessionInput.value = '';
+		this._keyBindPowerInput.value = '';
+		this._keyBindSettingsInput.value = '';
+		this._keyBindUsersInput.value = '';
+		this._keyBindCloseInput.value = '';
+	}
+
+	_updateKeyBindInputsPlaceholders() {
 		// Alias? To shorten the obj name. Yes, I'm lazy eventhough I wrote this long comment lol
 		let keyBindObjAlias = this._keyBindingsObj;
 
@@ -90,27 +110,60 @@ class SettingsKeybinds {
 		this._keyBindSettingsInput.placeholder = keyBindObjAlias.defaultSettingsKey;
 		this._keyBindUsersInput.placeholder = keyBindObjAlias.defaultUsersKey;
 		this._keyBindCloseInput.placeholder = keyBindObjAlias.defaultCloseKey;
+
+		// Call to clear inputs value
+		this._clearKeyBindInputsValues();
 	}
 
-	_updatekeyBindingsObj() {
+	getKeyBindingsObj() {
+		return this._keyBindingsObj;
+	}
+
+	_updateKeyBindingsObj() {
 		this._keyBindingsObj = {
-			'defaultModifierKey': this._storageGetItem('defaultModifierKey') || 'Alt',
-			'defaultSessionKey': this._storageGetItem('defaultSessionKey') || 's',
-			'defaultPowerKey': this._storageGetItem('defaultPowerKey') || 'e',
-			'defaultSettingsKey': this._storageGetItem('defaultSettingsKey') || 'x',
-			'defaultUsersKey': this._storageGetItem('defaultUsersKey') || 'y',
-			'defaultCloseKey': this._storageGetItem('defaultCloseKey') || 'Escape'
+			'defaultModifierKey': this._keyBindModifierInput.value || this._storageGetItem('defaultModifierKey') || 'Alt',
+			'defaultSessionKey': this._keyBindSessionInput.value || this._storageGetItem('defaultSessionKey') || 's',
+			'defaultPowerKey': this._keyBindPowerInput.value || this._storageGetItem('defaultPowerKey') || 'e',
+			'defaultSettingsKey': this._keyBindSettingsInput.value || this._storageGetItem('defaultSettingsKey') || 'x',
+			'defaultUsersKey': this._keyBindUsersInput.value || this._storageGetItem('defaultUsersKey') || 'y',
+			'defaultCloseKey': this._keyBindCloseInput.value || this._storageGetItem('defaultCloseKey') || 'Escape'
 		}
 
-		this._updateKeyBindInputs();
+		this._updateKeyBindInputsPlaceholders();
+	}
+
+
+	_resetKeyBindingsObj() {
+		this._keyBindingsObj = {
+			'defaultModifierKey': 'Alt',
+			'defaultSessionKey': 's',
+			'defaultPowerKey': 'e',
+			'defaultSettingsKey': 'x',
+			'defaultUsersKey': 'y',
+			'defaultCloseKey': 'Escape'
+		}
+
+		this._updateKeyBindInputsPlaceholders();
+	}
+
+	_updateKeyBindingsDefault() {
+		Object.keys(this._keyBindingsObj).forEach(
+			(key, index) => {
+				this._storageSetItem(key, this._keyBindingsObj[key]);
+			}
+		);
 	}
 
 	settingsKeybindsApply() {
-
+		this._updateKeyBindingsObj();
+		this._updateKeyBindingsDefault();
+		keyEvents.updateKeyBindsObj();
 	}
 
 	settingsKeybindsReset() {
-
+		this._resetKeyBindingsObj();
+		this._updateKeyBindingsDefault();
+		keyEvents.updateKeyBindsObj();
 	}
 }
 

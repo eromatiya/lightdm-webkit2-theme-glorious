@@ -79,6 +79,7 @@ class SettingsScreen {
 			() => {
 				settingsBackground.settingsBackgroundApply();
 				settingsTheme.settingsThemeApply();
+				settingsKeybinds.settingsKeybindsApply();
 			}
 		);
 	}
@@ -89,6 +90,7 @@ class SettingsScreen {
 			() => {
 				settingsBackground.settingsBackgroundReset();
 				settingsTheme.settingsThemeReset();
+				settingsKeybinds.settingsKeybindsReset();
 			}
 		);
 	}
