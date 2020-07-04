@@ -34,13 +34,9 @@ class SettingsScreen {
 		this._settingsScreenContent.classList.add('settingsScreenContentHide');
 	}
 
-	_settingsElementHadClass(element, className) {
-		return element.classList.contains(className);
-	}
-
 	_settingsOnGroupScreen() {
 
-		if (!this._settingsElementHadClass(this._settingsBackgroundImage, 'settingsGroupHide')) {
+		if (!this._settingsBackgroundImage.classList.contains('settingsGroupHide')) {
 			this._settingsBackgroundImage.classList.add('settingsGroupHide');
 			this._settingsPreviousScreen();
 			return true;
