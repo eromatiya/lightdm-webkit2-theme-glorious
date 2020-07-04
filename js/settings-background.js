@@ -24,6 +24,9 @@ class SettingsBackground{
 		this._backgroundCurrentPath = null;
 		this._backgroundRandomMode = null;
 
+		this._settingsApplyBackground = document.querySelector('#settingsApplyBackground');
+		this._settingsResetBackground = document.querySelector('#settingsResetBackground');
+
 		this._init();
 	}
 
@@ -34,6 +37,26 @@ class SettingsBackground{
 		// Events
 		this._previewButtonsOnClickEvent();
 		this._backgroundImageRandomOnChangeEvent();
+		this._settingsApplyBackgroundClickEvent();
+		this._settingsResetBackgroundClickEvent();
+	}
+
+	_settingsApplyBackgroundClickEvent() {
+		this._settingsApplyBackground.addEventListener(
+			'click',
+			() => {
+				this._settingsBackgroundApply();
+			}
+		);
+	}
+
+	_settingsResetBackgroundClickEvent() {
+		this._settingsResetBackground.addEventListener(
+			'click',
+			() => {
+				this._settingsBackgroundReset();
+			}
+		);
 	}
 
 	_backgroundImageRandomApply() {
@@ -271,7 +294,7 @@ class SettingsBackground{
 		);
 	}
 
-	settingsBackgroundApply() {
+	_settingsBackgroundApply() {
 
 		// Save current background path in localStorage
 		this._localStorage.setItem('defaultBackgroundImage', this._backgroundCurrentPath);
@@ -283,7 +306,7 @@ class SettingsBackground{
 		this._backgroundImageRandomApply();
 	}
 
-	settingsBackgroundReset() {
+	_settingsBackgroundReset() {
 		// Reset random mode
 		this._backgroundImageRandomReset();
 

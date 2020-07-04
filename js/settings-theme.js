@@ -10,12 +10,37 @@ class SettingsTheme {
 		this._blurTextBox = document.querySelector('#blurStrengthSetInput');
 		this._animSpeedTextBox = document.querySelector('#animSpeedSetInput');
 
+		this._settingsApplyTheme = document.querySelector('#settingsApplyTheme');
+		this._settingsResetTheme = document.querySelector('#settingsResetTheme');
+
 		this._init();
 	}
 
 	_init() {
 		// Save original css variables value
 		this._saveOriginalDefaultCSS();
+
+		// Events
+		this._settingsApplyThemeClickEvent();
+		this._settingsResetThemeClickEvent();
+	}
+
+	_settingsApplyThemeClickEvent() {
+		this._settingsApplyTheme.addEventListener(
+			'click',
+			() => {
+				this._settingsThemeApply();
+			}
+		);
+	}
+
+	_settingsResetThemeClickEvent() {
+		this._settingsResetTheme.addEventListener(
+			'click',
+			() => {
+				this._settingsThemeReset();
+			}
+		);
 	}
 
 	// Get CSS variable value
@@ -368,12 +393,12 @@ class SettingsTheme {
 		this._processCurrentCSSValues();
 	}
 
-	settingsThemeApply() {
+	_settingsThemeApply() {
 		// Update css variables
 		this._updateCSSVariables();
 	}
 
-	settingsThemeReset() {
+	_settingsThemeReset() {
 		// Reset CSS Colors
 		this._localStorage.removeItem('baseBG');
 		this._localStorage.removeItem('baseColor');

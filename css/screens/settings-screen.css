@@ -19,9 +19,80 @@
 	filter: blur();
 }
 
+#settingsList {
+	width: auto;
+	height: auto;
+	max-height: 100%;
+	overflow: auto;
+
+	/* Align vertically and horizontally */
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	opacity: 1;
+	transform: translate(-50%, -50%);
+	transition: opacity var(--transition-speed);
+}
+
+#settingsList.settingsListHide {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.settingsItem {
+	background: transparent;
+	
+	border: none;
+	border-radius: var(--rounded-radius);
+	outline: none;
+	margin: 5px;
+	width: 150px;
+	height: 150px;
+	padding: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.settingsItem:hover {
+	background: var(--base-hover-bg);
+}
+
+.settingsItem:focus {
+	background: var(--base-focus-bg);
+}
+
+.settingsItem:active {
+	background: var(--base-active-bg);
+}
+
+#settingsItemIconContainer {
+	margin-bottom: 5px;
+	position: relative;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+}
+
+img#settingsItemIcon {
+	width: 96px;
+	height: 96px;
+	object-fit: cover;
+	display: block;
+}
+
+#settingsItemName {
+	text-align: center;
+	font-size: 11pt;
+	font-family: Muli-Light, sans-serif;
+	font-weight: 400;
+	word-wrap: break-word;
+	color: var(--base-color);
+}
+
 #settingsScreenContent {
-	height: 100%;
 	width: 600px;
+	height: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
 	display: flex;
@@ -32,7 +103,14 @@
 	position: relative;
 	top: 50%;
 	left: 50%;
+	opacity: 1;
 	transform: translate(-50%, -50%);
+	transition: opacity var(--transition-speed);
+}
+
+#settingsScreenContent.settingsScreenContentHide {
+	opacity: 0;
+	pointer-events: none;
 }
 
 #settingsScreenContentCenter {
@@ -41,10 +119,14 @@
 	margin: auto auto;
 }
 
-#settingsBackgroundImage {
+#settingsBackgroundContainer {
 	width: auto;
 	height: auto;
 	display: block;
+}
+
+#settingsScreenContentCenter .settingsGroupHide {
+	display: none;
 }
 
 #settingsPreviewFileNameContainer {
@@ -139,14 +221,6 @@ button.previewButton#previewImageNextButton:active {
 	transform: translateX(-50%);
 }
 
-#settingsThemeContainer .settingsThemeGroup {
-	margin-top: 5px;
-}
-
-#settingsThemeContainer #settingsBackground.settingsThemeGroup {
-	margin-top: 0;
-}
-
 label.settingsLabel {
 	font-family: Muli, sans-serif;
 	font-weight: 400;
@@ -188,7 +262,7 @@ div.settingsInputGroup {
 	display: flex;
 }
 
-#settingsMainButtons {
+.settingsMainButtons {
 	display: flex;
 	margin: 10px auto;
 	position: relative;

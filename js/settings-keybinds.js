@@ -11,6 +11,9 @@ class SettingsKeybinds {
 		this._keyBindUsersInput = document.querySelector('#keyBindUsersInput');
 		this._keyBindCloseInput = document.querySelector('#keyBindCloseInput');
 
+		this._settingsApplyKeybinds = document.querySelector('#settingsApplyKeybinds');
+		this._settingsResetKeybinds = document.querySelector('#settingsResetKeybinds');
+
 		this._keyBindingsObj = {};
 
 		this._init();
@@ -25,6 +28,31 @@ class SettingsKeybinds {
 		this._keyBindModifierInputKeyUpEvent();
 		this._keyBindModifierInputContextMenuEvent();
 		this._keyBindModifierInputOnPasteEvent();
+		this._keyBindCloseInputKeyDownEvent();
+		this._settingsApplyKeybindsClickEvent();
+		this._settingsResetKeybindsClickEvent();
+		this._keyBindSessionInputKeyDownEvent();
+		this._keyBindPowerInputKeyDownEvent();
+		this._keyBindSettingsInputKeyDownEvent();
+		this._keyBindUsersInputKeyDownEvent();
+	}
+
+	_settingsApplyKeybindsClickEvent() {
+		this._settingsApplyKeybinds.addEventListener(
+			'click',
+			() => {
+				this._settingsKeybindsApply();
+			}
+		);
+	}
+
+	_settingsResetKeybindsClickEvent() {
+		this._settingsResetKeybinds.addEventListener(
+			'click',
+			() => {
+				this._settingsKeybindsReset();
+			}
+		);
 	}
 
 	_keyBindModifierInputContextMenuEvent() {
@@ -67,6 +95,39 @@ class SettingsKeybinds {
 				return false;
 			}
 		);
+	}
+
+	_keyBindSessionInputKeyDownEvent() {
+		this._keyBindSessionInput.onkeydown = e => {
+			this._keyBindSessionInput.value = e.key;
+			return false;
+		}
+	}
+
+	_keyBindPowerInputKeyDownEvent() {
+		this._keyBindPowerInput.onkeydown = e => {
+			this._keyBindPowerInput.value = e.key;
+			return false;
+		}
+	}
+	_keyBindSettingsInputKeyDownEvent() {
+		this._keyBindSettingsInput.onkeydown = e => {
+			this._keyBindSettingsInput.value = e.key;
+			return false;
+		}
+	}
+	_keyBindUsersInputKeyDownEvent() {
+		this._keyBindUsersInput.onkeydown = e => {
+			this._keyBindUsersInput.value = e.key;
+			return false;
+		}
+	}
+	
+	_keyBindCloseInputKeyDownEvent() {
+		this._keyBindCloseInput.onkeydown = e => {
+			this._keyBindCloseInput.value = e.key;
+			return false;
+		}
 	}
 
 	// Get item
@@ -154,13 +215,13 @@ class SettingsKeybinds {
 		);
 	}
 
-	settingsKeybindsApply() {
+	_settingsKeybindsApply() {
 		this._updateKeyBindingsObj();
 		this._updateKeyBindingsDefault();
 		keyEvents.updateKeyBindsObj();
 	}
 
-	settingsKeybindsReset() {
+	_settingsKeybindsReset() {
 		this._resetKeyBindingsObj();
 		this._updateKeyBindingsDefault();
 		keyEvents.updateKeyBindsObj();

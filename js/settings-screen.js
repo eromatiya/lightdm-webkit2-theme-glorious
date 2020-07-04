@@ -4,8 +4,16 @@ class SettingsScreen {
 		this._settingsScreenButton = document.querySelector('#settingsScreenButton');
 		this._settingsScreenVisible = false;
 
-		this._settingsApplyButton = document.querySelector('#settingsApplyButton');
-		this._settingsResetButton = document.querySelector('#settingsResetButton');
+		this._settingsItemBackground = document.querySelector('#settingsItemBackground');
+		this._settingsItemThemes = document.querySelector('#settingsItemThemes');
+		this._settingsItemKeyBinds = document.querySelector('#settingsItemKeyBinds');
+
+		this._settingsScreenContent = document.querySelector('#settingsScreenContent');
+
+		this._settingsList = document.querySelector('#settingsList');
+		this._settingsBackgroundImage = document.querySelector('#settingsBackgroundContainer');
+		this._settingsThemeContainer = document.querySelector('#settingsThemeContainer');
+		this._settingsKeyBindContainer = document.querySelector('#settingsKeyBindContainer');
 
 		this._init();
 	}
@@ -13,8 +21,60 @@ class SettingsScreen {
 	_init() {
 		// Events
 		this._settingsScreenButtonOnClickEvent();
-		this._settingsApplyButtonOnClickEvent();
-		this._settingsResetButtonOnClickEvent();
+		this._settingsItemClickEvents();
+	}
+
+	_settingsGroupHide() {
+
+		if (!this._settingsBackgroundImage.classList.contains('settingsGroupHide')) {
+			this._settingsBackgroundImage.classList.add('settingsGroupHide');
+			this._settingsList.classList.remove('settingsListHide');
+			this._settingsScreenContent.classList.add('settingsScreenContentHide');
+			return true;
+
+		} else if (!this._settingsThemeContainer.classList.contains('settingsGroupHide')) {
+			this._settingsThemeContainer.classList.add('settingsGroupHide');
+			this._settingsList.classList.remove('settingsListHide');
+			this._settingsScreenContent.classList.add('settingsScreenContentHide');
+			return true;
+
+		} else if (!this._settingsKeyBindContainer.classList.contains('settingsGroupHide')) {
+			this._settingsKeyBindContainer.classList.add('settingsGroupHide');
+			this._settingsList.classList.remove('settingsListHide');
+			this._settingsScreenContent.classList.add('settingsScreenContentHide');
+			return true;
+		}
+		return false;
+	}
+
+	_settingsItemClickEvents() {
+		
+		this._settingsItemBackground.addEventListener(
+			'click',
+			() => {
+				this._settingsList.classList.add('settingsListHide');
+				this._settingsScreenContent.classList.remove('settingsScreenContentHide');
+				this._settingsBackgroundImage.classList.remove('settingsGroupHide');
+			}
+		);
+
+		this._settingsItemThemes.addEventListener(
+			'click',
+			() => {
+				this._settingsList.classList.add('settingsListHide');
+				this._settingsScreenContent.classList.remove('settingsScreenContentHide');
+				this._settingsThemeContainer.classList.remove('settingsGroupHide');
+			}
+		);
+
+		this._settingsItemKeyBinds.addEventListener(
+			'click',
+			() => {
+				this._settingsList.classList.add('settingsListHide');
+				this._settingsScreenContent.classList.remove('settingsScreenContentHide');
+				this._settingsKeyBindContainer.classList.remove('settingsGroupHide');
+			}
+		);
 	}
 
 	_showSettingsScreen() {
@@ -54,6 +114,9 @@ class SettingsScreen {
 
 	toggleSettingsScreen() {
 		if (this._settingsScreenVisible) {
+			if (this._settingsGroupHide()) {
+				return;
+			}
 			this._hideSettingsScreen();
 		} else {
 			this._showSettingsScreen();
@@ -69,28 +132,6 @@ class SettingsScreen {
 			'click',
 			() => {
 				this.toggleSettingsScreen();
-			}
-		);
-	}
-
-	_settingsApplyButtonOnClickEvent() {
-		this._settingsApplyButton.addEventListener(
-			'click',
-			() => {
-				settingsBackground.settingsBackgroundApply();
-				settingsTheme.settingsThemeApply();
-				settingsKeybinds.settingsKeybindsApply();
-			}
-		);
-	}
-
-	_settingsResetButtonOnClickEvent() {
-		this._settingsResetButton.addEventListener(
-			'click',
-			() => {
-				settingsBackground.settingsBackgroundReset();
-				settingsTheme.settingsThemeReset();
-				settingsKeybinds.settingsKeybindsReset();
 			}
 		);
 	}
