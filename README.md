@@ -28,6 +28,11 @@ a modern, glorified lightdm webkit2 theme
 | --- |
 | ![screenshot](scrots/settings.webp) |
 
+| settings background | settings theme | settings keybinds |
+| --- | --- | --- |
+| ![screenshot](scrots/settings-bg.webp) | ![screenshot](scrots/settings-theme.webp) | ![screenshot](scrots/settings-keybinds.webp) |
+
+
 ### dependencies
 
 Make sure you have the latest version.
@@ -56,7 +61,7 @@ $ yay -S lightdm-webkit2-theme-glorious
 2. Copy the theme to the lightdm webkit theme folder.
 
 	```
-	# cp lightdm-webkit2-theme-glorious /usr/share/lightdm-webkit/themes/ -r
+	# cp lightdm-webkit2-theme-glorious /usr/share/lightdm-webkit/themes/glorious -r
 	```
 
 3. Set lightdm greeter session to webkit2.
@@ -78,6 +83,8 @@ $ yay -S lightdm-webkit2-theme-glorious
 + Multi-user support
 + Swipe gestures
 + Customization and Settings
++ Remappable keybindings
++ Change color schemes and background image on-the-fly
 + Simple keybinding
 + Vanilla Javascript <sup>(not sure if this is a feature tho)</sup>
 
@@ -91,6 +98,12 @@ $ yay -S lightdm-webkit2-theme-glorious
 
 ### keybinding
 
+The default modifier is <kbd>Alt</kbd> and you can change it in the settings.
+
++ <kbd>Modifier + s</kbd> toggle session screen
++ <kbd>Modifier + e</kbd> toggle power screen
++ <kbd>Modifier + x</kbd> toggle settings screen
++ <kbd>Modifier + y</kbd> toggle users screen
 + <kbd>Escape</kbd> to close the screens
 
 ### Customization and Settings
@@ -102,8 +115,8 @@ $ yay -S lightdm-webkit2-theme-glorious
 + Color settings supports `#RGB`, `#RRGGBB`, and `#RRGGBBAA`.
 + Blur strength settings only allows integer with `px` suffix.
 + Animation speed supports `s` and `ms`.
-+ Background image selection
-+ Background image random selection
++ Background image selection.
++ Background image random selection.
 
 ### Notes
 
