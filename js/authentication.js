@@ -57,7 +57,7 @@ class Authentication {
 		const errorMessages = [
 			'Authentication success! Logging in!',
 			'Logging in! Biatch',
-			'Don\'t watch too much porn.',
+			'Don\'t watch too much porn, bro.',
 			'Splish! Splash! Your password is trash!',
 			'Looking good today~',
 			'What are you doing, stepbro?~',

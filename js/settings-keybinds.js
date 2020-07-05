@@ -166,7 +166,7 @@ class SettingsKeybinds {
 			'defaultSettingsKey': this._keyBindSettingsInput.value || this._storageGetItem('defaultSettingsKey') || 'x',
 			'defaultUsersKey': this._keyBindUsersInput.value || this._storageGetItem('defaultUsersKey') || 'y',
 			'defaultCloseKey': this._keyBindCloseInput.value || this._storageGetItem('defaultCloseKey') || 'Escape'
-		}
+		};
 
 		this._updateKeyBindInputsPlaceholders();
 	}
@@ -180,7 +180,7 @@ class SettingsKeybinds {
 			'defaultSettingsKey': 'x',
 			'defaultUsersKey': 'y',
 			'defaultCloseKey': 'Escape'
-		}
+		};
 
 		this._updateKeyBindInputsPlaceholders();
 	}
