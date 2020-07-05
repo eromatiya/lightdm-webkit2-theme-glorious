@@ -8,6 +8,7 @@ class Authentication {
 
 		this._userName = '';
 		this._password = '';
+		this._keysLog = {};
 
 		this._init();
 	}
@@ -16,7 +17,8 @@ class Authentication {
 	_init() {
 		this._autologinTimerExpired();
 		this._authenticationComplete();
-		this._passwordInputOnKeyDownEvent();
+		this._passwordInputKeyUpEvent();
+		this._passwordInputKeyDownEvent();
 		this._authenticateButtonOnClickEvent();
 		this.startAuthentication();
 	}
@@ -55,7 +57,7 @@ class Authentication {
 		const errorMessages = [
 			'Authentication success! Logging in!',
 			'Logging in! Biatch',
-			'Don\'t watch too much porn.',
+			'Don\'t watch too much porn, bro.',
 			'Splish! Splash! Your password is trash!',
 			'Looking good today~',
 			'What are you doing, stepbro?~',
@@ -158,29 +160,47 @@ class Authentication {
 		);
 	}
 
-	// Register keydown event
-	_passwordInputOnKeyDownEvent() {
-		this._passwordInputEl.onkeydown = (e) => {
-
-			// Remove wrong password's warnings and tooltip
-			this._authenticationFailedRemove();
-
-			// Save input value to variable
-			this._password = this._passwordInputEl.value;
-
-			if (e.key === 'Enter') {
-				if (this._password.length < 1) {
-					return;
+	// Register keyup event
+	_passwordInputKeyUpEvent() {
+		this._passwordInputEl.addEventListener(
+			'keyup',
+			e => {
+				// Clear input
+				if (this._keysLog['Control'] && e.key === 'u') {
+					this._passwordInputEl.value = '';
 				}
-				// Prevent login spamming
-				if (profilePictureRotate.getProfileAnimationStatus()) return;
-				// Rotate profile picture
-				profilePictureRotate.rotateProfilePicture();
-				
-				// Validate
-				lightdm.respond(String(this._password));
+				delete this._keysLog[e.key];
 			}
-		};
+		);
+	}
+
+	// Register keydown event
+	_passwordInputKeyDownEvent() {
+		this._passwordInputEl.addEventListener(
+			'keydown',
+			e => {
+				this._keysLog[e.key] = true;
+
+				// Remove wrong password's warnings and tooltip
+				this._authenticationFailedRemove();
+
+				// Save input value to variable
+				this._password = this._passwordInputEl.value;
+
+				if (e.key === 'Enter') {
+					if (this._password.length < 1) {
+						return;
+					}
+					// Prevent login spamming
+					if (profilePictureRotate.getProfileAnimationStatus()) return;
+					// Rotate profile picture
+					profilePictureRotate.rotateProfilePicture();
+					
+					// Validate
+					lightdm.respond(String(this._password));
+				}
+			}
+		);
 	}
 }
 

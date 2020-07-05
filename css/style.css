@@ -10,7 +10,8 @@
 @import url('screens/sessions-screen.css');
 @import url('screens/users-screen.css');
 @import url('screens/power-screen.css');
-@import url('screens/settings-screen.css');
 @import url('screens/goodbye-screen.css');
+@import url('screens/settings-screen.css');
+@import url('screens/settings-screen-content.css');
 @import url('mainscreen/screens-buttons.css');
 @import url('mainscreen/main-form.css');

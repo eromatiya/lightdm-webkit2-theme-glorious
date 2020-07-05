@@ -29,5 +29,18 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
-	filter: blur(var(--blur-strength));
+}
+
+/* Darken screen background */
+.darkenScreen::before {
+	width: 100vw;
+	height: 100vh;
+	background: #000000;
+	filter: grayscale(100%);
+	opacity: 0.8;
+	content: '';
+	top: 0;
+	left: 0;
+	z-index: 0;
+	position: absolute;
 }

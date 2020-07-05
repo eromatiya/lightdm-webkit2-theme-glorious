@@ -1,3 +1,20 @@
+/* Scrollbar */
+
+/* Width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: var(--base-container);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--base-active-bg);
+}
+
 :root {
 	/* Colors */
 	--base-body-bg: #1a1a1aff;
@@ -8,7 +25,7 @@
 	--base-hover-bg: #f2f2f230;
 	--base-focus-bg: #f2f2f245;
 	--base-active-bg: #fefefe60;
-	--blur-strength: 12px;
+	--blur-strength: 6px;
 	--panel-bg: var(--base-bg);
 	--panel-color: var(--base-color);
 	--transition-speed: 300ms;
@@ -24,6 +41,11 @@
 	font-weight: 700;
 	color: var(--base-color);
 	opacity: 0.75;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--base-hover-bg);
 }
 
 * {

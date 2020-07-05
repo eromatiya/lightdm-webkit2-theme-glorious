@@ -9,7 +9,7 @@
 }
 
 #goodbyeScreenBackground.screenBackground {
-	background-image: url('../../assets/bg.jpg');
+	filter: blur(var(--blur-strength));
 }
 
 #goodbyeScreen.showGoodbyeScreen {
