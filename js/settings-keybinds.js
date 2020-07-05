@@ -51,15 +51,15 @@ class SettingsKeybinds {
 	_keyBindModifierInputEvents() {
 		this._keyBindModifierInput.oncontextmenu = e => {
 			e.preventDefault();
-		}
+		};
 
 		this._keyBindModifierInput.ondrop = e => {
 			return false;
-		}
+		};
 		
 		this._keyBindModifierInput.onpaste = e => {
 			return false;
-		}
+		};
 		
 		this._keyBindModifierInput.onkeydown = e => {
 			if (e.key !== 'Alt' && e.key !== 'Control' && e.key !== 'Super') {
@@ -71,8 +71,7 @@ class SettingsKeybinds {
 				}
 				return false;
 			}
-			return false;
-		}
+		};
 		
 		this._keyBindModifierInput.addEventListener(
 			'keyup',
@@ -86,27 +85,27 @@ class SettingsKeybinds {
 		this._keyBindSessionInput.onkeydown = e => {
 			this._keyBindSessionInput.value = e.key;
 			return false;
-		}
+		};
 
 		this._keyBindPowerInput.onkeydown = e => {
 			this._keyBindPowerInput.value = e.key;
 			return false;
-		}
+		};
 		
 		this._keyBindSettingsInput.onkeydown = e => {
 			this._keyBindSettingsInput.value = e.key;
 			return false;
-		}
+		};
 		
 		this._keyBindUsersInput.onkeydown = e => {
 			this._keyBindUsersInput.value = e.key;
 			return false;
-		}
+		};
 		
 		this._keyBindCloseInput.onkeydown = e => {
 			this._keyBindCloseInput.value = e.key;
 			return false;
-		}
+		};
 	}
 
 	// Get item
