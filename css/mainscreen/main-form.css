@@ -89,6 +89,31 @@ label#userName {
 	display: inline-flex;
 }
 
+@keyframes shake {
+	0% {
+		transform: translate(0);
+	}
+	20% {
+		transform: translate(3em);
+	}
+	40% {
+		transform: translate(-3em);
+	}
+	60% {
+		transform: translate(3em);
+	}
+	80% {
+		transform: translate(-3em);
+	}
+	100% {
+		transform: translate(0);
+	}
+}
+
+#passwordInputContainer.shake {
+	animation: shake 0.5s infinite;
+}
+
 #passwordInputBox {
 	background: var(--base-bg);
 	border-radius: var(--rounded-radius);

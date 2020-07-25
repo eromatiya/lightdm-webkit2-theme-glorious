@@ -5,6 +5,7 @@ class Authentication {
 		this._passwordInputBox = document.querySelector('#passwordInputBox');
 		this._tooltipMessage = document.querySelector('#passwordTooltip');
 		this._authenticateButton = document.querySelector('#authenticateButton');
+		this._passwordInputContainer = document.querySelector('#passwordInputContainer');
 
 		this._userName = '';
 		this._password = '';
@@ -80,6 +81,16 @@ class Authentication {
 		this._passwordInputBox.classList.add('authenticationFailed');
 		this._tooltipMessage.innerText = this._returnRandomErrorMessages();
 		this._tooltipMessage.classList.add('tooltipError');
+
+		// Shake animation
+		this._passwordInputContainer.classList.add('shake');
+		setTimeout(
+			() => {
+				// Stop shaking
+				this._passwordInputContainer.classList.remove('shake');
+			},
+			500
+		);
 	}
 
 	// Remove authentication failure messages
