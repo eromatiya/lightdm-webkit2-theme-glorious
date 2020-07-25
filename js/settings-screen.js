@@ -16,7 +16,7 @@ class SettingsScreen {
 		this._settingsKeyBindContainer = document.querySelector('#settingsKeyBindContainer');
 
 		this._closeScreenSettingsButton = document.querySelector('#closeScreenSettingsButton');
-		this._closeScreenButtonImage = document.querySelector('#closeScreenSettingsButton img.closeScreenButtonImage')
+		this._closeScreenButtonImage = document.querySelector('#closeScreenSettingsButton img.closeScreenButtonImage');
 
 		this._init();
 	}
@@ -34,7 +34,7 @@ class SettingsScreen {
 			() => {
 				this.toggleSettingsScreen();
 			}
-		)
+		);
 	}
 
 	_settingsNextScreen() {

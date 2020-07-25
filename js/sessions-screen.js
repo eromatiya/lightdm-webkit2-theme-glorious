@@ -45,7 +45,7 @@ class SessionsScreen {
 			() => {
 				this.toggleSessionsScreen();
 			}
-		)
+		);
 	}
 
 	// Return session screen visibility bool

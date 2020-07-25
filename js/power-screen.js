@@ -35,7 +35,7 @@ class PowerScreen {
 			() => {
 				this.togglePowerScreen();
 			}
-		)
+		);
 	}
 
 	// Return power screen visibility bool
