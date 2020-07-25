@@ -23,10 +23,11 @@
 
 /* Top side tooltop */
 .tooltipParent .tooltipMessage.tooltipTop {
-	width: 120px;
-	bottom: 100%;
+	width: 240px;
+	bottom: 120%;
 	left: 50%;
-	margin-left: -60px;
+	margin-left: -120px;
+	padding: 5px;
 }
 
 .tooltipParent .tooltipMessage.tooltipTop::after {
@@ -63,10 +64,11 @@
 
 /* Bottom side tooltop */
 .tooltipParent .tooltipMessage.tooltipBottom {
-	width: 120px;
-	top: 100%;
+	width: 240px;
+	top: 120%;
 	left: 50%;
-	margin-left: -60px;
+	margin-left: -120px;
+	padding: 5px;
 }
 
 .tooltipParent .tooltipMessage.tooltipBottom::after {
@@ -101,9 +103,10 @@
 
 /* Right side tooltop */
 .tooltipParent .tooltipMessage.tooltipRight {
-	width: 120px;
+	width: 240px;
 	top: -5px;
 	left: 105%;
+	padding: 5px;
 }
 
 .tooltipParent .tooltipMessage.tooltipRight::after {
@@ -142,9 +145,10 @@
 
 /* Left side tooltop */
 .tooltipParent .tooltipMessage.tooltipLeft {
-	width: 120px;
+	width: 240px;
 	top: -5px;
 	right: 105%;
+	padding: 5px;
 }
 
 .tooltipParent .tooltipMessage.tooltipLeft::after {

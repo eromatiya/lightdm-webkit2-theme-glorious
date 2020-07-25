@@ -133,13 +133,11 @@ label#userName {
 }
 
 .authenticationFailed {
-	border: 2px solid;
-	border-color: var(--base-error-bg);
+	box-shadow: 0 0 0 2px var(--base-error-bg);
 }
 
 .authenticationSuccess {
-	border: 2px solid;
-	border-color: var(--base-success-bg);
+	box-shadow: 0 0 0 2px var(--base-success-bg);
 }
 
 .mainFormButton {
