@@ -89,6 +89,36 @@ label#userName {
 	display: inline-flex;
 }
 
+@keyframes shake {
+	0% {
+		transform: translate(0);
+	}
+
+	20% {
+		transform: translate(3em);
+	}
+
+	40% {
+		transform: translate(-3em);
+	}
+
+	60% {
+		transform: translate(3em);
+	}
+
+	80% {
+		transform: translate(-3em);
+	}
+	
+	100% {
+		transform: translate(0);
+	}
+}
+
+#passwordInputContainer.shake {
+	animation: shake 0.5s infinite;
+}
+
 #passwordInputBox {
 	background: var(--base-bg);
 	border-radius: var(--rounded-radius);
@@ -108,13 +138,11 @@ label#userName {
 }
 
 .authenticationFailed {
-	border: 2px solid;
-	border-color: var(--base-error-bg);
+	box-shadow: 0 0 0 2px var(--base-error-bg);
 }
 
 .authenticationSuccess {
-	border: 2px solid;
-	border-color: var(--base-success-bg);
+	box-shadow: 0 0 0 2px var(--base-success-bg);
 }
 
 .mainFormButton {

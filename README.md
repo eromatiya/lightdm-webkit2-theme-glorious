@@ -39,6 +39,7 @@ Make sure you have the latest version.
 
 + lightdm
 + lightdm-webkit2-greeter
++ an environment, a desktop environment or a window manager
 
 ### installation
 
@@ -50,7 +51,7 @@ $ yay -S lightdm-webkit2-theme-glorious
 
 #### manual
 
-0. If you're using systemd, make sure that `lightdm.service` or `lightdm-plymouth.service` is enabled and running. There's a bunch of guide on the internet. [Archwiki](https://wiki.archlinux.org/index.php/LightDM) is recommended.
+0. If you're using `systemd`, make sure that `lightdm.service` or `lightdm-plymouth.service` is enabled and running. There's a bunch of guides on the internet. [Archwiki](https://wiki.archlinux.org/index.php/LightDM) is recommended.
 
 1. Clone it.
 
@@ -68,7 +69,7 @@ $ yay -S lightdm-webkit2-theme-glorious
 
 	```
 	$ sudoedit /etc/lightdm/lightdm.conf
-	# Find the `greeter-session` string under the `[Seat:*]` section, uncomment it, then set its value to `lightdm-webkit2-greeter`.
+	# Find `greeter-session` under the `[Seat:*]` section, uncomment it, then set its value to `lightdm-webkit2-greeter`.
 	```
 
 4. Set as lightdm webkit2 theme.
@@ -81,11 +82,11 @@ $ yay -S lightdm-webkit2-theme-glorious
 ### features
 
 + Multi-user support
-+ Swipe gestures
 + Customization and Settings
++ Keybindings navigation
 + Remappable keybindings
 + Change color schemes and background image on-the-fly
-+ Simple keybinding
++ Swipe gestures
 + Vanilla Javascript <sup>(not sure if this is a feature tho)</sup>
 
 ### swipe gestures
@@ -122,7 +123,7 @@ The default modifier is <kbd>Alt</kbd> and you can change it in the settings.
 
 + You can add more background images by putting your wallpapers/images in `/usr/share/backgrounds/`.
 + If you're on a desktop environment like KDE Plasma and GNOME3, you can set your profile picture and real name in the settings. While if you're on a more minimal environment like window managers, you can install and use the program called `mugshot`.
-+ If your desktop environment or window manager's logo is not in the sessions screen, feel free to submit a pull request!
++ If your desktop environment or window manager's logo is not in the sessions screen, feel free to submit a [pull request](https://github.com/manilarome/lightdm-webkit2-theme-glorious/pulls)!
 
 ### credits
 

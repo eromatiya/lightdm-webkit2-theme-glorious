@@ -27,14 +27,22 @@ class GreeterScreenContent {
 
 		this._greeter = document.querySelector('#greeter');
 		this._clockEl = document.querySelector('#clock');
+		this._arrowIndicatorGreeter = document.querySelector('#arrowIndicatorGreeter');
 		this._dateEl = document.querySelector('#date');
 
 		this._init();
 	}
 
-	// Start clock
+	// Start clock and add click event on arrow indicator
 	_init() {
 		this._startClock();
+		this._arrowIndicatorGreeter.addEventListener(
+			'click',
+			() => {
+				// Close greeter screen
+				greeterScreen.toggleGreeterScreen();
+			}
+		);
 	}
 
 	// Get ordinal  suffix
