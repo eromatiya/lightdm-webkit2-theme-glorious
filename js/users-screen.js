@@ -166,6 +166,9 @@ class UsersScreen {
 
 				// Hide user screen
 				this._hideUsersScreen();
+
+				// Focus on password input
+				this._passwordInputEl.focus();
 			}
 		);
 	}
