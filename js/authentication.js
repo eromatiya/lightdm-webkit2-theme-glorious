@@ -103,7 +103,7 @@ class Authentication {
 					this._tooltipMessage.classList.remove('tooltipError');
 					this._passwordInputBox.classList.remove('authenticationFailed');
 				},
-				1500
+				250
 			);
 		}
 	}
