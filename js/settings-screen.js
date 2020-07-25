@@ -15,13 +15,26 @@ class SettingsScreen {
 		this._settingsThemeContainer = document.querySelector('#settingsThemeContainer');
 		this._settingsKeyBindContainer = document.querySelector('#settingsKeyBindContainer');
 
+		this._closeScreenSettingsButton = document.querySelector('#closeScreenSettingsButton');
+		this._closeScreenButtonImage = document.querySelector('#closeScreenSettingsButton img.closeScreenButtonImage')
+
 		this._init();
 	}
 
 	_init() {
 		// Events
 		this._settingsScreenButtonOnClickEvent();
+		this._closeScreenSettingsButtonClickEvent();
 		this._settingsItemClickEvents();
+	}
+
+	_closeScreenSettingsButtonClickEvent() {
+		this._closeScreenSettingsButton.addEventListener(
+			'click',
+			() => {
+				this.toggleSettingsScreen();
+			}
+		)
 	}
 
 	_settingsNextScreen() {
@@ -61,6 +74,7 @@ class SettingsScreen {
 			() => {
 				this._settingsNextScreen();
 				this._settingsBackgroundImage.classList.remove('settingsGroupHide');
+				this._closeScreenButtonImage.src = 'assets/back.svg';
 			}
 		);
 
@@ -69,6 +83,7 @@ class SettingsScreen {
 			() => {
 				this._settingsNextScreen();
 				this._settingsThemeContainer.classList.remove('settingsGroupHide');
+				this._closeScreenButtonImage.src = 'assets/back.svg';
 			}
 		);
 
@@ -77,6 +92,7 @@ class SettingsScreen {
 			() => {
 				this._settingsNextScreen();
 				this._settingsKeyBindContainer.classList.remove('settingsGroupHide');
+				this._closeScreenButtonImage.src = 'assets/back.svg';
 			}
 		);
 	}
@@ -119,6 +135,7 @@ class SettingsScreen {
 	toggleSettingsScreen() {
 		if (this._settingsScreenVisible) {
 			if (this._settingsOnGroupScreen()) {
+				this._closeScreenButtonImage.src = 'assets/close.svg';
 				return;
 			}
 			this._hideSettingsScreen();

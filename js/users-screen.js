@@ -8,6 +8,7 @@ class UsersScreen {
 		this._profilePictureContainer = document.querySelector('#profilePictureContainer');
 		this._profilePicture = document.querySelector('#profilePicture');
 		this._passwordInputEl = document.querySelector('#passwordInput');
+		this._closeScreenUsersButton = document.querySelector('#closeScreenUsersButton');
 
 		this._userScreenVisible = false;
 
@@ -24,6 +25,7 @@ class UsersScreen {
 	// Start creating Users list, register events
 	_init() {
 		this.profilePictureContainerOnClickEvent();
+		this._closeScreenUsersButtonClickEvent();
 
 		this._updateUsersObject();
 	}
@@ -39,6 +41,15 @@ class UsersScreen {
 				this.toggleUsersScreen();
 			}
 		);
+	}
+
+	_closeScreenUsersButtonClickEvent() {
+		this._closeScreenUsersButton.addEventListener(
+			'click',
+			() => {
+				this.toggleUsersScreen();
+			}
+		)
 	}
 
 	// Return session screen visibility bool

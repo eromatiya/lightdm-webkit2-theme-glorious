@@ -6,6 +6,7 @@ class PowerScreen {
 		this._powerList = document.querySelector('.powerList');
 		this._powerButtonPanel = document.querySelector('#powerButtonsPanel');
 		this._powerScreenButton = document.querySelector('#powerScreenButton');
+		this._closeScreenPowerButton = document.querySelector('#closeScreenPowerButton');
 
 		this._powerScreenVisible = false;
 
@@ -13,8 +14,10 @@ class PowerScreen {
 	}
 
 	_init() {
-		this._createPowerObject();
 		this._powerScreenButtonOnClickEvent();
+		this._closeScreenPowerButtonClickEvent();
+
+		this._createPowerObject();
 	}
 
 	_powerScreenButtonOnClickEvent() {
@@ -24,6 +27,15 @@ class PowerScreen {
 				this.togglePowerScreen();
 			}
 		);
+	}
+
+	_closeScreenPowerButtonClickEvent() {
+		this._closeScreenPowerButton.addEventListener(
+			'click',
+			() => {
+				this.togglePowerScreen();
+			}
+		)
 	}
 
 	// Return power screen visibility bool
