@@ -160,10 +160,6 @@ class Authentication {
 				if (this._password.length < 1) {
 					return;
 				}
-				// Prevent login spamming
-				if (profilePictureRotate.getProfileAnimationStatus()) return;
-				// Rotate profile picture
-				profilePictureRotate.rotateProfilePicture();
 				
 				// Validation
 				lightdm.respond(String(this._password));
