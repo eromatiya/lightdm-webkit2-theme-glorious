@@ -95,19 +95,19 @@ label#userName {
 	}
 
 	20% {
-		transform: translate(3em);
+		transform: translate(0.5em);
 	}
 
 	40% {
-		transform: translate(-3em);
+		transform: translate(-0.5em);
 	}
 
 	60% {
-		transform: translate(3em);
+		transform: translate(0.5em);
 	}
 
 	80% {
-		transform: translate(-3em);
+		transform: translate(-0.5em);
 	}
 	
 	100% {
@@ -116,7 +116,7 @@ label#userName {
 }
 
 #passwordInputContainer.shake {
-	animation: shake 0.5s infinite;
+	animation: shake 0.25s infinite;
 }
 
 #passwordInputBox {

@@ -99,12 +99,10 @@ class DebugMode {
 				},
 				respond: password => {
 					console.log(`Password provided: '${password}'`);
-					if (password === this._debugModePass)
-					{
+					if (password === this._debugModePass) {
 						lightdm.is_authenticated = true;
 					}
-					else
-					{
+					else {
 						let now = new Date().getTime();
 						while (new Date().getTime() < now + 2000);
 					}
@@ -112,18 +110,21 @@ class DebugMode {
 				},
 				start_session_sync: session => {
 					alert(`Logged with session: '${session}'!`);
+					location.reload(); 
 				},
 				shutdown: () => {
 					alert('System is shutting down...');
+					location.reload(); 
+				},
+				restart: () => {
+					alert('System is rebooting...');
+					location.reload(); 
 				},
 				hibernate: () => {
 					alert('System is hibernating...');
 				},
 				suspend: () => {
 					alert('System is suspending...');
-				},
-				restart: () => {
-					alert('System is rebooting...');
 				}
 			};
 		}

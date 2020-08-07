@@ -1,55 +1,56 @@
-## the glorious lightdm webkit2 theme
+## The glorious lightdm webkit2 theme
 
 [![maintained](https://img.shields.io/maintenance/yes/2020?label=maintained&style=flat-square)](https://github.com/manilarome/the-glorious-lightdm-webkit2-theme/commits/master) [![contributions](https://img.shields.io/badge/contribution-welcome-brightgreen&?style=flat-square)](https://github.com/manilarome/the-glorious-lightdm-webkit2-theme/pulls) [![HitCount](http://hits.dwyl.com/manilarome/the-glorious-lightdm-webkit2-theme.svg)](http://hits.dwyl.com/manilarome/the-glorious-lightdm-webkit2-theme) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/0812167ef9954b74ac23f7c1bfeb3764)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=manilarome/the-glorious-lightdm-webkit2-theme&amp;utm_campaign=Badge_Grade)
 
-a modern, glorified lightdm webkit2 theme
+A sleek, modern, and glorified lightdm webkit2 theme
 
-## [live demo here](https://manilarome.github.io/lightdm-webkit2-theme-glorious)
+## [Live Demo](https://manilarome.github.io/lightdm-webkit2-theme-glorious)
+#### Demo password: `toor`
 
-### gallery
+### Gallery
 
-| login screen |
+| Login Screen |
 | --- |
 | ![screenshot](scrots/login.webp) |
 
-| sessions screen |
+| Sessions Screen |
 | --- |
 | ![screenshot](scrots/sessions.webp) |
 
-| users screen |
+| Users Screen |
 | --- |
 | ![screenshot](scrots/users.webp) |
 
-| power screen |
+| Power Screen |
 | --- |
 | ![screenshot](scrots/power.webp) |
 
-| settings screen |
+| Settings Screen |
 | --- |
 | ![screenshot](scrots/settings.webp) |
 
-| settings background | settings theme | settings keybinds |
+| Settings background | Settings Theme | Settings Keybinds |
 | --- | --- | --- |
 | ![screenshot](scrots/settings-bg.webp) | ![screenshot](scrots/settings-theme.webp) | ![screenshot](scrots/settings-keybinds.webp) |
 
 
-### dependencies
+### Dependencies
 
-Make sure you have the latest version.
+Please make sure you don't have an ancient version of these.
 
 + lightdm
 + lightdm-webkit2-greeter
 + an environment, a desktop environment or a window manager
 
-### installation
+### Installation
 
-#### aur
+#### AUR
 
-```bash
+```
 $ yay -S lightdm-webkit2-theme-glorious
 ```
 
-#### manual
+#### Manual
 
 0. If you're using `systemd`, make sure that `lightdm.service` or `lightdm-plymouth.service` is enabled and running. There's a bunch of guides on the internet. [Archwiki](https://wiki.archlinux.org/index.php/LightDM) is recommended.
 
@@ -79,17 +80,19 @@ $ yay -S lightdm-webkit2-theme-glorious
 	# Find `webkit_theme` then set its value to `glorious`.
 	```
 
-### features
+### Features
 
 + Multi-user support
 + Customization and Settings
-+ Keybindings navigation
++ Keyboard navigation
 + Remappable keybindings
 + Change color schemes and background image on-the-fly
 + Swipe gestures
 + Vanilla Javascript <sup>(not sure if this is a feature tho)</sup>
 
-### swipe gestures
+### Swipe gestures
+
+Why do we have this? Linux can be installed on almost anything. Yes, even on a potato. So swipe gestures exist to save myself some time if someone decided to use this theme on a touch screen device.
 
 + Swiping down on the login screen will open the greeter screen.
 + Swiping right on the login screen will open the session screen.
@@ -97,7 +100,7 @@ $ yay -S lightdm-webkit2-theme-glorious
 + Swiping up on the login screen will open the power screen.
 + Swiping up on the greeter, user, power,and session screens will close them.
 
-### keybinding
+### Keybinding
 
 The default modifier is <kbd>Alt</kbd> and you can change it in the settings.
 
@@ -125,8 +128,6 @@ The default modifier is <kbd>Alt</kbd> and you can change it in the settings.
 + If you're on a desktop environment like KDE Plasma and GNOME3, you can set your profile picture and real name in the settings. While if you're on a more minimal environment like window managers, you can install and use the program called `mugshot`.
 + If your desktop environment or window manager's logo is not in the sessions screen, feel free to submit a [pull request](https://github.com/manilarome/lightdm-webkit2-theme-glorious/pulls)!
 
-### credits
+### Credits
 
 <span>Background image by <a href="https://unsplash.com/@johnonolan?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">John O'Nolan</a> on <a href="https://unsplash.com/s/photos/waves?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-
-<span>Old background image by <a href="https://unsplash.com/@wilstewart3?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Wil Stewart</a> on <a href="/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
