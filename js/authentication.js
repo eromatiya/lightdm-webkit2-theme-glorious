@@ -195,14 +195,11 @@ class Authentication {
 				this._password = this._passwordInputEl.value;
 
 				if (e.key === 'Enter') {
+					// Don't allow empty passwords
 					if (this._password.length < 1) {
 						return;
 					}
-					// Prevent login spamming
-					if (profilePictureRotate.getProfileAnimationStatus()) return;
-					// Rotate profile picture
-					profilePictureRotate.rotateProfilePicture();
-					
+
 					// Validate
 					lightdm.respond(String(this._password));
 				}
