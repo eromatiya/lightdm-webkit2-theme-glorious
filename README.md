@@ -44,25 +44,19 @@ Please make sure you don't have an ancient version of these.
 
 ### Installation
 
-#### AUR
-
-```
-$ yay -S lightdm-webkit2-theme-glorious
-```
-
-#### Manual
-
 0. If you're using `systemd`, make sure that `lightdm.service` or `lightdm-plymouth.service` is enabled and running. There's a bunch of guides on the internet. [Archwiki](https://wiki.archlinux.org/index.php/LightDM) is recommended.
 
-1. Clone it.
+1. Get the theme by cloning it or by installing it from `AUR`.
+
++ **If you're using Archlinux**, you can install it using `makepkg` or by using an `AUR helper` like `yay`.
+
+	```
+	$ yay -S lightdm-webkit2-theme-glorious
+	```
++ Clone the repository, then copy it to the `lightdm-webkit`'s `theme` folder.
 
 	```
 	$ git clone --depth 1 https://github.com/manilarome/lightdm-webkit2-theme-glorious
-	```
-
-2. Copy the theme to the lightdm webkit theme folder.
-
-	```
 	# cp lightdm-webkit2-theme-glorious /usr/share/lightdm-webkit/themes/glorious -r
 	```
 
@@ -73,11 +67,13 @@ $ yay -S lightdm-webkit2-theme-glorious
 	# Find `greeter-session` under the `[Seat:*]` section, uncomment it, then set its value to `lightdm-webkit2-greeter`.
 	```
 
-4. Set as lightdm webkit2 theme.
+4. Set it as the lightdm webkit2 theme then enable `debug_mode` by setting it to `true`. Why do we need to enable it, you say? Sometimes you will be greeted by an error. And this error is due to a race condition. Where the theme is trying to access the `lightdm` object even though it doesn't exist *yet*. Debug mode will allow you to `right-click` and `reload` the greeter just like a webpage allowing you to log-in. I don't know how to fix this yet, so yeah, PRs welcome. 
 
 	```
 	$ sudoedit /etc/lightdm/lightdm-webkit2-greeter.conf
 	# Find `webkit_theme` then set its value to `glorious`.
+	# Find `debug-mode` then set it to true.
+	# If you encountered an error, right-click then reload.
 	```
 
 ### Features
