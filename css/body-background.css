@@ -1,0 +1,17 @@
+.body-background {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	z-index: 0;
+	overflow: hidden;
+	filter: blur(var(--global-blur-strength));
+	background-color: #252525;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}

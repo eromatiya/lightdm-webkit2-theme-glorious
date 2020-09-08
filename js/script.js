@@ -1,46 +1,50 @@
-// Instantiation
-
 // Instantiate debug mode
 const debugMode = new DebugMode();
 
-// Instantiate profile picture animations
-const profilePictureRotate = new ProfilePictureRotate();
+// Instantiate image profile
+const userProfile = new UserProfile();
 
 // Instantiate greeter screen
 const greeterScreen = new GreeterScreen();
 
-// Instantiate greeter screen contents
-const greeterScreenContent = new GreeterScreenContent();
-
-// Instantiate user screen
-const usersScreen = new UsersScreen();
-
-// Instantiate sessions screen
-const sessionsScreen = new SessionsScreen();
-
 // Instantiate goodbye screen
-const goodbyeScreen = new GoodbyeScreen();
+const goodbye = new Goodbye();
 
-// Instantiate power screen
-const powerScreen = new PowerScreen();
+// Instantiate accounts settings
+const accounts = new Accounts();
 
-// Instantiate settings screen
-const settingsScreen = new SettingsScreen();
+// Instantiate sessions settings
+const sessions = new Sessions();
 
-// Instantiate settings background
-const settingsBackground = new SettingsBackground();
+// Instantiate power settings
+const power = new Power();
 
-// Instantiate settings theme
-const settingsTheme = new SettingsTheme();
+// Instantiate sidebar
+const sidebar = new Sidebar();
 
-// Instantiate settings theme
-const settingsKeybinds = new SettingsKeybinds();
+// Instantiate main screen buttons
+const mainScreenButtons = new MainScreenButtons();
+
+// Instantiate date time
+const dateTime = new DateTime();
+
+// Instantiate backgrounds settings
+const backgrounds = new Backgrounds();
+
+// Instantiate sidebar navigation
+const sidebarNavigate = new SidebarNavigate();
+
+// Instantiate key binds
+const keyBinds = new KeyBinds();
+
+// Instantiate themes
+const themes = new Themes();
 
 // Instantiate key events
 const keyEvents = new KeyEvents();
 
-// Instantiate swipe events and callbacks
+// Instantiate swipe event callbacks
 const swipeEventCallback = new SwipeEventCallback();
 
 // Instantiate authentication
-const authentication = new Authentication();
+const authenticate = new Authenticate();

@@ -1,0 +1,100 @@
+:root {
+	--global-bg: #00000020;
+	--global-fg: #F2F2F2FF;
+	--global-animation-speed: 300ms;
+	--global-blur-strength: 9px;
+	--tooltip-error-bg: #ff3a3060;
+	--tooltip-success-bg: #28cd4160;
+	--button-bg-hover: #F2F2F230;
+	--button-bg-focus: #F2F2F245;
+	--button-bg-active: #F2F2F260;
+	--login-form-elements-bg: #F2F2F222;
+	--login-form-elements-fg: #F2F2F2;
+	--login-form-elements-button-bg: var(--login-form-elements-bg);
+	--login-form-elements-button-bg-hover: var(--button-bg-hover);
+	--login-form-elements-button-bg-focus: var(--button-bg-focus);
+	--login-form-elements-button-bg-active: var(--button-bg-active);
+	--login-failed-bg: #ff3a3060;
+	--login-success-bg: #28cd4160;
+	--sidebar-bg: var(--global-bg);
+	--sidebar-group-elements-bg: #F2F2F222;
+	--sidebar-group-elements-fg: #F2F2F2;
+	--sidebar-group-elements-button-bg: #F2F2F206;
+	--sidebar-elements-bg: #F2F2F222;
+	--main-screen-button-bg: #F2F2F222;
+	--arrow-indicator-bg: #F2F2F2;
+	--arrow-indicator-bg-fade: #F2F2F220;
+}
+
+* {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	font-variant-ligatures: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	position: fixed;
+}
+
+body {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	scrollbar-width: none;
+	background-color: #252525;
+}
+
+html * {
+	color: var(--global-fg) !important;
+	font-family: 'Inter', 'Roboto', sans-serif !important;
+}
+
+/* Remove outline on input fields on chrome */
+input:focus,
+textarea:focus,
+select:focus,
+button {
+	outline: none;
+}
+
+/* Placeholder */
+::placeholder {
+	color: var(--font-color);
+	opacity: 0.65;
+}
+
+option {
+	text-align: left;
+}
+
+img {
+	user-select: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 0;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--base-bg);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--base-secondary-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--hover-bg);
+}
