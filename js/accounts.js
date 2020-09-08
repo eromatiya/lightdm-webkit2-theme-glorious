@@ -127,7 +127,7 @@ class Accounts {
 			lightdm.onload = function() {
 				this._usersObject = lightdm.users;
 				this._populateAccountsList();
-			}
+			};
 		} else {
 			this._usersObject = lightdm.users;
 			this._populateAccountsList();

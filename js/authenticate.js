@@ -34,7 +34,7 @@ class Authenticate {
 			'Looking good today~',
 			'What are you doing, stepbro?~',
 			'You are someone\'s reason to smile.',
-			'Finally, someone with good amount of IQ!',
+			'Finally, someone with a good amount of IQ!',
 			'Please, don\'t watch porn.'
 		];
 		return errorMessages[Math.floor(Math.random() * errorMessages.length)];

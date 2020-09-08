@@ -29,11 +29,11 @@
 	scrollbar-width: none;
 	z-index: 5;
 	box-shadow:
-								0 1px 1px rgba(0,0,0,0.12),
-								0 2px 2px rgba(0,0,0,0.12),
-								0 4px 4px rgba(0,0,0,0.12),
-								0 8px 8px rgba(0,0,0,0.12),
-								0 16px 16px rgba(0,0,0,0.12);
+							0 1px 1px rgba(0,0,0,0.12),
+							0 2px 2px rgba(0,0,0,0.12),
+							0 4px 4px rgba(0,0,0,0.12),
+							0 8px 8px rgba(0,0,0,0.12),
+							0 16px 16px rgba(0,0,0,0.12);
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	user-select: none;
@@ -179,12 +179,6 @@ img.button-sidebar-item-image {
 	flex-direction: column;
 }
 
-.sidebar-settings-item-list {
-	list-style-type: none;
-	padding: 0;
-	overflow: hidden;
-}
-
 .sidebar-settings-item-list li {
 	height: 160px;
 	float: left;
@@ -192,6 +186,14 @@ img.button-sidebar-item-image {
 	margin: 2px;
 	width: calc(50% - 4px);
 	box-sizing: border-box;
+}
+
+.sidebar-settings-item-list {
+	list-style-type: none;
+	padding: 0;
+	overflow: hidden;
+	flex-grow: 1;
+	flex-shrink: 0;
 }
 
 .button-sidebar-list-item {
@@ -256,11 +258,6 @@ img.button-sidebar-item-image {
 
 .button-settings-default-selected {
 	background: var(--button-bg-focus);
-}
-
-.sidebar-settings-item-list {
-	flex-grow: 1;
-	flex-shrink: 0;
 }
 
 .sidebar-group.sidebar-group-settings {
