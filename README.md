@@ -50,12 +50,12 @@ Please make sure you don't have an ancient version of these.
 	# Find `greeter-session` under the `[Seat:*]` section, uncomment it, then set its value to `lightdm-webkit2-greeter`.
 	```
 
-4. Set it as the lightdm webkit2 theme then enable `debug_mode` by setting it to `true`. Why do we need to enable it, you say? Sometimes you will be greeted by an error. And this error is due to a race condition where the theme is trying to access the `lightdm` object even though it doesn't exist *yet*. Debug mode will allow you to `right-click` and `reload` the greeter just like a webpage.
+4. Set it as the lightdm webkit2 theme then enable `debug_mode` by setting it to `true`. Why do we need to enable `debug_mode`? Sometimes you will be greeted by an error. And this error is due to a race condition where the theme is trying to access the `lightdm` object even though it doesn't exist *yet*. Debug mode will allow you to `right-click` and `reload` the greeter just like a webpage.
 
 	```
 	$ sudoedit /etc/lightdm/lightdm-webkit2-greeter.conf
 	# Find `webkit_theme` then set its value to `glorious`.
-	# Find `debug-mode` then set it to true.
+	# Find `debug_mode` then set it to true.
 	# If you encountered an error, right-click then reload.
 	```
 
@@ -104,7 +104,7 @@ There are two clock modes available - `24-hour` and `12-hour`. Switch between cl
 + Make sure that you only have image files and directories inside `/usr/share/backgrounds/` or it will cause an error!
 + If you're on a desktop environment like KDE Plasma and GNOME3, you can set your profile picture and real name in the settings. While if you're on a more minimal environment like window managers, you can install and use the program called `mugshot`.
 + If your desktop environment or window manager's logo is not in the sessions screen, feel free to submit a [pull request](https://github.com/manilarome/lightdm-webkit2-theme-glorious/pulls)!
-+ Translations are not yet supported, PR's are welcome!
++ Translations are not yet supported. PR's are welcome!
 
 ### Credits
 

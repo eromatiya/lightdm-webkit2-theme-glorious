@@ -11,7 +11,6 @@ class Backgrounds {
 		this._backgroundCurrentPath = null;
 		this._backgroundRandomMode = null;
 		this._defaultBackgroundItem = null;
-		this._defaultBackgroundItemID = null;
 		this._backgroundListPopulated = false;
 		this._init();
 	}
@@ -149,8 +148,7 @@ class Backgrounds {
 			this._backgroundsList.appendChild(listItem);
 		}
 		const id = this._pathToID(this._backgroundCurrentPath);
-		this._defaultBackgroundItemID = `#button-backgrounds-item-${id}`;
-		const defaultAccountItem = document.querySelector(`${this._defaultBackgroundItemID}`);
+		const defaultAccountItem = document.querySelector(`#button-backgrounds-item-${id}`);
 		this._updateBackgroundsDefault(defaultAccountItem);
 	}
 
