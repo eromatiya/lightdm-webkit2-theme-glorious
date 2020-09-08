@@ -70,6 +70,7 @@ class DateTime {
 
 		// 24-hour mode
 		if (this._twentyFourMode === true) {
+			hour = this._appendZero(hour);
 			this._sidebarClock.innerText = `${hour}:${min}`;
 			this._greeterClock.innerText = `${hour}:${min}`;
 		} else {
