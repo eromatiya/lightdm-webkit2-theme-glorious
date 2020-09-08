@@ -5,12 +5,10 @@
 A sleek, modern, and glorified lightdm webkit2 theme
 
 ## [Live Demo](https://manilarome.github.io/lightdm-webkit2-theme-glorious)
+
 #### Demo password: `toor`
 
-### Gallery
-
 <p align='center'><img alt='glorious' src='glorious.gif'/><br/><i>glorious - a lightdm webkit 2 theme</i></p>
-
 
 ### Dependencies
 
@@ -24,14 +22,21 @@ Please make sure you don't have an ancient version of these.
 
 0. If you're using `systemd`, make sure that `lightdm.service` or `lightdm-plymouth.service` is enabled and running. There's a bunch of guides on the internet. [Archwiki](https://wiki.archlinux.org/index.php/LightDM) is recommended.
 
-1. Get the theme by cloning it or by installing it from `AUR`.
+1. Install it. You can get the theme by cloning this repo or by installing it from `AUR` using `makepkg` or an AUR helper like `yay`.
 
-+ **If you're using Archlinux**, you can install it using `makepkg` or by using an `AUR helper` like `yay`.
++ AUR route.
 
 	```
-	$ yay -S lightdm-webkit2-theme-glorious
+	# AUR Helper
+	$ yay -Syu lightdm-webkit2-theme-glorious
+
+	# Makepkg route
+	$ git clone https://aur.archlinux.org/lightdm-webkit2-theme-glorious.git
+	$ cd lightdm-webkit2-theme-glorious
+	$ makepkg -sri
 	```
-+ Clone the repository, then copy it to the `lightdm-webkit`'s `theme` folder.
+
++ Clone the repo route.
 
 	```
 	$ git clone --depth 1 https://github.com/manilarome/lightdm-webkit2-theme-glorious
@@ -65,7 +70,7 @@ Please make sure you don't have an ancient version of these.
 
 ### Swipe gestures
 
-Why do we have this? Linux can be installed on almost anything. Yes, even on a potato. So it exists to save myself some time if someone including myself decided to use this theme on a touch screen device.
+Why do we have this? Linux can be installed on almost anything. Yes, even on a potato. So it exists to save myself some time if someone (including myself) decided to use this theme on a touch screen device (like touch screen potato? Who knows).
 
 + Swiping up on the greeter screen will close it.
 + Swiping down on the login screen will open the greeter screen.
@@ -74,7 +79,7 @@ Why do we have this? Linux can be installed on almost anything. Yes, even on a p
 
 ### Keybinds
 
-The default modifier is <kbd>Alt</kbd> and you can change it in the settings.
+The default modifier is <kbd>Alt</kbd>. You can change it in the settings.
 
 + <kbd>Modifier + s</kbd> opens the dashboard.
 + <kbd>Modifier + e</kbd> opens the session selection.
