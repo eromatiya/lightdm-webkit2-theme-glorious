@@ -60,9 +60,27 @@ class DebugMode {
 					{
 						name: 'xmonad',
 						key: 'xmonad'
+					},
+					{
+						name: 'Deepin',
+						key: 'deepin'
+					},
+					{
+						name: 'Budgie',
+						key: 'budgie'
 					}
 				],
 				users: [
+					{
+						display_name: 'Yasuho Hirose',
+						username: 'bestgirl',
+						image: 'assets/profiles/yasuhoh.jpg'
+					},
+					{
+						display_name: 'Josuke Higashikata',
+						username: '4balls',
+						image: 'assets/profiles/josukeh.jpg'
+					},
 					{
 						display_name: 'Johnny Joestar',
 						username: 'tellhimyourself',
@@ -75,12 +93,12 @@ class DebugMode {
 					},
 					{
 						display_name: 'Diego Brando',
-						username: 'diodiodio',
+						username: 'diosaur',
 						image: 'assets/profiles/diegob.jpg'
 					},
 					{
 						display_name: 'Funny Valentine',
-						username: 'reasonableprice',
+						username: 'napkinwiper',
 						image: 'assets/profiles/funnyv.jpg'
 					}
 				],

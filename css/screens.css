@@ -1,0 +1,130 @@
+.screen {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	z-index: 20;
+	background: #252525;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.screen-image {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	background-color: #252525;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.screen-background-darken::before {
+	width: 100vw;
+	height: 100vh;
+	background: #000000;
+	filter: grayscale(100%);
+	opacity: 0.75;
+	content: '';
+	top: 0;
+	left: 0;
+	z-index: 0;
+	position: absolute;
+}
+
+.screen-content-parent {
+	display: inline-block;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Goodbye screen */
+#screen-goodbye.screen {
+	opacity: 0;
+	z-index: -1;
+	transition:
+						opacity var(--global-animation-speed),
+						z-index var(--global-animation-speed);
+}
+
+#screen-goodbye.screen.screen-goodbye-show {
+	opacity: 1;
+	z-index: 20;
+}
+
+#screen-goodbye-image.screen-image {
+	filter: blur(var(--global-blur-strength));
+}
+
+#goodbye-power-icon.goodbye-content {
+	width: 88px;
+	height: 88px;
+	object-fit: contain;
+	display: block;
+	margin: 0 10px;
+}
+
+#screen-goodbye-content-parent.screen-content-parent {
+	display: inline-flex;
+}
+
+#goodbye-message.goodbye-content {
+	font-size: 56pt;
+	font-weight: 400;
+	font-style: italic;
+	color: var(--global-fg);
+}
+
+/* Greeter Screen */
+#screen-greeter {
+	top: 0;
+	pointer-events: unset;
+	transform: translateZ();
+	transition:
+						top var(--global-animation-speed),
+						pointer-events var(--global-animation-speed),
+						transform var(--global-animation-speed);
+}
+
+#screen-greeter.screen-greeter-hide {
+	top: -100vh;
+	pointer-events: none;
+	transform: translateZ();
+}
+
+#screen-greeter-content-parent.screen-content-parent {
+	display: inline-block;
+}
+
+#greeter-message.greeter-content {
+	font-size: 32pt;
+	font-weight: 400;
+	text-align: center;
+	color: var(--global-fg);
+	cursor: pointer;
+}
+
+#greeter-clock.greeter-content {
+	font-size: 72pt;
+	font-weight: 700;
+	text-align: center;
+	color: var(--global-fg);
+}
+
+#greeter-date.greeter-content {
+	font-size: 32pt;
+	font-weight: 400;
+	text-align: center;
+	color: var(--global-fg);
+}

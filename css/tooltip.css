@@ -1,0 +1,177 @@
+.tooltip-parent {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip-parent .tooltip-message {
+	display: none;
+	background-color: var(--base-bg);
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	transition: all var(--transition-speed);
+}
+
+.tooltip-parent .tooltip-message::after {
+	content: ' ';
+	position: absolute;
+	border-style: solid;
+}
+
+/* Top side tooltop */
+.tooltip-parent .tooltip-message.tooltip-top {
+	width: 240px;
+	bottom: 120%;
+	left: 50%;
+	margin-left: -120px;
+	padding: 5px;
+}
+
+.tooltip-parent .tooltip-message.tooltip-top::after {
+	top: 100%; 
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-color: var(--base-bg) transparent transparent transparent;
+}
+
+.tooltip-message.tooltip-top.tooltip-error {
+	display: block;
+	opacity: 1;
+	font-weight: 700;
+	background: var(--tooltip-error-bg);
+}
+
+.tooltip-message.tooltip-top.tooltip-success {
+	display: block;
+	opacity: 1;
+	font-weight: 400;
+	background: var(--tooltip-success-bg);
+}
+
+.tooltip-message.tooltip-top.tooltip-error::after {
+	border-color: var(--tooltip-error-bg) transparent transparent transparent;
+}
+
+.tooltip-message.tooltip-top.tooltip-success::after {
+	border-color: var(--tooltip-success-bg) transparent transparent transparent;
+}
+
+/* Bottom side tooltop */
+.tooltip-parent .tooltip-message.tooltip-bottom {
+	width: 240px;
+	top: 120%;
+	left: 50%;
+	margin-left: -120px;
+	padding: 5px;
+}
+
+.tooltip-parent .tooltip-message.tooltip-bottom::after {
+	bottom: 100%; 
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-color: transparent transparent var(--base-bg) transparent;
+}
+
+.tooltip-message.tooltip-bottom.tooltip-error {
+	display: block;
+	opacity: 1;
+	background: var(--tooltip-error-bg);
+}
+
+.tooltip-message.tooltip-bottom.tooltip-success {
+	display: block;
+	opacity: 1;
+	font-weight: 400;
+	background: var(--tooltip-success-bg);
+}
+
+.tooltip-message.tooltip-bottom.tooltip-error::after {
+	border-color: transparent transparent var(--tooltip-error-bg) transparent;
+}
+
+.tooltip-message.tooltip-bottom.tooltip-success::after {
+	border-color: transparent transparent var(--tooltip-success-bg) transparent;
+}
+
+/* Right side tooltop */
+.tooltip-parent .tooltip-message.tooltip-right {
+	width: 240px;
+	top: -5px;
+	left: 105%;
+	padding: 5px;
+}
+
+.tooltip-parent .tooltip-message.tooltip-right::after {
+	top: 50%; 
+	right: 100%;
+	margin-top: -5px;
+	border-width: 5px;
+	border-color: transparent var(--base-bg) transparent transparent;
+}
+
+.tooltip-parent.tooltipHover:hover .tooltip-message {
+	display: block;
+}
+
+.tooltip-message.tooltip-right.tooltip-error {
+	display: block;
+	opacity: 1;
+	background: var(--tooltip-error-bg);
+}
+
+.tooltip-message.tooltip-right.tooltip-success {
+	display: block;
+	opacity: 1;
+	font-weight: 400;
+	background: var(--tooltip-error-bg);
+}
+
+.tooltip-message.tooltip-right.tooltip-error::after {
+	border-color: transparent var(--tooltip-error-bg) transparent transparent;
+}
+
+.tooltip-message.tooltip-right.tooltip-success::after {
+	border-color: transparent var(--tooltip-success-bg) transparent transparent;
+}
+
+/* Left side tooltop */
+.tooltip-parent .tooltip-message.tooltip-left {
+	width: 240px;
+	top: -5px;
+	right: 105%;
+	padding: 5px;
+}
+
+.tooltip-parent .tooltip-message.tooltip-left::after {
+	top: 50%; 
+	left: 100%;
+	margin-top: -5px;
+	border-width: 5px;
+	border-color: transparent transparent transparent var(--base-bg);
+}
+
+.tooltip-message.tooltip-left.tooltip-error {
+	display: block;
+	opacity: 1;
+	background: var(--tooltip-error-bg);
+}
+
+.tooltip-message.tooltip-left.tooltip-success {
+	display: block;
+	opacity: 1;
+	font-weight: 400;
+	background: var(--tooltip-success-bg);
+}
+
+.tooltip-message.tooltip-left.tooltip-error::after {
+	border-color: transparent transparent transparent var(--tooltip-error-bg);
+}
+
+.tooltip-message.tooltip-left.tooltip-success::after {
+	border-color: transparent transparent transparent var(--tooltip-success-bg);
+}

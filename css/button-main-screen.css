@@ -1,0 +1,67 @@
+#buttons-main-screen {
+	display: inline-flex;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.button-main-screen {
+	border: none;
+	margin: 5px;
+	padding: 10px;
+	background: transparent;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.button-main-screen:hover {
+	background: var(--button-bg-hover);
+}
+
+.button-main-screen:active {
+	background: var(--button-bg-active);
+}
+
+.button-main-screen-image {
+	max-width: 32px;
+	max-height: 32px;
+	width: 32px;
+	height: 32px;
+	object-fit: contain;
+	display: block;
+}
+
+/* Give an illusion that it's being blurred by sidebar */
+.button-main-screen-image.button-main-screen-blur {
+	filter: blur(var(--global-blur-strength));
+}
+
+#buttons-main-screen-settings-parent.buttons-main-screen-parent {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#buttons-main-screen-powers-parent.buttons-main-screen-parent {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+#buttons-main-screen-sessions-parent.buttons-main-screen-parent {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+label#button-main-screen-sessions-label {
+	color: var(--global-fg);
+	font-weight: 300;
+	font-size: 28pt;
+	opacity: 0;
+	transition: opacity var(--global-animation-speed);
+}
+
+#button-main-screen-sessions:hover + label#button-main-screen-sessions-label {
+	opacity: 1;
+}
