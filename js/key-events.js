@@ -48,19 +48,19 @@ class KeyEvents {
 					return;
 				}
 
-				if (this._keysLog[this._modifierKey] && e.key === this._sessionsKey) {
+				if ((this._keysLog[this._modifierKey]) && (e.key === this._sessionsKey)) {
 					e.preventDefault();
 					sidebarNavigate.settingsShowSessions();
 					return;
 				}
 
-				if (this._keysLog[this._modifierKey] && e.key === this._powerKey) {
+				if ((this._keysLog[this._modifierKey]) && (e.key === this._powerKey)) {
 					e.preventDefault();
 					sidebarNavigate.settingsShowPowers();
 					return;
 				}
 
-				if (this._keysLog[this._modifierKey] && e.key === this._accountsKey) {
+				if ((this._keysLog[this._modifierKey]) && (e.key === this._accountsKey)) {
 					e.preventDefault();
 					sidebarNavigate.settingsShowAccounts();
 					return;
