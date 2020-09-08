@@ -8,7 +8,7 @@ class SwipeEventCallback {
 
 	_createMouseSwipeEvents() {
 		// Swipe event for greeter screen
-		new SwipeEvent(
+		const greeterSwipe = new SwipeEvent(
 			this._greeterScreen,
 			(el, dir) => {
 				if (dir === 'up') {
@@ -18,7 +18,7 @@ class SwipeEventCallback {
 		);
 
 		// Swipe event for body overlay
-		new SwipeEvent(
+		const bodyBackgroundSwipe = new SwipeEvent(
 			this._bodyBackground,
 			(el, dir) => {
 				if (dir === 'down') {
@@ -29,7 +29,7 @@ class SwipeEventCallback {
 			}
 		);
 
-		new SwipeEvent(
+		const sidebarSwipe = new SwipeEvent(
 			this._sidebar,
 			(el, dir) => {
 				if (dir === 'right') {

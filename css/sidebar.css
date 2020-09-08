@@ -29,9 +29,9 @@
 	scrollbar-width: none;
 	z-index: 5;
 	box-shadow:
-								0 1px 1px rgba(0,0,0,0.12), 
-								0 2px 2px rgba(0,0,0,0.12), 
-								0 4px 4px rgba(0,0,0,0.12), 
+								0 1px 1px rgba(0,0,0,0.12),
+								0 2px 2px rgba(0,0,0,0.12),
+								0 4px 4px rgba(0,0,0,0.12),
 								0 8px 8px rgba(0,0,0,0.12),
 								0 16px 16px rgba(0,0,0,0.12);
 	-webkit-touch-callout: none;
@@ -41,7 +41,7 @@
 }
 
 #sidebar.sidebar.sidebar-expand {
-	width: 411px !important;
+	width: 411px;
 }
 
 #sidebar.sidebar-show {
@@ -174,7 +174,9 @@ img.button-sidebar-item-image {
 	max-height: 100vh;
 	height: auto;
 	position: relative;
-	display: block;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 }
 
 .sidebar-settings-item-list {
@@ -254,13 +256,6 @@ img.button-sidebar-item-image {
 
 .button-settings-default-selected {
 	background: var(--button-bg-focus);
-}
-
-#sidebar-settings {
-	max-height: 100vh;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
 }
 
 .sidebar-settings-item-list {
@@ -362,7 +357,7 @@ button.button-input:active {
 	background: var(--button-bg-active);
 }
 
-/* User profile, date and time*/
+/* User profile, date and time */
 #sidebar-user-profile {
 	text-align: center;
 	display: block;

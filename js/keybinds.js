@@ -101,7 +101,7 @@ class KeyBinds {
 					return false;
 				}
 			);
-		}
+		};
 
 		const keyEventsObj = [
 			this._inputSidebarKey,
@@ -121,8 +121,8 @@ class KeyBinds {
 		this._inputModifier.addEventListener(
 			'contextmenu',
 			e => {
-			 	e.preventDefault();
-			 }
+				e.preventDefault();
+			}
 		);
 
 		this._inputModifier.addEventListener(
@@ -160,14 +160,6 @@ class KeyBinds {
 			e => {
 				e.preventDefault();
 				return false;
-			}
-		);
-	}
-
-	_updateKeyBindDefault() {
-		Object.keys(this._keyBindObj).forEach(
-			(key, index) => {
-				this._storageSetItem(key, this._keyBindObj[String(key)]);
 			}
 		);
 	}

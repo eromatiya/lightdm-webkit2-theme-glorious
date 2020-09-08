@@ -27,7 +27,7 @@ class Accounts {
 		};
 		this._imageUserProfile.onerror = function() {
 			this.src = fallback;
-		}
+		};
 	}
 
 	_setUserNameLabel(name) {

@@ -71,7 +71,7 @@ class KeyEvents {
 
 					if (sidebarNavigate.hideActiveSettings()) {
 						sidebarNavigate.settingsSelectionShow();
-						return
+						return;
 					}
 
 					if (sidebar.getSidebarVisibility()) {

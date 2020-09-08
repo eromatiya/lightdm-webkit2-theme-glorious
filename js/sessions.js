@@ -80,7 +80,7 @@ class Sessions {
 			lightdm.onload = function() {
 				this._sessionsObject = lightdm.sessions;
 				this._populateSessionsList();
-			}
+			};
 		} else {
 			this._sessionsObject = lightdm.sessions;
 			this._populateSessionsList();

@@ -97,7 +97,7 @@ class Power {
 			let listItem = document.createElement('li');
 			// Create on click event
 			this._powerItemOnClickEvent(powerItemButton, this._powerObject[parseInt(i, 10)]);
-			listItem.appendChild(powerItemButton)
+			listItem.appendChild(powerItemButton);
 			this._powerList.appendChild(listItem);
 		}
 	}
@@ -107,7 +107,7 @@ class Power {
 			lightdm.onload = function() {
 				this._usersObject = lightdm.users;
 				this._createPowerObject();
-			}
+			};
 		} else {
 			this._usersObject = lightdm.users;
 			this._createPowerObject();
