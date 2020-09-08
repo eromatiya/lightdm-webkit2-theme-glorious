@@ -63,12 +63,14 @@ class Backgrounds {
 		}
 	}
 
-	_updateBackgroundsDefault(button) {
+	_updateBackgroundsDefault() {
+		const id = this._pathToID(this._backgroundCurrentPath);
+		let defaultAccountItem = document.querySelector(`#button-backgrounds-item-${id}`);
 		if (this._defaultBackgroundItem) {
 			this._defaultBackgroundItem.classList.remove('button-default-selected');
 		}
-		this._defaultBackgroundItem = button;
-		button.classList.add('button-default-selected');
+		this._defaultBackgroundItem = defaultAccountItem;
+		defaultAccountItem.classList.add('button-default-selected');
 	}
 
 	_updateBackgroundVariables() {
@@ -147,9 +149,7 @@ class Backgrounds {
 			listItem.appendChild(backgroundsItemButton);
 			this._backgroundsList.appendChild(listItem);
 		}
-		const id = this._pathToID(this._backgroundCurrentPath);
-		const defaultAccountItem = document.querySelector(`#button-backgrounds-item-${id}`);
-		this._updateBackgroundsDefault(defaultAccountItem);
+		this._updateBackgroundsDefault();
 	}
 
 	populateBackgroundsList() {
