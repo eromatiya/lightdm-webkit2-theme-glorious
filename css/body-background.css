@@ -14,4 +14,7 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
 }

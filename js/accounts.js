@@ -68,6 +68,13 @@ class Accounts {
 		);
 	}
 
+	_setAccountDefaultOnStartUp() {
+		this._setUserImageProfile(this._defaultUserProfileImage, this._defaultUserProfileImageFallback);
+		this._setUserNameLabel(this._defaultUserDisplayName);
+		const defaultAccountItem = document.querySelector(`#button-accounts-item-${this._defaultUser}`);
+		this._updateAccountDefault(defaultAccountItem);
+	}
+
 	_updateProfileVariablesOnStartUp() {
 		this._defaultUser = this._localStorage.getItem('defaultUser') ||
 			this._usersObject[0].username;
@@ -77,14 +84,7 @@ class Accounts {
 			this._usersObject[0].image;
 		this._defaultUserProfileImageFallback = this._localStorage.getItem('defaultUserProfileImageFallback') ||
 			'assets/profiles/user.svg';
-	}
-
-	_setAccountDefaultOnStartUp() {
-		this._updateProfileVariablesOnStartUp();
-		this._setUserImageProfile(this._defaultUserProfileImage, this._defaultUserProfileImageFallback);
-		this._setUserNameLabel(this._defaultUserDisplayName);
-		const defaultAccountItem = document.querySelector(`#button-accounts-item-${this._defaultUser}`);
-		this._updateAccountDefault(defaultAccountItem);
+		this._setAccountDefaultOnStartUp();
 	}
 
 	_populateAccountsList() {
@@ -119,7 +119,7 @@ class Accounts {
 			listItem.appendChild(userItemButton);
 			this._accountsList.appendChild(listItem);
 		}
-		this._setAccountDefaultOnStartUp();
+		this._updateProfileVariablesOnStartUp();
 	}
 
 	_init() {

@@ -107,12 +107,18 @@
 	display: inline-block;
 }
 
+.greeter-content {
+	cursor: default;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
 #greeter-message.greeter-content {
 	font-size: 32pt;
 	font-weight: 400;
 	text-align: center;
 	color: var(--global-fg);
-	cursor: pointer;
 }
 
 #greeter-clock.greeter-content {

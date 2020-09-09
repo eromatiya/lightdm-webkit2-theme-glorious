@@ -24,16 +24,11 @@
 	top: 0;
 	right: -411px;
 	box-sizing: border-box;
+	box-shadow: none;
 	padding: 10px 10px;
 	overflow: hidden;
 	scrollbar-width: none;
 	z-index: 5;
-	box-shadow:
-							0 1px 1px rgba(0,0,0,0.12),
-							0 2px 2px rgba(0,0,0,0.12),
-							0 4px 4px rgba(0,0,0,0.12),
-							0 8px 8px rgba(0,0,0,0.12),
-							0 16px 16px rgba(0,0,0,0.12);
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	user-select: none;
@@ -46,6 +41,12 @@
 
 #sidebar.sidebar-show {
 	right: 0;
+	box-shadow:
+							0 1px 1px rgba(0,0,0,0.12),
+							0 2px 2px rgba(0,0,0,0.12),
+							0 4px 4px rgba(0,0,0,0.12),
+							0 8px 8px rgba(0,0,0,0.12),
+							0 16px 16px rgba(0,0,0,0.12);
 }
 
 .sidebar-group {
