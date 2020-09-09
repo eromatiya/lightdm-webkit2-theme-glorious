@@ -24,24 +24,26 @@ Please make sure you don't have an ancient version of these.
 
 1. Install it. You can get the theme by cloning this repo or by installing it from `AUR` using `makepkg` or an AUR helper like `yay`.
 
-+ AUR route.
+	+ AUR route.
 
-	```
-	# AUR Helper
-	$ yay -Syu lightdm-webkit2-theme-glorious
+		```
+		# AUR Helper
+		$ yay -Syu lightdm-webkit2-theme-glorious
 
-	# Makepkg route
-	$ git clone https://aur.archlinux.org/lightdm-webkit2-theme-glorious.git
-	$ cd lightdm-webkit2-theme-glorious
-	$ makepkg -sri
-	```
+		# Makepkg route
+		$ git clone https://aur.archlinux.org/lightdm-webkit2-theme-glorious.git
+		$ cd lightdm-webkit2-theme-glorious
+		$ makepkg -sri
+		```
 
-+ Clone the repo route.
+	+ Clone the repo route.
 
-	```
-	$ git clone --depth 1 https://github.com/manilarome/lightdm-webkit2-theme-glorious
-	# cp lightdm-webkit2-theme-glorious /usr/share/lightdm-webkit/themes/glorious -r
-	```
+		1. Download and extract the latest stable release from [here](https://github.com/manilarome/lightdm-webkit2-theme-glorious/releases).
+		2. Copy it to the lightdm-webkit theme folder:
+
+			```
+			# cp -r lightdm-webkit2-theme-glorious /usr/share/lightdm-webkit/themes/glorious
+			```
 
 3. Set lightdm greeter session to webkit2.
 
@@ -89,10 +91,10 @@ The default modifier is <kbd>Alt</kbd>. You can change it in the settings.
 
 ### Customization and Settings
 
-+ Color settings supports `#RGB`, `#RRGGBB`, and `#RRGGBBAA`.
-+ Blur strength settings only allows integer with `px` suffix.
++ Color customization supports `#RGB`, `#RRGGBB`, and `#RRGGBBAA`.
++ Blur strength settings only allows an integer with `px` suffix.
 + Animation speed supports `s` and `ms`.
-+ Background image selection. Selection supports randomness.
++ Background image selection. Supports randomness.
 
 ### Changing clock mode
 
