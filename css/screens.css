@@ -3,7 +3,7 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	position: fixed;
+	position: absolute;
 	margin: 0;
 	padding: 0;
 	z-index: 20;
@@ -20,7 +20,7 @@
 	left: 0;
 	margin: 0;
 	padding: 0;
-	position: fixed;
+	position: absolute;
 	background-color: #252525;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -87,8 +87,9 @@
 }
 
 /* Greeter Screen */
-#screen-greeter {
+#screen-greeter.screen {
 	top: 0;
+	position: fixed;
 	pointer-events: unset;
 	transform: translateZ();
 	transition:
