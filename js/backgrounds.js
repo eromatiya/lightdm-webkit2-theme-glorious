@@ -58,8 +58,13 @@ class Backgrounds {
 	}
 
 	_updateBackgroundImages() {
-		for (let background of this._backgrounds) {
-			background.style.backgroundImage = `url('${this._backgroundCurrentPath}')`;
+		let dummyImg = document.createElement('img');
+		dummyImg.src = this._backgroundCurrentPath;
+		dummyImg.onload = () => {
+			const src = `url('${dummyImg.src}')`;
+			for (let background of this._backgrounds) {
+				background.style.backgroundImage = src;
+			}
 		}
 	}
 
