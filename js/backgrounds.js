@@ -63,7 +63,7 @@ class Backgrounds {
 		dummyImg.onload = () => {
 			const src = `url('${dummyImg.src}')`;
 			for (let background of this._backgrounds) {
-				background.style.backgroundImage = src;
+				background.style.setProperty('background-image', src);
 			}
 		}
 	}
@@ -106,7 +106,7 @@ class Backgrounds {
 			'click',
 			() => {
 				for (let background of this._backgrounds) {
-					background.style.backgroundImage = `url('${path}')`;
+					background.style.setProperty('background-image', `url('${path}')`);
 				}
 				this._localStorage.setItem('defaultBackgroundImage', String(path));
 				this._backgroundRandomMode = false;
