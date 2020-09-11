@@ -22,7 +22,7 @@
 	backdrop-filter: blur(var(--global-blur-strength));
 	position: fixed;
 	top: 0;
-	right: -411px;
+	right: -100%;
 	box-sizing: border-box;
 	box-shadow: none;
 	padding: 10px 10px;

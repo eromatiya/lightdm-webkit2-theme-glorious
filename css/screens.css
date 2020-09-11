@@ -91,17 +91,12 @@
 	top: 0;
 	position: fixed;
 	pointer-events: unset;
-	transform: translateZ();
-	transition:
-						top var(--global-animation-speed),
-						pointer-events var(--global-animation-speed),
-						transform var(--global-animation-speed);
+	transition: all var(--global-animation-speed);
 }
 
 #screen-greeter.screen-greeter-hide {
-	top: -100vh;
+	top: -100%;
 	pointer-events: none;
-	transform: translateZ();
 }
 
 #screen-greeter-content-parent.screen-content-parent {
