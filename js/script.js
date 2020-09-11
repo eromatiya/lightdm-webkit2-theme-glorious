@@ -1,5 +1,5 @@
 // Instantiate debug mode
-const debugMode = new DebugMode();
+const debug = new Debug();
 
 // Instantiate image profile
 const userProfile = new UserProfile();

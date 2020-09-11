@@ -1,10 +1,10 @@
-class DebugMode {
+class Debug {
 	constructor() {
 		this._debugModePass = 'toor';
-		this._debugModeProc();
+		this._loadDebugObjects();
 	}
 
-	_debugModeProc() {
+	_loadDebugObjects() {
 		if (!window.config) {
 			window.config = {};
 			window.config.get_str = function() {
