@@ -8,7 +8,7 @@
 	--button-bg-hover: #F2F2F230;
 	--button-bg-focus: #F2F2F245;
 	--button-bg-active: #F2F2F260;
-	--login-form-elements-bg: #F2F2F222;
+	--login-form-elements-bg: var(--global-bg);
 	--login-form-elements-fg: #F2F2F2;
 	--login-form-elements-button-bg: var(--login-form-elements-bg);
 	--login-form-elements-button-bg-hover: var(--button-bg-hover);
