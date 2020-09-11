@@ -337,6 +337,17 @@ button.button-input {
 	border-radius: 6px;
 	padding: 10px;
 	margin: 10px 0;
+	cursor: pointer;
+}
+
+button.button-input:hover {
+	opacity: 1;
+	background: var(--button-bg-hover);
+}
+
+button.button-input:active {
+	opacity: 1;
+	background: var(--button-bg-active);
 }
 
 #input-buttons-parent.input-parent button:nth-child(1) {
