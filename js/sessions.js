@@ -51,6 +51,7 @@ class Sessions {
 	}
 
 	_populateSessionsList() {
+		if (this._sessionsObject.length < 1) return;
 		for (let i = 0; i < this._sessionsObject.length; i++) {
 			const sessionName = this._sessionsObject[parseInt(i, 10)].name;
 			const sessionKey = this._sessionsObject[parseInt(i, 10)].key;

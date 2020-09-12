@@ -68,10 +68,29 @@ class Accounts {
 		);
 	}
 
+	_setAccountDefaultOnStartUpFallback() {
+		this._defaultUser = this._usersObject[0].username;
+		this._defaultUserDisplayName = this._usersObject[0].display_name;
+		this._defaultUserProfileImage =  this._usersObject[0].image;
+		this._defaultUserProfileImageFallback = 'assets/profiles/user.svg';
+		const userDefault = {
+			'userName': this._defaultUser,
+			'displayName': this._defaultUserDisplayName,
+			'profileImage': this._defaultUserProfileImage,
+			'profileImageFallBack': this._defaultUserProfileImageFallback
+		}
+		this._updateUserProfileDefaults(userDefault);
+	}	
+
 	_setAccountDefaultOnStartUp() {
+		let defaultAccountItem = document.querySelector(`#button-accounts-item-${this._defaultUser}`);
+		if (!defaultAccountItem) {
+			// If the should've been default user does not exist
+			defaultAccountItem = document.querySelector(`#button-accounts-item-${this._usersObject[0].username}`);
+			this._setAccountDefaultOnStartUpFallback();
+		}
 		this._setUserImageProfile(this._defaultUserProfileImage, this._defaultUserProfileImageFallback);
 		this._setUserNameLabel(this._defaultUserDisplayName);
-		const defaultAccountItem = document.querySelector(`#button-accounts-item-${this._defaultUser}`);
 		this._updateAccountDefault(defaultAccountItem);
 	}
 
