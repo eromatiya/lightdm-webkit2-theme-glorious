@@ -78,7 +78,7 @@ class Accounts {
 			'displayName': this._defaultUserDisplayName,
 			'profileImage': this._defaultUserProfileImage,
 			'profileImageFallBack': this._defaultUserProfileImageFallback
-		}
+		};
 		this._updateUserProfileDefaults(userDefault);
 	}	
 

@@ -16,7 +16,6 @@ Please make sure you don't have an ancient version of these.
 
 + lightdm
 + lightdm-webkit2-greeter
-+ an environment, a desktop environment or a window manager
 
 ### Installation
 
@@ -102,8 +101,8 @@ There are two clock modes available - `24-hour` and `12-hour`. Switch between cl
 
 ### Notes
 
-+ You can add more background images by putting your wallpapers/images in `/usr/share/backgrounds/`.
-+ Make sure that you only have image files and directories inside `/usr/share/backgrounds/` or it will cause an error!
++ Add more background images by putting your wallpapers/images in `/usr/share/backgrounds/`.
++ Non-image and directory inside `/usr/share/backgrounds/` will cause an error! You will encounter this if you installed a package (for example `archlinux-wallpaper`) that includes `AUTHORS` file.
 + If you're on a desktop environment like KDE Plasma and GNOME3, you can set your profile picture and real name in the settings. While if you're on a more minimal environment like window managers, you can install and use the program called `mugshot`.
 + If your desktop environment or window manager's logo is not in the sessions screen, feel free to submit a [pull request](https://github.com/manilarome/lightdm-webkit2-theme-glorious/pulls)!
 + Translations are not yet supported. PR's are welcome!
