@@ -20,7 +20,8 @@ class Authenticate {
 			'“You miss 100% of the shots you don\'t take – Wayne Gretzky – Michael Scott”',
 			'Get out of there, it\'s gonna blow!',
 			'I can do this all day.',
-			'You father is right. You are a disappointment...'
+			'You father is right. You are a disappointment...',
+			'PAM will lock you out...'
 		];
 		return errorMessages[Math.floor(Math.random() * errorMessages.length)];	
 	}
@@ -41,8 +42,8 @@ class Authenticate {
 	}
 
 	startAuthentication() {
-			lightdm.cancel_authentication();
-			lightdm.authenticate(String(accounts.getDefaultUserName()));
+		lightdm.cancel_authentication();
+		lightdm.authenticate(String(accounts.getDefaultUserName()));
 	}
 
 	// Timer expired, create new authentication session

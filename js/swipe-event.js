@@ -127,7 +127,7 @@ class SwipeEvent {
 // new SwipeEvent(
 // 	document.querySelector('#greeterScreen'),
 // 	(el, dir) => {
-// 		el.style.background = '#ff00ff';
+// 		el.style.setProperty('background', '#ff00ff');
 // 		console.log(`swiped ${dir}`);
 // 	}
 // );

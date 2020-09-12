@@ -30,10 +30,20 @@ class Sessions {
 		button.classList.add('button-default-selected');
 	}
 
+	_setSessionListDefaultOnStartUpFallback() {
+		this._defaultSession = this._sessionsObject[0].key;
+		this._localStorage.setItem('defaultSession', this._defaultSession);
+	}
+
 	_setSessionListDefaultOnStartUp() {
 		this._defaultSession = this._localStorage.getItem('defaultSession') ||
 			this._sessionsObject[0].key || lightdm.default_session;
-		const defaultSessionItem = document.querySelector(`#button-sessions-item-${this._defaultSession}`);
+		let defaultSessionItem = document.querySelector(`#button-sessions-item-${this._defaultSession}`);
+		if (!defaultSessionItem) {
+			// If the should've been default session does not exist
+			defaultSessionItem = document.querySelector(`#button-sessions-item-${this._sessionsObject[parseInt(0, 10)].key}`);
+			this._setSessionListDefaultOnStartUpFallback();
+		}
 		this._updateSessionItemDefault(defaultSessionItem);
 		this._updateMainScreenButtonUIs(this._defaultSession);
 	}
@@ -51,6 +61,7 @@ class Sessions {
 	}
 
 	_populateSessionsList() {
+		if (this._sessionsObject.length < 1) return;
 		for (let i = 0; i < this._sessionsObject.length; i++) {
 			const sessionName = this._sessionsObject[parseInt(i, 10)].name;
 			const sessionKey = this._sessionsObject[parseInt(i, 10)].key;

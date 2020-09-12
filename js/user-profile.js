@@ -3,7 +3,7 @@ class UserProfile {
 		this._imageParentRotate = document.querySelector('#image-profile-parent');
 		this._labelUserName = document.querySelector('#label-user-name');
 		this._inputPassword = document.querySelector('#input-password');
-		this._imageParentRotate.style.webkitAnimationPlayState = 'paused';
+		this._imageParentRotate.style.setProperty('animation-play-state', 'paused');
 		this._profileAnimRunning = false;
 		this._init();
 	}
@@ -23,7 +23,7 @@ class UserProfile {
 		// Re-add animation class
 		this._imageParentRotate.classList.add('image-profile-rotate');
 		// Start rotation animation
-		this._imageParentRotate.style.webkitAnimationPlayState = 'running';
+		this._imageParentRotate.style.setProperty('animation-play-state', 'running');
 		this._profileAnimRunning = true;
 	}
 
