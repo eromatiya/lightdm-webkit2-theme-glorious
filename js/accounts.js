@@ -86,7 +86,7 @@ class Accounts {
 		let defaultAccountItem = document.querySelector(`#button-accounts-item-${this._defaultUser}`);
 		if (!defaultAccountItem) {
 			// If the should've been default user does not exist
-			defaultAccountItem = document.querySelector(`#button-accounts-item-${this._usersObject[0].username}`);
+			defaultAccountItem = document.querySelector(`#button-accounts-item-${this._usersObject[parseInt(0, 10)].username}`);
 			this._setAccountDefaultOnStartUpFallback();
 		}
 		this._setUserImageProfile(this._defaultUserProfileImage, this._defaultUserProfileImageFallback);
