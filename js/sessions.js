@@ -42,7 +42,7 @@ class Sessions {
 		if (!defaultSessionItem) {
 			// If the should've been default session does not exist
 			defaultSessionItem = document.querySelector(`#button-accounts-item-${this._sessionsObject[0].key}`);
-			this.__setSessionListDefaultOnStartUpFallback();
+			this._setSessionListDefaultOnStartUpFallback();
 		}
 		this._updateSessionItemDefault(defaultSessionItem);
 		this._updateMainScreenButtonUIs(this._defaultSession);
