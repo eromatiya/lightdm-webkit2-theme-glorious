@@ -31,13 +31,13 @@ class Sessions {
 	}
 
 	_setSessionListDefaultOnStartUpFallback() {
-		this._defaultSession = this._sessionsObject[0].key;
+		this._defaultSession = this._sessionsObject[parseInt(0, 10)].key;
 		this._localStorage.setItem('defaultSession', this._defaultSession);
 	}
 
 	_setSessionListDefaultOnStartUp() {
 		this._defaultSession = this._localStorage.getItem('defaultSession') ||
-			this._sessionsObject[0].key || lightdm.default_session;
+			this._sessionsObject[parseInt(0, 10)].key || lightdm.default_session;
 		let defaultSessionItem = document.querySelector(`#button-sessions-item-${this._defaultSession}`);
 		if (!defaultSessionItem) {
 			// If the should've been default session does not exist

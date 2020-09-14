@@ -69,9 +69,9 @@ class Accounts {
 	}
 
 	_setAccountDefaultOnStartUpFallback() {
-		this._defaultUser = this._usersObject[0].username;
-		this._defaultUserDisplayName = this._usersObject[0].display_name;
-		this._defaultUserProfileImage =  this._usersObject[0].image;
+		this._defaultUser = this._usersObject[parseInt(0, 10)].username;
+		this._defaultUserDisplayName = this._usersObject[parseInt(0, 10)].display_name;
+		this._defaultUserProfileImage =  this._usersObject[parseInt(0, 10)].image;
 		this._defaultUserProfileImageFallback = 'assets/profiles/user.svg';
 		const userDefault = {
 			'userName': this._defaultUser,
