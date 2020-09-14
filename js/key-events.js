@@ -66,6 +66,13 @@ class KeyEvents {
 					return;
 				}
 
+				if ((e.key === ' ') || (e.code === 'Space')) {
+					if (greeterScreen.getGreeterVisibility()) {
+						greeterScreen.toggleGreeter();
+						return;
+					}
+				}
+
 				if (e.key === this._closeKey) {
 					e.preventDefault();
 
