@@ -41,6 +41,7 @@ class Authenticate {
 		return errorMessages[Math.floor(Math.random() * errorMessages.length)];
 	}
 
+	// Start authentication
 	startAuthentication() {
 		lightdm.cancel_authentication();
 		lightdm.authenticate(String(accounts.getDefaultUserName()));
@@ -66,6 +67,12 @@ class Authenticate {
 
 	// You passed to authentication
 	_authenticationSuccess() {
+		this._password = null;
+
+		// Make password input read-only
+		this._passwordInput.readOnly = true;
+		this._passwordInput.blur();
+		
 		// Success messages
 		this._passwordBox.classList.add('authentication-success');
 		this._tooltipPassword.innerText = this._returnRandomSuccessfulMessages();
@@ -84,22 +91,14 @@ class Authenticate {
 
 	// Remove authentication failure messages
 	_authFailedRemove() {
-		// Remove warnings and tooltip
-		if ((!this._passwordBox.classList.contains('authentication-failed')) &&
-				(!this._tooltipPassword.classList.contains('tooltip-error'))) {
-			return;
-		}
-		setTimeout(
-			() => {
-				this._tooltipPassword.classList.remove('tooltip-error');
-				this._passwordBox.classList.remove('authentication-failed');
-			},
-			250
-		);
+		this._tooltipPassword.classList.remove('tooltip-error');
+		this._passwordBox.classList.remove('authentication-failed');
 	}
 
 	// You failed to authenticate
 	_authenticationFailed() {
+		this._password = null;
+
 		// New authentication session
 		this.startAuthentication();
 		this._passwordInput.value = '';
@@ -125,13 +124,9 @@ class Authenticate {
 		this._buttonAuthenticate.addEventListener(
 			'click',
 			() => {
-				// Save input value to variable
+				console.log(lightdm.in_authentication);
+				this._authFailedRemove();
 				this._password = this._passwordInput.value;
-				if (this._password.length < 1) {
-					return;
-				}
-				
-				// Validation
 				lightdm.respond(String(this._password));
 			}
 		);
@@ -145,9 +140,6 @@ class Authenticate {
 				this._authFailedRemove();
 				this._password = this._passwordInput.value;
 				if (e.key === 'Enter') {
-					if (this._password.length < 1) {
-						return;
-					}
 					lightdm.respond(String(this._password));
 				}
 			}

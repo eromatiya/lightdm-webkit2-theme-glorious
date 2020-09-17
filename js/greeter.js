@@ -9,6 +9,10 @@ class GreeterScreen {
 		this._arrowIndicatorClickEvent();
 	}
 
+	getGreeterVisibility() {
+		return this._screenGreeterVisible;
+	}
+
 	_buttonGreeterClickEvent() {
 		this._buttonScreenGreeter.addEventListener(
 			'click',
