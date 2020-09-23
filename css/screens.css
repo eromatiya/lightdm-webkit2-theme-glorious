@@ -130,3 +130,18 @@
 	text-align: center;
 	color: var(--global-fg);
 }
+
+#screen-dark {
+	background-color: #000000;
+	opacity: 0;
+	pointer-events: none;
+	z-index: 25;
+	transition:
+						opacity var(--global-animation-speed),
+						pointer-events var(--global-animation-speed);
+}
+
+#screen-dark.screen-dark-show {
+	opacity: 1;
+	pointer-events: unset;
+}

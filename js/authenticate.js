@@ -71,6 +71,13 @@ class Authenticate {
 		this._tooltipPassword.innerText = this._returnRandomSuccessfulMessages();
 		this._tooltipPassword.classList.add('tooltip-success');
 
+		setTimeout(
+			() => {
+				loginFade.showLoginFade();
+			},
+			500
+		);
+
 		// Add a delay before unlocking
 		setTimeout(
 			() => {
@@ -78,7 +85,7 @@ class Authenticate {
 				lightdm.start_session_sync(String(sessions.getDefaultSession()));
 				this._tooltipPassword.classList.remove('tooltip-success');
 			},
-			1500
+			1000
 		);
 	}
 
