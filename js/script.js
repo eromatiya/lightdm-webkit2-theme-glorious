@@ -7,6 +7,9 @@ const userProfile = new UserProfile();
 // Instantiate greeter screen
 const greeterScreen = new GreeterScreen();
 
+// Instantiate dark screen
+const loginFade = new LoginFade();
+
 // Instantiate goodbye screen
 const goodbye = new Goodbye();
 
