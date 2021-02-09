@@ -1,3 +1,4 @@
+
 class Authenticate {
 	constructor() {
 		this._passwordBox = document.querySelector('#input-password-box');
@@ -6,38 +7,18 @@ class Authenticate {
 		this._passwordInputContainer = document.querySelector('#input-password-container');
 		this._tooltipPassword = document.querySelector('#tooltip-password');
 		this._password = '';
+		
 		this._init();
+		this._language = new Language;		
 	}
 
 	_returnRandomErrorMessages() {
-		const errorMessages = [
-			'Authentication failed!',
-			'You look stoopid.',
-			'This incident will be reported.',
-			'Why are you the way that you are?',
-			'This will self-destruct in 5 seconds!',
-			'Uhhh... are you sure you know what you are doing?',
-			'“You miss 100% of the shots you don\'t take – Wayne Gretzky – Michael Scott”',
-			'Get out of there, it\'s gonna blow!',
-			'I can do this all day.',
-			'You father is right. You are a disappointment...',
-			'PAM will lock you out...'
-		];
+		const errorMessages = this._language._getErrorMessages();
 		return errorMessages[Math.floor(Math.random() * errorMessages.length)];	
 	}
 
 	_returnRandomSuccessfulMessages() {
-		const errorMessages = [
-			'Authentication success! Logging in!',
-			'Logging in! Biatch',
-			'Don\'t watch too much porn, bro.',
-			'Splish! Splash! Your password is trash!',
-			'Looking good today~',
-			'What are you doing, stepbro?~',
-			'You are someone\'s reason to smile.',
-			'Finally, someone with a good amount of IQ!',
-			'Please, don\'t watch porn.'
-		];
+		const errorMessages = this._language._getSuccessfulMessages();
 		return errorMessages[Math.floor(Math.random() * errorMessages.length)];
 	}
 
