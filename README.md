@@ -25,14 +25,14 @@ Please make sure you don't have an ancient version of these.
 
 	+ AUR route.
 
-		```
+		```sh
 		# AUR Helper
-		$ yay -Syu lightdm-webkit2-theme-glorious
+		yay -Syu lightdm-webkit2-theme-glorious
 
 		# Makepkg route
-		$ git clone https://aur.archlinux.org/lightdm-webkit2-theme-glorious.git
-		$ cd lightdm-webkit2-theme-glorious
-		$ makepkg -sri
+		git clone https://aur.archlinux.org/lightdm-webkit2-theme-glorious.git
+		cd lightdm-webkit2-theme-glorious
+		makepkg -sri
 		```
 
 	+ Clone the repo route.
@@ -40,24 +40,23 @@ Please make sure you don't have an ancient version of these.
 		1. Download and extract the latest stable release from [here](https://github.com/manilarome/lightdm-webkit2-theme-glorious/releases).
 		2. Copy it to the lightdm-webkit theme folder:
 
-			```
-			# cp -r lightdm-webkit2-theme-glorious /usr/share/lightdm-webkit/themes/glorious
+			```sh
+			cp -r lightdm-webkit2-theme-glorious /usr/share/lightdm-webkit/themes/glorious
 			```
 
 3. Set lightdm greeter session to webkit2.
 
-	```
-	$ sudoedit /etc/lightdm/lightdm.conf
-	# Find `greeter-session` under the `[Seat:*]` section, uncomment it, then set its value to `lightdm-webkit2-greeter`.
+	```sh
+	# Set default lightdm greeter to lightdm-webkit2-greeter
+	sudo sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf
 	```
 
 4. Set it as the lightdm webkit2 theme then enable `debug_mode` by setting it to `true`. Why do we need to enable `debug_mode`? Sometimes you will be greeted by an error. And this error is due to a race condition where the theme is trying to access the `lightdm` object even though it doesn't exist *yet*. Debug mode will allow you to `right-click` and `reload` the greeter just like a webpage.
 
-	```
-	$ sudoedit /etc/lightdm/lightdm-webkit2-greeter.conf
-	# Find `webkit_theme` then set its value to `glorious`.
-	# Find `debug_mode` then set it to true.
-	# If you encountered an error, right-click then reload.
+	```sh
+	# Set default lightdm-webkit2-greeter theme to Glorious
+	sudo sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = glorious #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+	sudo sed -i 's/^debug_mode\s*=\s*\(.*\)/debug_mode = true #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 	```
 
 ### Uninstall
