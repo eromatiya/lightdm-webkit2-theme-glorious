@@ -14,8 +14,9 @@ A sleek, modern, and glorified lightdm webkit2 theme
 
 Please make sure you don't have an ancient version of these.
 
-+ lightdm
-+ lightdm-webkit2-greeter
++ [lightdm](https://wiki.archlinux.org/title/LightDM#Installation)
++ [lightdm-webkit2-greeter (aur/lightdm-webkit2-greeter )](https://github.com/Antergos/lightdm-webkit2-greeter)
+
 
 ### Installation
 
@@ -58,6 +59,23 @@ Please make sure you don't have an ancient version of these.
 	sudo sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = glorious #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 	sudo sed -i 's/^debug_mode\s*=\s*\(.*\)/debug_mode = true #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 	```
+	
+### Change the Avatar
+
+![](./assets/profiles/yasuhoh.jpg)
+
+Once LightDM, LightDM Webkit Greeter, and Aether are installed you will need to set an avatar image for your users. Size is irrelevant, and avatars will be displayed as a 125x125 circle (Yes, square images too). Users that don't have an avatar set will default to the [avatar](./assets/profiles/user.svg).
+
+To accomplish this, you can do either of the following:
+- Create an image in your home directory named `.face` or in `/var/lib/AccountsService/icons/username.png`.
+- Append `Icon=/path/to/your/avatar.png` to the bottom of the file at `/var/lib/AccountsService/users/<youraccountname>`
+
+_Examples:_ https://github.com/manilarome/lightdm-webkit2-theme-glorious/tree/master/assets/profiles
+
+For more information: 
+- Archlinux: [LightDM - Avatar](https://wiki.archlinux.org/title/LightDM#Changing_your_avatar)
+
+**Note:** If the avatar does not change when you put the file in the folder, just go to the users section select another user (or the same user) and the change will appear.
 
 ### Uninstall
 
