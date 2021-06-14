@@ -88,8 +88,10 @@ class Authenticate {
 		// Add a delay before unlocking
 		setTimeout(
 			() => {
+				var defSession = String(sessions.getDefaultSession());
+				console.log(defSession);
 				this._buttonAuthenticate.classList.remove('authentication-success');
-				lightdm.start_session_sync(String(sessions.getDefaultSession()));
+				lightdm.start_session(defSession);
 				this._tooltipPassword.classList.remove('tooltip-success');
 			},
 			1000
@@ -131,7 +133,8 @@ class Authenticate {
 		this._buttonAuthenticate.addEventListener(
 			'click',
 			() => {
-				console.log(lightdm.in_authentication);
+				//console.log(lightdm.in_authentication);
+				//console.log("Auth: " + lightdm.is_authenticated);
 				this._authFailedRemove();
 				this._password = this._passwordInput.value;
 				lightdm.respond(String(this._password));
