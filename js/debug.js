@@ -19,7 +19,9 @@ class Debug {
 			};
 		}
 
-		if (!window.lightdm) {
+		/* This needs to be forced in debug mode */
+		if (true) {
+			console.log("Debug!");
 			window.lightdm = {
 				is_authenticated: false,
 				authentication_user: null,
@@ -126,7 +128,7 @@ class Debug {
 					}
 					authentication_complete();
 				},
-				start_session_sync: session => {
+				start_session: session => {
 					alert(`Logged with session: '${session}'!`);
 					location.reload(); 
 				},
