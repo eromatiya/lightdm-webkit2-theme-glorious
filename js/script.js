@@ -1,22 +1,26 @@
+let ran = false;
+
 async function initGreeter() {
-
-	lightdm.authentication_complete.connect( () => authentication_complete() );
-
-  lightdm.show_prompt.connect( (prompt, type) => {
-    console.log("PROMPT!");
-    console.log(prompt, type);
-  } );
-
-  lightdm.show_message.connect( (msg, type) => {
-    console.log("MESSAGE!");
-    console.log(msg, type);
-  } );
+  if (ran) return;
+  ran = true;
 
   if (greeter_config.greeter.debug_mode) {
     // Instantiate debug mode
     // Comment this line to let lightdm do its own things
     debug = new Debug();
   }
+
+	lightdm.authentication_complete?.connect( () => authentication_complete() );
+
+  lightdm.show_prompt?.connect( (prompt, type) => {
+    console.log("PROMPT!");
+    console.log(prompt, type);
+  } );
+
+  lightdm.show_message?.connect( (msg, type) => {
+    console.log("MESSAGE!");
+    console.log(msg, type);
+  } );
 
   // Instantiate image profile
   userProfile = new UserProfile();
@@ -73,3 +77,10 @@ async function initGreeter() {
  }
 
 window.addEventListener("GreeterReady", initGreeter)
+
+const greeterReady = new Event("GreeterReady");
+
+setTimeout(() => {
+  if (!("lightdm" in window)) debug = new Debug();
+  window.dispatchEvent(greeterReady);
+}, 1000)
