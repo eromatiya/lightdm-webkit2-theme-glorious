@@ -12,7 +12,12 @@ class Backgrounds {
 		this._backgroundRandomMode = null;
 		this._defaultBackgroundItem = null;
 		this._backgroundListPopulated = false;
-		this._init();
+
+		var _config = theme_utils.bind_this(this);
+
+		return _config;
+
+		//this._init();
 	}
 
 	_randomIntegerForBackground(min, max) {
@@ -30,7 +35,8 @@ class Backgrounds {
 	}
 
 	// Find image files recursively and save it to an array
-	_findImages(dirlist) {
+	async _findImages(dirlist) {
+		//console.log("Find Images", dirlist)
 		let images = [],
 		subdirs = [],
 		recursion = 0;
@@ -42,17 +48,20 @@ class Backgrounds {
 				subdirs.push(file);
 			}
 		}
-		// Search recursively
-		if (subdirs.length && recursion < 3) {
-			recursion++;
-			for (let dir of subdirs) {
-				let list = greeterutil.dirlist(dir);
+			// Search recursively
+			if (subdirs.length && recursion < 3) {
+				recursion++;
+				for (let dir of subdirs) {
+					//let list = greeterutil.dirlist(dir);
+					let list = await this._getImages(dir);
+					//console.log(list)
 
-				if (list && list.length) {
-					images.push.apply(images, this._findImages(list));
+					if (list && list.length) {
+						var toadd = await this._findImages(list);
+						images.push.apply(images, toadd);
+					}
 				}
 			}
-		}
 		// Return array of images
 		return images;
 	}
@@ -164,20 +173,29 @@ class Backgrounds {
 		}
 	}
 
-	_createBackgroundArray() {
-		this._backgroundImagesDir = config.get_str('branding', 'background_images') || '/usr/share/backgrounds';
-		if (this._backgroundImagesDir) {
-			this._backgroundImages = greeterutil.dirlist(this._backgroundImagesDir) || [];
-		}
+	async _createBackgroundArray(result) {
 		if (this._backgroundImages && this._backgroundImages.length) {
-			this._backgroundImages = this._findImages(this._backgroundImages);
+			this._backgroundImages = await this._findImages(this._backgroundImages);
+			console.log("Background images", this._backgroundImages);
 		}
 		this._backgroundImages.unshift(this._defaultBackgroundPath);
 		this._backgroundImages.unshift(this._randomBackgroundPath);
 		this._setBackgroundDefaultOnStartUp();
 	}
 
-	_init() {
+	_getImages(dir) {
+		this._backgroundImagesDir = greeter_config.branding.background_images_dir || '/usr/share/backgrounds';
+		return new Promise( resolve => {
+			theme_utils.dirlist(dir ? dir : this._backgroundImagesDir, false, result => {
+				resolve(result);
+			})
+		})
+	}
+
+	async _init() {
+		this._backgroundImages = await this._getImages();
 		this._createBackgroundArray();
+
+		return new Promise(resolve => resolve());
 	}
 }
