@@ -12,6 +12,8 @@ class Themes {
 
 		this._inputBlurStrength = document.querySelector('#sidebar-settings-blur-input');
 		this._inputAnimSpeed = document.querySelector('#sidebar-settings-animation-input');
+
+		this._inputLanguage = document.querySelector('#sidebar-settings-language');
 		this._init();
 	}
 
@@ -126,6 +128,13 @@ class Themes {
 
 	_settingsThemeApply() {
 		this._updateCSSVariables();
+		this._updateLanguageVariable();
+	}
+
+	_updateLanguageVariable()
+	{
+		
+		this._localStorage.setItem('Lang',this._inputLanguage.value);
 	}
 
 	_settingsThemeReset() {
@@ -133,6 +142,7 @@ class Themes {
 		this._localStorage.removeItem('baseColor');
 		this._localStorage.removeItem('blurStrength');
 		this._localStorage.removeItem('animSpeed');
+		this._localStorage.removeItem('Lang');
 		this._saveOriginalDefaultCSS();
 	}
 

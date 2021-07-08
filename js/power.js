@@ -19,34 +19,36 @@ class Power {
 	}
 
 	_createPowerObject() {
+		const language = new Language();
+		;
 		this._powerObject = [
 			{
-				'name': 'Shutdown',
+				'name': language._getPowerTranslate('shutdown', 'Shutdown','name'),
 				'icon': 'shutdown',
 				'enabled': lightdm.can_shutdown,
 				'powerCommand': lightdm.shutdown,
-				'message': 'Shutting down...'
+				'message': language._getPowerTranslate('shutdown', 'Shutting down...','message')
 			},
 			{
-				'name': 'Reboot',
+				'name': language._getPowerTranslate('reboot', 'Reboot','name'),
 				'icon': 'restart',
 				'enabled': lightdm.can_restart,
 				'powerCommand': lightdm.restart,
-				'message': 'Rebooting...'
+				'message': language._getPowerTranslate('reboot', 'Rebooting...','message')
 			},
 			{
-				'name': 'Hibernate',
+				'name': language._getPowerTranslate('hibernate', 'Hibernate','name'),
 				'icon': 'hibernate',
 				'enabled': lightdm.can_hibernate,
 				'powerCommand': lightdm.hibernate,
-				'message': 'Hibernating...'
+				'message': language._getPowerTranslate('hibernate', 'Hibernating...','message')
 			},
 			{
-				'name': 'Suspend',
+				'name': language._getPowerTranslate('suspend', 'Suspend','name'),
 				'icon': 'suspend',
 				'enabled': lightdm.can_suspend,
 				'powerCommand': lightdm.suspend,
-				'message': 'Suspending...'
+				'message': language._getPowerTranslate('suspend', 'Suspending...','message')
 			}
 		];
 	}
