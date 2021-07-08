@@ -5,18 +5,27 @@ class Debug {
 	}
 
 	_loadDebugObjects() {
-		if (!window.config) {
-			window.config = {};
-			window.config.get_str = function() {
+		if (!window.greeter_config) {
+			window.greeter_config = {
+				greeter: {
+					debug_mode: true,
+				},
+				branding: {
+					background_images_dir: "",
+				}
+			};
+			window.greeter_config.get_str = function() {
 				return '/usr/share/lightdm-webkit/themes/lightdm-webkit2-theme-glorious/assets/';
 			};
 		}
 
-		if (!window.greeterutil) {
-			window.greeterutil = {};
-			window.greeterutil.dirlist = function(path) {
-				return false;
+		if (!window.theme_utils) {
+			window.theme_utils = {};
+			window.theme_utils.dirlist = function(path, mode, callback) {
+				var result = [];
+				callback(result)
 			};
+			window.theme_utils.bind_this = function(context) {return context}
 		}
 
 		/* This needs to be forced in debug mode */
