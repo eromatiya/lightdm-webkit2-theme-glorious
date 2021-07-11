@@ -175,11 +175,11 @@ const languagePack = {
         ],
         successfulMessages: [
             "Authentifizierung erfolgreich! Angemeldet!",
-            "Angemeldet! Schlampe",
+            "Überraschung! Angemeldet!",
             "Guck nicht zu viele Pornos, Bruder.",
             "Platsch! Platsch! Dein Passwort ist Schrott!",
             "Siehst gut aus heute~",
-            "Was machst du da, Stiefbruder?",
+            "Wie gehts, Mann?",
             "Du bist für jemanden ein Grund zum Lächeln.",
             "Endlich mal jemand mit einem ordentlichen Maß an IQ!",
             "Bitte, schau keine Pornos."
