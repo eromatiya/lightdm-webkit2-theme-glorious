@@ -55,8 +55,8 @@ Please make sure you don't have an ancient version of these.
 
 	```sh
 	# Set default lightdm-webkit2-greeter theme to Glorious
-	sudo sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = glorious #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
-	sudo sed -i 's/^debug_mode\s*=\s*\(.*\)/debug_mode = true #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+	sudo sed -i '/webkit_theme/s/=\s*\(.*\)/= glorious #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+	sudo sed -i '/debug_mode/s/=\s*\(.*\)/= true #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 	```
 
 ### Uninstall
