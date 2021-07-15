@@ -3,8 +3,10 @@ class Language {
     constructor()
     {
         this._localStorage = window.localStorage;
-        this._language = this._getStorageItem('Lang') ||
-                        this._getStorageItem('origLang');
+        this._language =
+            this._getStorageItem("Lang") ??
+            this._getStorageItem("origLang") ??
+            "en_us";
         this._languageFallback = 'en_us';
         this._languagePack = this._getLanguagePack();
         
@@ -34,19 +36,25 @@ class Language {
 
     _getErrorMessages()
     {
-       
-        return (typeof this._languagePack.errorMessages == 'undefined' ? languagePack[this._languageFallback].errorMessages : this._languagePack.errorMessages);
+        return this._getItem("errorMessages") ?? this._getDefault("errorMessages");
     }
 
     _getSuccessfulMessages()
     {
-        return (typeof this._languagePack.successfulMessages == 'undefined' ? languagePack[this._languageFallback].successfulMessages : this._languagePack.successfulMessages);
+        return this._getItem("successfulMessages") ?? this._getDefault("successfulMessages");
     }
 
     _getPowerTranslate(powerItem, fallback, powerItemIndex = null)
     {
-        
-        return (typeof this._languagePack.power[powerItem] == 'undefined' ? fallback : (powerItemIndex != null ? this._languagePack.power[powerItem][powerItemIndex] : this._languagePack.power[powerItem]));
+        const item = this._getItem("power");
+        if (!item && !item?.hasOwnProperty(powerItem)) {
+            return fallback;
+        }
+        const powerObject = item[powerItem];
+        if (powerItemIndex) {
+            return powerObject[powerItemIndex];
+        }
+        return powerObject;
     }
 
     _getTanslateStringByIdElement(idItem)
@@ -56,17 +64,34 @@ class Language {
 
     _getTranslatedItem(item, fallback = null)
     {
-        return (typeof this._languagePack[item] != 'undefined' ?  this._languagePack[item] : (fallback != null ? fallback : languagePack[this._languageFallback][item]));
+        return this._getItem(item) ?? fallback ?? this._getDefault(item);
     }
 
     _getDaysArray()
     {
-        return (typeof this._languagePack.days != 'undefined' ? this._languagePack.days : languagePack[this._languageFallback].days);
+        return this._getItem("days") ?? this._getDefault("days");
     }
 
     _getMonthsArray()
     {
-        return (typeof this._languagePack.months != 'undefined' ? this._languagePack.months : languagePack[this._languageFallback].months);
+        return this._getItem("months") ?? this._getDefault("months");
+    }
+
+    _getItem(itemName) {
+        if (!this._languagePack) {
+            return this._getDefault(itemName);
+        }
+        if (!this._languagePack.hasOwnProperty(itemName)) {
+            return;
+        }
+        return this._languagePack[itemName];
+    }
+
+    _getDefault(itemName) {
+        if (!languagePack.en_us.hasOwnProperty(itemName)) {
+            return;
+        }
+        return languagePack.en_us[itemName];
     }
     
     _translateInterface()
