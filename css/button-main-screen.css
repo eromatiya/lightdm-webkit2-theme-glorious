@@ -29,6 +29,8 @@
   height: 32px;
   object-fit: contain;
   display: block;
+  filter: blur(0);
+  transition: filter calc(var(--global-animation-speed) / 2) ease;
 }
 
 /* Give an illusion that it's being blurred by sidebar */
