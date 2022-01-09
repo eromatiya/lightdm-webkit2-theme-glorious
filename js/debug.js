@@ -30,7 +30,6 @@ class Debug {
 
 		/* This needs to be forced in debug mode */
 		if (true) {
-			console.log("Debug!");
 			window.lightdm = {
 				is_authenticated: false,
 				authentication_user: null,

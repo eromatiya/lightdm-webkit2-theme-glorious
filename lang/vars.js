@@ -135,7 +135,7 @@ const languagePack = {
         afternoon: 'Boa Tarde',
         evening: 'Boa Noite',
         of: 'de',
-    }
+    },
 	de_de: {
         goodbye_message: 'Trennen der Verbindung...',
         input_password: 'Geben Sie Ihr Passwort ein',
