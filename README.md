@@ -27,7 +27,7 @@ Please make sure you don't have an ancient version of these.
 
 		```sh
 		# AUR Helper
-		yay -Syu lightdm-webkit2-theme-glorious
+		yay -S lightdm-webkit2-theme-glorious
 
 		# Makepkg route
 		git clone https://aur.archlinux.org/lightdm-webkit2-theme-glorious.git
