@@ -75,30 +75,25 @@ class Power {
 	}
 
 	_createPowerList() {
-		for (let i = 0; i < this._powerObject.length; i++) {
+		for (let powerItem of this._powerObject) {
 			// If disabled, don't create a button for it
-			const powerCommandEnabled = this._powerObject[parseInt(i, 10)].enabled;
-			if (!powerCommandEnabled) return;
-			const powerName = this._powerObject[parseInt(i, 10)].name;
-			const powerCommand =  this._powerObject[parseInt(i, 10)].powerCommand;
-			const powerIcon = this._powerObject[parseInt(i, 10)].icon;
-			const powerMessage = this._powerObject[parseInt(i, 10)].message;
+			if (!powerItem.enabled) continue;
 			let powerItemButton = document.createElement('button');
 			powerItemButton.className = 'button-sidebar-list-item';
-			powerItemButton.id = `button-sessions-item-${powerName.toLowerCase()}`;
+			powerItemButton.id = `button-sessions-item-${powerItem.name.toLowerCase()}`;
 			powerItemButton.insertAdjacentHTML(
 				'beforeend',
 				`
 				<div class='button-sidebar-item-image-parent' id='button-powers-item-image-parent'>
-					<img class='button-sidebar-item-image' id='button-powers-item-image' draggable='false' src='assets/power/${powerIcon}.svg' 
+					<img class='button-sidebar-item-image' id='button-powers-item-image' draggable='false' src='assets/power/${powerItem.icon}.svg'
 					onerror='this.src="assets/power/shutdown.svg"'></img>
 				</div>
-				<div class='button-sidebar-item-name' id='button-sessions-item-name'>${powerName}</div>
+				<div class='button-sidebar-item-name' id='button-sessions-item-name'>${powerItem.name}</div>
 				`
 			);
 			let listItem = document.createElement('li');
 			// Create on click event
-			this._powerItemOnClickEvent(powerItemButton, this._powerObject[parseInt(i, 10)]);
+			this._powerItemOnClickEvent(powerItemButton, powerItem);
 			listItem.appendChild(powerItemButton);
 			this._powerList.appendChild(listItem);
 		}
