@@ -10,7 +10,7 @@ const languagePack = {
             "“You miss 100% of the shots you don't take – Wayne Gretzky – Michael Scott”",
             "Get out of there, it's gonna blow!",
             "I can do this all day.",
-            "You father is right. You are a disappointment...",
+            "Your father is right. You are a disappointment...",
             "PAM will lock you out..."
         ],
         successfulMessages: [
@@ -135,7 +135,7 @@ const languagePack = {
         afternoon: 'Boa Tarde',
         evening: 'Boa Noite',
         of: 'de',
-    }
+    },
 	de_de: {
         goodbye_message: 'Trennen der Verbindung...',
         input_password: 'Geben Sie Ihr Passwort ein',
