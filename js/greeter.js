@@ -23,6 +23,16 @@ class GreeterScreen {
 	}
 
 	_arrowIndicatorClickEvent() {
+		document.addEventListener(
+			'wheel',
+			() => {
+				const start = !document.querySelector(".screen.background.screen-image.screen-background-darken.screen-greeter-hide")
+				if(start) {
+					this._hideGreeter();
+					this.startAuthentication();
+				}
+			}
+		);
 		this._arrowIndicatorGreeter.addEventListener(
 			'click',
 			() => {
