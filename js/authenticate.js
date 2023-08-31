@@ -145,11 +145,9 @@ class Authenticate {
 		if (!lightdm) {
 			lightdm.onload = function() {
 				console.log('Start authentication');
-				this.startAuthentication();
 			};
 		} else {
 			console.log('Start authentication');
-			this.startAuthentication();
 		}
 	}
 }
