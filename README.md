@@ -48,7 +48,7 @@ Please make sure you don't have an ancient version of these.
 
 	```sh
 	# Set default lightdm greeter to lightdm-webkit2-greeter
-	sudo sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf
+	sudo sed -i 's/^#\{0,1\}greeter-session\s*=\s*\(.*\)/greeter-session=lightdm-webkit2-greeter #\1/g' /etc/lightdm/lightdm.conf
 	```
 
 4. Set it as the lightdm webkit2 theme then enable `debug_mode` by setting it to `true`. Why do we need to enable `debug_mode`? Sometimes you will be greeted by an error. And this error is due to a race condition where the theme is trying to access the `lightdm` object even though it doesn't exist *yet*. Debug mode will allow you to `right-click` and `reload` the greeter just like a webpage.
