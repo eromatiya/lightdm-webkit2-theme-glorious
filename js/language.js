@@ -3,10 +3,10 @@ class Language {
     constructor()
     {
         this._localStorage = window.localStorage;
-        this._languageFallback = 'en_us';
         this._language = this._getStorageItem('Lang') ||
-                        this._getStorageItem('origLang') || this._languageFallback;
+                        this._getStorageItem('origLang');
         this._languagePack = this._getLanguagePack();
+        this._languageFallback = 'en_us';
 
         if(this._language !== 'en_us')
         {
@@ -43,10 +43,8 @@ class Language {
         return (typeof this._languagePack.successfulMessages == 'undefined' ? languagePack[this._languageFallback].successfulMessages : this._languagePack.successfulMessages);
     }
 
-    _getPowerTranslate(powerItem, fallback, powerItemIndex = null)
-    {
-
-        return (typeof this._languagePack.power[powerItem] == 'undefined' ? fallback : (powerItemIndex != null ? this._languagePack.power[powerItem][powerItemIndex] : this._languagePack.power[powerItem]));
+    _getPowerTranslate(powerItem, fallback, powerItemIndex = null) {
+        return this._languagePack.power && typeof this._languagePack.power[powerItem] !== 'undefined' ? (powerItemIndex !== null && typeof this._languagePack.power[powerItem][powerItemIndex] !== 'undefined' ? this._languagePack.power[powerItem][powerItemIndex] : this._languagePack.power[powerItem]) : fallback;
     }
 
     _getTranslateStringByIdElement(idItem)
