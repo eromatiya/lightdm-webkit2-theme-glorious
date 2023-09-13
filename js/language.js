@@ -3,12 +3,12 @@ class Language {
     constructor()
     {
         this._localStorage = window.localStorage;
-        this._language = this._getStorageItem('Lang') ||
-                        this._getStorageItem('origLang');
         this._languageFallback = 'en_us';
+        this._language = this._getStorageItem('Lang') ||
+                        this._getStorageItem('origLang') || this._languageFallback;
         this._languagePack = this._getLanguagePack();
-        
-        if(this._language != 'en_us')
+
+        if(this._language !== 'en_us')
         {
             this._translateInterface();
         }
@@ -26,7 +26,7 @@ class Language {
 		return this._localStorage.getItem(String(item));
 	}
 
-    
+
     _getLanguagePack()
     {
         return languagePack[this._language];
@@ -34,7 +34,7 @@ class Language {
 
     _getErrorMessages()
     {
-       
+
         return (typeof this._languagePack.errorMessages == 'undefined' ? languagePack[this._languageFallback].errorMessages : this._languagePack.errorMessages);
     }
 
@@ -45,12 +45,13 @@ class Language {
 
     _getPowerTranslate(powerItem, fallback, powerItemIndex = null)
     {
-        
+
         return (typeof this._languagePack.power[powerItem] == 'undefined' ? fallback : (powerItemIndex != null ? this._languagePack.power[powerItem][powerItemIndex] : this._languagePack.power[powerItem]));
     }
 
-    _getTanslateStringByIdElement(idItem)
+    _getTranslateStringByIdElement(idItem)
     {
+        console.log(idItem);
         return this._languagePack[String(idItem).replace(/-/g,'_')];
     }
 
@@ -68,7 +69,7 @@ class Language {
     {
         return (typeof this._languagePack.months != 'undefined' ? this._languagePack.months : languagePack[this._languageFallback].months);
     }
-    
+
     _translateInterface()
     {
         const InputElements = {
@@ -76,14 +77,14 @@ class Language {
         };
 
         Object.keys(InputElements).forEach(key => {
-            let translate = this._getTanslateStringByIdElement(InputElements[key].id);
+            let translate = this._getTranslateStringByIdElement(InputElements[key].id);
           if(typeof translate != 'undefined' && translate != null && translate != '')
           {
             InputElements[String(key)].placeholder = translate;
-           
+
           }
         });
-       
+
         const InterfaceElements = {
             goodbye: document.getElementById("goodbye-message"),
             item_account: document.getElementById("sidebar-item-account"),
@@ -110,7 +111,7 @@ class Language {
         }
 
         Object.keys(InterfaceElements).forEach(key => {
-            let translate = this._getTanslateStringByIdElement(InterfaceElements[String(key)].id);
+            let translate = this._getTranslateStringByIdElement(InterfaceElements[String(key)].id);
           if(typeof translate != 'undefined' && translate != null && translate != '')
           {
             InterfaceElements[String(key)].innerHTML = '';
