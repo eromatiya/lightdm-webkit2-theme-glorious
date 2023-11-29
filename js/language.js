@@ -2,34 +2,27 @@
 class Language {
     constructor()
     {
-        this._localStorage = window.localStorage;
-        this._language = this._getStorageItem('Lang') ||
-                        this._getStorageItem('origLang');
-        this._languageFallback = 'en_us';
-        this._languagePack = this._getLanguagePack();
         
+        this._language = navigator.language.toLowerCase()
+        this._languagePack = this._getLanguagePack();
+    
         if(this._language != 'en_us')
         {
             this._translateInterface();
         }
     }
 
-    _saveOriginalLanguage()
-	{
-		this._localStorage.setItem(
-			'origLang',
-			'en_us'
-		);
-	}
-
-    _getStorageItem(item) {
-		return this._localStorage.getItem(String(item));
-	}
-
     
     _getLanguagePack()
     {
-        return languagePack[this._language];
+        
+        if(this._language === "pt-br"){
+            return languagePack.pt_br;
+        }else if(this._language === "de-de"){
+            return languagePack.de_de;
+        }else {
+            return languagePack.en_us;
+        }
     }
 
     _getErrorMessages()

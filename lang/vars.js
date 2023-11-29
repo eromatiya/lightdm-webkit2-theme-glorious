@@ -1,5 +1,5 @@
 const languagePack = {
-    en_us: {
+    "en_us": {
         errorMessages: [
             "Authentication failed!",
             "You look stoopid.",
@@ -52,7 +52,7 @@ const languagePack = {
         evening: 'Good Evening',
         of: 'of',
     },
-    pt_br: {
+    "pt_br": {
         goodbye_message: 'Desligando...',
         input_password: 'Digite sua Senha',
         sidebar_item_account: 'Contas',
@@ -136,7 +136,7 @@ const languagePack = {
         evening: 'Boa Noite',
         of: 'de',
     },
-	de_de: {
+	"de_de": {
         goodbye_message: 'Trennen der Verbindung...',
         input_password: 'Geben Sie Ihr Passwort ein',
         sidebar_item_account: 'Konten',
