@@ -29,7 +29,7 @@ class Language {
     
     _getLanguagePack()
     {
-        return languagePack[this._language];
+        return languagePack[this._language] || languagePack['en_us'];
     }
 
     _getErrorMessages()
@@ -46,7 +46,7 @@ class Language {
     _getPowerTranslate(powerItem, fallback, powerItemIndex = null)
     {
         
-        return (typeof this._languagePack.power[powerItem] == 'undefined' ? fallback : (powerItemIndex != null ? this._languagePack.power[powerItem][powerItemIndex] : this._languagePack.power[powerItem]));
+        return (!this._languagePack.power || typeof this._languagePack.power[powerItem] == 'undefined' ? fallback : (powerItemIndex != null ? this._languagePack.power[powerItem][powerItemIndex] : this._languagePack.power[powerItem]));
     }
 
     _getTanslateStringByIdElement(idItem)
